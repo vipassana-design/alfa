@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ALFA - Catálogo de Equipos</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#fab41e", 
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#0a0a0a", 
+                        "surface-dark": "#141414",
+                        "surface-card": "#000000",
+                        "surface-light": "#FFFFFF",
+                        "border-dark": "#262626",
+                        "text-main": "#E5E5E5",
+                        "text-muted": "#888888",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #fab41e; 
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Clase añadida para el ocultamiento de las cards */
+        .product-gone {
+            display: none !important;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-text-main antialiased selection:bg-primary selection:text-black">
+<div class="flex min-h-screen flex-col">
+<header class="sticky top-0 z-50 border-b border-border-dark bg-background-dark/95 backdrop-blur-sm">
+<div class="mx-auto flex h-20 max-w-[1600px] items-center justify-between px-6 lg:px-10">
+<div class="flex items-center gap-4 text-white">
+<img src="images/alfa-logo.png" class="h-12 w-auto object-contain" alt="ALFA"/>
+</div>
+<nav class="hidden flex-1 justify-end gap-8 md:flex">
+<div class="flex items-center gap-9">
+<a class="text-sm font-medium text-primary transition-colors hover:text-primary" href="#">Inicio</a>
+<a class="text-sm font-medium text-text-muted transition-colors hover:text-primary" href="#">Quiénes Somos</a>
+<a class="text-sm font-medium text-text-muted transition-colors hover:text-primary" href="#">Equipos</a>
+<a class="text-sm font-medium text-text-muted transition-colors hover:text-primary" href="#">Soluciones</a>
+	<a class="text-sm font-medium text-text-muted transition-colors hover:text-primary" href="#">Contacto</a>
+</div>
+<button class="flex h-10 min-w-[140px] items-center justify-center rounded bg-primary px-6 text-sm font-bold tracking-wide text-background-dark transition-transform hover:scale-105 hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background-dark">
+                        Solicitar Cotización
+                    </button>
+</nav>
+<button id="mobile-btn" class="ml-4 text-white md:hidden focus:outline-none">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-background-dark/95 backdrop-blur-md border-b border-border-dark flex-col items-center gap-6 py-8 md:hidden shadow-2xl">
+    <a class="text-lg font-medium text-primary transition-colors hover:text-primary" href="#">Inicio</a>
+    <a class="text-lg font-medium text-text-muted transition-colors hover:text-primary" href="#">Quiénes Somos</a>
+    <a class="text-lg font-medium text-text-muted transition-colors hover:text-primary" href="#">Equipos</a>
+    <a class="text-lg font-medium text-text-muted transition-colors hover:text-primary" href="#">Soluciones</a>
+	<a class="text-lg font-medium text-text-muted transition-colors hover:text-primary" href="#">Contacto</a>
+    <button class="flex h-12 min-w-[200px] items-center justify-center rounded bg-primary px-6 text-sm font-bold tracking-wide text-background-dark transition-transform hover:scale-105 hover:bg-yellow-400">
+        Solicitar Cotización
+    </button>
+</div>
+</header>
+<main class="mx-auto flex w-full max-w-[1600px] flex-1 flex-col gap-8 px-6 py-10 lg:px-10">
+<div class="flex flex-col gap-8">
+<div>
+    <h1 class="text-4xl font-black uppercase leading-none tracking-tight text-white lg:text-6xl">Catálogo de Flota</h1>
+    <p class="mt-4 text-xl text-text-muted max-w-2xl">Maquinaria de alto rendimiento diseñada para una durabilidad extrema. Explore nuestro inventario completo a continuación.</p>
+</div>
+
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 border-y border-border-dark bg-surface-dark/30 py-6">
+    <div class="flex flex-col sm:flex-row gap-6 w-full lg:w-auto">
+        <div class="space-y-3 w-full sm:w-auto">
+            <h3 class="px-2 text-xs font-bold uppercase tracking-widest text-text-muted">Filtro por Industria</h3>
+            <select id="industry-select" class="h-14 w-full sm:w-56 rounded border-none bg-surface-dark py-0 pl-4 pr-10 text-sm font-medium text-white shadow-md ring-1 ring-border-dark focus:ring-2 focus:ring-primary focus:outline-none cursor-pointer transition-colors">
+                <option value="all">Todas</option>
+                <option value="construccion">Construcción</option>
+                <option value="mineria">Minería</option>
+                <option value="agricultura">Agricultura</option>
+                <option value="forestal">Forestal</option>
+                <option value="industrial">Industrial</option>
+            </select>
+        </div>
+        <div class="space-y-3 w-full sm:w-auto">
+            <h3 class="px-2 text-xs font-bold uppercase tracking-widest text-text-muted">Filtro por Tipo</h3>
+            <select id="type-select" class="h-14 w-full sm:w-56 rounded border-none bg-surface-dark py-0 pl-4 pr-10 text-sm font-medium text-white shadow-md ring-1 ring-border-dark focus:ring-2 focus:ring-primary focus:outline-none cursor-pointer transition-colors">
+                <option value="all">Todas</option>
+                <option value="excavadora">Excavadoras</option>
+                <option value="pala">Palas Cargadoras</option>
+                <option value="grua">Grúas</option>
+                <option value="camion">Camiones</option>
+                <option value="compactadora">Compactadoras</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="w-full lg:w-[400px]">
+        <div class="relative flex h-14 w-full items-center overflow-hidden rounded bg-surface-dark shadow-md ring-1 ring-border-dark focus-within:ring-2 focus-within:ring-primary transition-shadow">
+            <div class="flex h-full w-14 items-center justify-center text-text-muted">
+                <span class="material-symbols-outlined">search</span>
+            </div>
+            <input id="search-input" class="h-full flex-1 border-none bg-transparent px-2 text-base text-white placeholder-text-muted focus:ring-0 focus:outline-none" placeholder="Buscar modelo o tipo de máquina..." type="text"/>
+        </div>
+    </div>
+</div>
+
+<div class="flex items-center justify-between mt-2">
+<p class="text-sm font-medium text-text-muted"><span id="product-count" class="text-white">6</span> Máquinas Disponibles</p>
+<div class="flex items-center gap-2">
+<span class="text-sm text-text-muted hidden sm:inline">Ordenar por:</span>
+<select class="rounded border-none bg-surface-dark py-1 pl-3 pr-8 text-sm font-medium text-white ring-1 ring-border-dark focus:ring-primary cursor-pointer">
+<option>Más recientes</option>
+<option>Precio: Menor a Mayor</option>
+<option>Precio: Mayor a Menor</option>
+</select>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+<article class="product-item group relative flex flex-col overflow-hidden bg-surface-card transition-all hover:shadow-[0_0_40px_rgba(250,180,30,0.1)]" data-industry="mineria" data-type="excavadora">
+<div class="relative aspect-[16/10] overflow-hidden bg-[#1a1a1a]">
+<div class="absolute right-0 top-0 z-10 bg-primary px-3 py-1 text-xs font-black uppercase tracking-widest text-black">
+                            Más Vendido
+                        </div>
+<img alt="Yellow industrial excavator on dark background" class="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-110" data-alt="Yellow ALFA X-200 Excavator heavy machinery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdNwNhGonptUj4PjBv2J-pOWAz_GSu1B4OrmMeJXrOefAscvSGN8y1MgeOTXKkQdOYPSxIurEc3y2X4lwwm6Nfm_wL1sPomTtrJHUqnUKKkN0jz_4frCG6uy70fuyVsIYiHUFmzqvdYRVMRXQYHI1BRrArTtubdm60EPxbYvYNvcQXAATiC_use2bRThDGGudgT7F5GIbbA-iT4vzWxZpoCVLWtjOl45RGte6o6EFEXf-HFzymbQwC-wzwQLs8UNNVQHtQkOR0T2A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+</div>
+<div class="flex flex-1 flex-col p-6">
+<div class="mb-2 flex items-center justify-between">
+<span class="text-xs font-bold uppercase tracking-widest text-text-muted">Excavadora Orugas</span>
+</div>
+<h3 class="mb-4 text-2xl font-black uppercase text-white group-hover:text-primary transition-colors">ALFA X-200 Series</h3>
+<div class="mb-6 grid grid-cols-3 gap-4 border-t border-white/10 pt-4">
+<div class="flex flex-col gap-1">
+<span class="text-[10px] uppercase tracking-wider text-text-muted">Potencia</span>
+<span class="font-bold text-primary">180 HP</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-[10px] uppercase tracking-wider text-text-muted">Peso</span>
+<span class="font-bold text-primary">48.5k lbs</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-[10px] uppercase tracking-wider text-text-muted">Prof. Exc.</span>
+<span class="font-bold text-primary">22' 4"</span>
+</div>
+</div>
+<button class="mt-auto flex w-full items-center justify-center gap-2 bg-primary py-4 text-sm font-black uppercase tracking-wider text-black transition-all hover:bg-white hover:text-black">
+                            Ver Especificaciones
+                            <span class="material-symbols-outlined text-lg">arrow_outward</span>
+</button>
+</div>
+</article>
+
+<article class="product-item group relative flex flex-col overflow-hidden bg-surface-card transition-all hover:shadow-[0_0_40px_rgba(250,180,30,0.1)]" data-industry="construccion" data-type="pala">
+<div class="relative aspect-[16/10] overflow-hidden bg-[#1a1a1a]">
+<img alt="Yellow industrial wheel loader heavy machinery" class="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-110" data-alt="Yellow ALFA WL-500 Wheel Loader" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB2C5V9xEBHKVCQvEBRVA-FvAnKPziOAgYSBw13hC0Avl6i4biM5eZtT70FgPvBUHSf3GKnXRBks0RQ410bK-M8k1suPVzJlDGwD80yDwJAQpjPs_7BG-yS4_E7Qlk42zWRwdQOXHwcN9WhBUEeRhKC0mn6e7UNWvzlY1wyU6qAue2gofnbpm9BeZlO6zMhXSwBkbAi91qcsm-8DxcqN-h9zduF8Dh9j7V0t-3YqqFL0bW58P3GHSfGdudsG57McGRSnwXKJ_s-OQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+</div>
+<div class="flex flex-1 flex-col p-6">
+<div class="mb-2 flex items-center justify-between">
+<span class="text-xs font-bold uppercase tracking-widest text-text-muted">Pala Cargadora</span>
+</div>
+<h3 class="mb-4 text-2xl font-black uppercase text-white group-hover:text-primary transition-colors">ALFA WL-500</h3>
+<div class="mb-6 grid grid-cols-3 gap-4 border-t border-white/10 pt-4">
+<div class="flex flex-col gap-1">
+<span class="text-[10px] uppercase tracking-wider text-text-muted">Potencia</span>
+<span class="font-bold text-primary">245 HP</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-[10px] uppercase tracking-wider text-text-muted">Cuchara</span>
+<span class="font-bold text-primary">4.5 yd³</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-[10px] uppercase tracking-wider text-text-muted">Fza. Rotura</span>
+<span class="font-bold text-primary">38k lbf</span>
+</div>
+</div>
+<button class="mt-auto flex w-full items-center justify-center gap-2 bg-primary py-4 text-sm font-black uppercase tracking-wider text-black transition-all hover:bg-white hover:text-black">
+                            Ver Especificaciones
+                            <span class="material-symbols-outlined text-lg">arrow_outward</span>
+</button>
+</div>
+</article>
+
+<article class="product-item group relative flex flex-col overflow-hidden bg-surface-card transition-all hover:shadow-[0_0_40px_rgba(250,180,30,0.1)]" data-industry="industrial" data-type="camion">
+<div class="relative aspect-[16/10] overflow-hidden bg-[#1a1a1a]">
+<div class="absolute right-0 top-0 z-10 bg-white px-3 py-1 text-xs font-black uppercase tracking-widest text-black">
+                            Nuevo Ingreso
+                        </div>
+<img alt="Yellow industrial forklift heavy machinery" class="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-110" data-alt="Yellow ALFA FL-30 Heavy Forklift" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMFWRXjy-hEpbQoDxqlq17i_HhaXUWbIB-EUJh3L1sP55NJoU_HlT31Vu3I4quLvGtZUp2hv3cBA3hIKNGEHTovTpO_jtKg3-yhb7yiGi4p6OAwXqCFrCsneqPiZA7zKNrEHZ8vqbeIkEhppjIFdsjbTepiBQ2KWRvbaAnZNnyBClgsiUPAzVPiEhtUU6qNeokNjElVHmfGzBQv6D_vPnLjSVM2Iot77NLjfw6OM7buuwv3TTpor91c0tq6X4afjo2ugYT24AqN3Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+</div>
+<div class="flex flex-1 flex-col p-6">
+<div class="mb-2 flex items-center justify-between">
+<span class="text-xs font-bold uppercase tracking-widest text-text-muted">Montacargas Pesado</span>
+</div>
+<h3 class="mb-4 text-2xl font-black uppercase text-white group-hover:text-primary transition-colors">ALFA FL-30</h3>
+<div class="mb-6 grid grid-cols-3 gap-4 border-t border-white/10 pt-4">
+<div class="flex flex-col gap-1">
+<span class="text-[10px] uppercase tracking-wider text-text-muted">Potencia</span>
+<span class="font-bold text-primary">120 HP</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-[10px] uppercase tracking-wider text-text-muted">Cap. Carga</span>
+<span class="font-bold text-primary">15k lbs</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-[10px] uppercase tracking-wider text-text-muted">Alt. Máx.</span>
+<span class="font-bold text-primary">18 ft</span>
+</div>
+</div>
+<button class="mt-auto flex w-full items-center justify-center gap-2 bg-primary py-4 text-sm font-black uppercase tracking-wider text-black transition-all hover:bg-white hover:text-black">
+                            Ver Especificaciones
+                            <span class="material-symbols-outlined text-lg">arrow_outward</span>
+</button>
+</div>
+</article>
+
+<article class="product-item group relative flex flex-col overflow-hidden bg-surface-card transition-all hover:shadow-[0_0_40px_rgba(250,180,30,0.1)]" data-industry="construccion" data-type="grua">
+<div class="relative aspect-[16/10] overflow-hidden bg-[#1a1a1a]">
+<img alt="Construction crane heavy machinery" class="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-110" data-alt="Yellow ALFA Crane C-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0hhUo8T-2ZEQGf-VjDdW61Ijd2QwMf6NGCRQhGy371XEVMVrVXC66FO5-es8t1__a9Ngtq20EIem-JeDjVqOW58B-e2w_yfNGyDGKfqXz19o9FGCCk1blS4QZ-G_aQBDBjd06TYqyqirOscn0o9N0qPI9lprCMO61xctuCc7zYLm2NWB7SXbWHAAIjEv9-pNPH_8l2JA8VIsRjeKR7Lt4X4lS8YfeZ2sXf-vuPkLh7Dul8zjV211wcE_bS75syDTuyFgpIa8fUQE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+</div>
+<div class="flex flex-1 flex-col p-6">
+<div class="mb-2 flex items-center justify-between">
+<span class="text-xs font-bold uppercase tracking-widest text-text-muted">Grúa Móvil</span>
+</div>
+<h3 class="mb-4 text-2xl font-black uppercase text-white group-hover:text-primary transition-colors">ALFA C-100</h3>
+<div class="mb-6 grid grid-cols-3 gap-4 border-t border-white/10 pt-4">
+<div class="flex flex-col gap-1">
+<span class="text-[10px] uppercase tracking-wider text-text-muted">Potencia</span>
+<span class="font-bold text-primary">350 HP</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-[10px] uppercase tracking-wider text-text-muted">Carga Máx.</span>
+<span class="font-bold text-primary">100 Ton</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-[10px] uppercase tracking-wider text-text-muted">Alcance</span>
+<span class="font-bold text-primary">180 ft</span>
+</div>
+</div>
+<button class="mt-auto flex w-full items-center justify-center gap-2 bg-primary py-4 text-sm font-black uppercase tracking-wider text-black transition-all hover:bg-white hover:text-black">
+                            Ver Especificaciones
+                            <span class="material-symbols-outlined text-lg">arrow_outward</span>
+</button>
+</div>
+</article>
+
+<article class="product-item group relative flex flex-col overflow-hidden bg-surface-card transition-all hover:shadow-[0_0_40px_rgba(250,180,30,0.1)]" data-industry="mineria" data-type="camion">
+<div class="relative aspect-[16/10] overflow-hidden bg-[#1a1a1a]">
+<img alt="Dump truck industrial vehicle" class="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-110" data-alt="Yellow ALFA HD-40 Haul Truck" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZgnEEG0vrej6Q42EkRK_egalnTa9QvJFc4oDQtOxyrkViUdBBbEStXt8McE-AlY8sp--pWkGg4LQx6nU2GlTWrH1tJhyWNmqDFa7YnPToZ261mX2ivdy5l5aG8tuGM4vwH9oQFH9Q5GZ1k6fgNx34LoQbEPi1MdDNyh3bXUDVT-3hdeQIpbI00a16lYjK82wTCrX3Y4ILJ2E-hd3Qyac62VUAh0FtrpeqFb0KpuESOnWM7Bb772NJleStyj8-sFhBGTPgulhOB8Y"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+</div>
+<div class="flex flex-1 flex-col p-6">
+<div class="mb-2 flex items-center justify-between">
+<span class="text-xs font-bold uppercase tracking-widest text-text-muted">Camión Minero</span>
+</div>
+<h3 class="mb-4 text-2xl font-black uppercase text-white group-hover:text-primary transition-colors">ALFA HD-40</h3>
+<div class="mb-6 grid grid-cols-3 gap-4 border-t border-white/10 pt-4">
+<div class="flex flex-col gap-1">
+<span class="text-[10px] uppercase tracking-wider text-text-muted">Potencia</span>
+<span class="font-bold text-primary">550 HP</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-[10px] uppercase tracking-wider text-text-muted">Carga Útil</span>
+<span class="font-bold text-primary">40 Ton</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-[10px] uppercase tracking-wider text-text-muted">Capacidad</span>
+<span class="font-bold text-primary">34 yd³</span>
+</div>
+</div>
+<button class="mt-auto flex w-full items-center justify-center gap-2 bg-primary py-4 text-sm font-black uppercase tracking-wider text-black transition-all hover:bg-white hover:text-black">
+                            Ver Especificaciones
+                            <span class="material-symbols-outlined text-lg">arrow_outward</span>
+</button>
+</div>
+</article>
+
+<article class="product-item group relative flex flex-col overflow-hidden bg-surface-card transition-all hover:shadow-[0_0_40px_rgba(250,180,30,0.1)]" data-industry="construccion" data-type="compactadora">
+<div class="relative aspect-[16/10] overflow-hidden bg-[#1a1a1a]">
+<img alt="Road roller compactor" class="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-110" data-alt="Yellow ALFA R-88 Road Roller" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP3Q1QHrkrfWGavpwCop8B6YgG-NM45ARSxLcWeXBwXixPNGQtjB2w1QcZKH5VeTusuEQmNKUEZHjJmnNWxRMdmCrRjKBrkFLstHzAvSY_FrK8j2rPPEfvXBnVR1Ja0YL5iJUN_2NDCqU1DLuF3KiWZDVqN71FoSm0Cv-wLbw3uO4lbRBEDb92doN5y65GC5UHtoWR8C3rudQxxDON6F1ooRFGnDWDKc0EHbf10OZncn_ZzlgJiOctJUyUaGg8lXxAZ9wAKd4RZFQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+</div>
+<div class="flex flex-1 flex-col p-6">
+<div class="mb-2 flex items-center justify-between">
+<span class="text-xs font-bold uppercase tracking-widest text-text-muted">Compactadora</span>
+</div>
+<h3 class="mb-4 text-2xl font-black uppercase text-white group-hover:text-primary transition-colors">ALFA R-88</h3>
+<div class="mb-6 grid grid-cols-3 gap-4 border-t border-white/10 pt-4">
+<div class="flex flex-col gap-1">
+<span class="text-[10px] uppercase tracking-wider text-text-muted">Potencia</span>
+<span class="font-bold text-primary">130 HP</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-[10px] uppercase tracking-wider text-text-muted">Rodillo</span>
+<span class="font-bold text-primary">84 in</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-[10px] uppercase tracking-wider text-text-muted">Peso</span>
+<span class="font-bold text-primary">28k lbs</span>
+</div>
+</div>
+<button class="mt-auto flex w-full items-center justify-center gap-2 bg-primary py-4 text-sm font-black uppercase tracking-wider text-black transition-all hover:bg-white hover:text-black">
+                            Ver Especificaciones
+                            <span class="material-symbols-outlined text-lg">arrow_outward</span>
+</button>
+</div>
+</article>
+</div>
+<div class="mt-12 flex justify-center">
+<nav class="flex gap-2 rounded-lg bg-surface-dark p-2 shadow-lg ring-1 ring-border-dark">
+<a class="flex h-10 w-10 items-center justify-center rounded hover:bg-white/5 text-text-muted" href="#">
+<span class="material-symbols-outlined">chevron_left</span>
+</a>
+<a class="flex h-10 w-10 items-center justify-center rounded bg-primary font-bold text-black" href="#">1</a>
+<a class="flex h-10 w-10 items-center justify-center rounded hover:bg-white/5 text-text-main font-medium" href="#">2</a>
+<a class="flex h-10 w-10 items-center justify-center rounded hover:bg-white/5 text-text-main font-medium" href="#">3</a>
+<span class="flex h-10 w-10 items-center justify-center text-text-muted">...</span>
+<a class="flex h-10 w-10 items-center justify-center rounded hover:bg-white/5 text-text-muted" href="#">
+<span class="material-symbols-outlined">chevron_right</span>
+</a>
+</nav>
+</div>
+</main>
+<a class="fixed bottom-8 right-8 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-primary text-black shadow-lg transition-all hover:bg-white hover:scale-110" href="#">
+<span class="material-symbols-outlined">arrow_upward</span>
+</a>
+<footer class="mt-auto border-t border-border-dark bg-surface-dark py-12">
+<div class="mx-auto grid max-w-[1600px] grid-cols-1 gap-12 px-6 lg:grid-cols-4 lg:px-10">
+<div class="space-y-4">
+<div class="flex items-center gap-2 text-white">
+<img src="images/alfa-logo.png" class="h-12 w-auto object-contain" alt="ALFA"/>
+</div>
+<p class="text-sm text-text-muted">Diseñadas para durar. Liderando la industria con soluciones de maquinaria pesada para todo tipo de terrenos y desafíos.</p>
+</div>
+<div>
+<h5 class="mb-4 text-sm font-bold uppercase tracking-wider text-white">Productos</h5>
+<ul class="space-y-2 text-sm text-text-muted">
+<li><a class="hover:text-primary" href="#">Excavadoras</a></li>
+<li><a class="hover:text-primary" href="#">Palas Cargadoras</a></li>
+<li><a class="hover:text-primary" href="#">Retroexcavadoras</a></li>
+<li><a class="hover:text-primary" href="#">Minicargadoras</a></li>
+</ul>
+</div>
+<div>
+<h5 class="mb-4 text-sm font-bold uppercase tracking-wider text-white">Empresa</h5>
+<ul class="space-y-2 text-sm text-text-muted">
+<li><a class="hover:text-primary" href="#">Quienes Somos</a></li>
+<li><a class="hover:text-primary" href="#">Soluciones</a></li>
+<li><a class="hover:text-primary" href="#">Contacto</a></li>
+</ul>
+</div>
+	
+<div>
+<h5 class="mb-4 text-sm font-bold uppercase tracking-wider text-white">Contacto</h5>
+<ul class="space-y-2 text-sm text-text-muted">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-xs">phone</span> +1 (800) 555-0123
+                        </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-xs">mail</span> sales@alfa-equip.com
+                        </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-xs">location_on</span> 100 Industrial Dr, CABA.
+                        </li>
+</ul>
+</div>
+</div>
+<div class="mt-12 border-t border-border-dark pt-8 text-center text-xs text-text-muted">
+                © 2026 ALFA. Todos los derechos reservados.
+            </div>
+</footer>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- Lógica del menú móvil ---
+        const mobileBtn = document.getElementById('mobile-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileBtn && mobileMenu) {
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('flex');
+            });
+        }
+
+        // --- Lógica de filtrado con animaciones fluidas (FLIP) ---
+        const searchInput = document.getElementById('search-input');
+        const industrySelect = document.getElementById('industry-select');
+        const typeSelect = document.getElementById('type-select');
+        const products = document.querySelectorAll('.product-item');
+        const countDisplay = document.getElementById('product-count');
+
+        let currentSearch = '';
+        let currentIndustry = 'all';
+        let currentType = 'all';
+        let isFirstLoad = true;
+        let filterTimeout;
+
+        function filterProducts() {
+            let visibleCount = 0;
+            const searchLower = currentSearch.toLowerCase();
+
+            const toShow = [];
+            const toHide = [];
+
+            products.forEach(product => {
+                const title = product.querySelector('h3').textContent.toLowerCase();
+                const subtitle = product.querySelector('.text-xs.font-bold').textContent.toLowerCase();
+                const industry = product.dataset.industry;
+                const type = product.dataset.type;
+
+                const matches = (title.includes(searchLower) || subtitle.includes(searchLower)) &&
+                                (currentIndustry === 'all' || industry === currentIndustry) &&
+                                (currentType === 'all' || type === currentType);
+
+                if (matches) {
+                    toShow.push(product);
+                    visibleCount++;
+                } else {
+                    toHide.push(product);
+                }
+            });
+
+            if(countDisplay) {
+                countDisplay.textContent = visibleCount;
+            }
+
+            // En la primera carga, ocultamos/mostramos sin animación para evitar parpadeos
+            if (isFirstLoad) {
+                toShow.forEach(p => {
+                    p.classList.remove('product-gone');
+                    p.style.opacity = '1';
+                    p.style.transform = 'scale(1)';
+                });
+                toHide.forEach(p => p.classList.add('product-gone'));
+                isFirstLoad = false;
+                return;
+            }
+
+            // Detenemos ejecuciones previas si el usuario escribe/clickea rápido
+            clearTimeout(filterTimeout);
+
+            // PASO 1 (First): Guardar posiciones actuales de los elementos que van a quedarse visibles
+            const firstRects = new Map();
+            toShow.forEach(p => {
+                if (!p.classList.contains('product-gone')) {
+                    firstRects.set(p, p.getBoundingClientRect());
+                }
+            });
+
+            // PASO 2: Animar salida de los que se ocultan (Fade out + Scale down)
+            toHide.forEach(p => {
+                p.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                p.style.opacity = '0';
+                p.style.transform = 'scale(0.9)';
+            });
+
+            // PASO 3: Esperar el fade out y luego reacomodar (FLIP animation)
+            filterTimeout = setTimeout(() => {
+                
+                // Remover por completo del flujo del DOM a las cards ocultas
+                toHide.forEach(p => p.classList.add('product-gone'));
+
+                // Preparar las cards que estaban ocultas y ahora deben mostrarse
+                toShow.forEach(p => {
+                    if (p.classList.contains('product-gone')) {
+                        p.classList.remove('product-gone');
+                        p.style.transition = 'none'; // Quitar transición para que no se note el reingreso
+                        p.style.opacity = '0';
+                        p.style.transform = 'scale(0.9)';
+                    }
+                });
+
+                // Calcular nuevas posiciones en el DOM despues del colapso (Last)
+                const lastRects = new Map();
+                toShow.forEach(p => {
+                    if (firstRects.has(p)) {
+                        lastRects.set(p, p.getBoundingClientRect());
+                    }
+                });
+
+                // PASO 4 (Invert & Play): Deslizar las tarjetas a su nuevo lugar suavemente
+                toShow.forEach(p => {
+                    if (firstRects.has(p)) {
+                        const first = firstRects.get(p);
+                        const last = lastRects.get(p);
+                        const deltaX = first.left - last.left;
+                        const deltaY = first.top - last.top;
+
+                        if (deltaX !== 0 || deltaY !== 0) {
+                            // Mover instantáneamente a la posición original (Invert)
+                            p.style.transition = 'none';
+                            p.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(1)`;
+                            p.style.opacity = '1';
+
+                            // Forzar reflow en el navegador
+                            void p.offsetHeight;
+
+                            // Animar hacia la posición final (Play)
+                            p.style.transition = 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease';
+                            p.style.transform = 'translate(0, 0) scale(1)';
+                        } else {
+                            // Elementos que no cambiaron de posición
+                            p.style.transition = 'transform 0.4s ease, opacity 0.4s ease';
+                            p.style.transform = 'scale(1)';
+                            p.style.opacity = '1';
+                        }
+                    } else {
+                        // Animación para elementos totalmente nuevos que entran a pantalla
+                        void p.offsetHeight; // Forzar reflow
+                        p.style.transition = 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease';
+                        p.style.transform = 'translate(0, 0) scale(1)';
+                        p.style.opacity = '1';
+                    }
+
+                    // Limpiar el atributo style para que Tailwind recupere el control (Hover shadows)
+                    setTimeout(() => {
+                        p.style.transition = '';
+                    }, 450);
+                });
+
+            }, 300); // 300ms debe coincidir con la transición de ocultamiento
+        }
+
+        // --- Event Listeners para Buscador y Selects ---
+        if(searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                currentSearch = e.target.value;
+                filterProducts();
+            });
+        }
+
+        if(industrySelect) {
+            industrySelect.addEventListener('change', (e) => {
+                currentIndustry = e.target.value;
+                filterProducts();
+            });
+        }
+
+        if(typeSelect) {
+            typeSelect.addEventListener('change', (e) => {
+                currentType = e.target.value;
+                filterProducts();
+            });
+        }
+        
+        // Disparar carga inicial silenciosa
+        filterProducts();
+    });
+</script>
+</body></html>
