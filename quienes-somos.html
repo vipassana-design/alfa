@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ALFA - Quiénes Somos</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary":          "#fab41e",
+                    "primary-hover":    "#e0a316",
+                    "background-dark":  "#020408",
+                    "surface-dark":     "#0a0c10",
+                    "surface-card":     "#000000",
+                    "text-main":        "#E5E5E5",
+                    "text-muted":       "#888888",
+                    "border-dark":      "#262626",
+                },
+                fontFamily: {
+                    "display": ["Oswald", "sans-serif"],
+                    "body":    ["Inter",  "sans-serif"]
+                },
+            },
+        },
+    }
+</script>
+<style type="text/tailwindcss">
+    @layer utilities {
+        .glow-primary   { text-shadow: 0 0 20px rgba(250,180,30,0.5); }
+        .text-outline   { -webkit-text-stroke: 1px #fab41e; color: transparent; }
+    }
+</style>
+<style>
+    /* ── Scrollbar ───────────────────────────────────────── */
+    ::-webkit-scrollbar         { width:8px; height:8px; }
+    ::-webkit-scrollbar-track   { background:#0a0a0a; }
+    ::-webkit-scrollbar-thumb   { background:#333; border-radius:4px; }
+    ::-webkit-scrollbar-thumb:hover { background:#fab41e; }
+
+    /* ── Reveal on scroll ───────────────────────────────── */
+    .reveal {
+        opacity:0;
+        transform:translateY(30px);
+        transition: opacity .65s ease, transform .65s ease;
+    }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    .reveal-left  { opacity:0; transform:translateX(-40px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal-right { opacity:0; transform:translateX( 40px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal-left.visible,
+    .reveal-right.visible { opacity:1; transform:translateX(0); }
+
+    /* ── Counter animation ──────────────────────────────── */
+    .counter { display:inline-block; }
+
+    /* ── Timeline vertical ──────────────────────────────── */
+    .timeline-item:not(:last-child)::after {
+        content:'';
+        position:absolute;
+        left:27px;
+        top:56px;
+        bottom:-32px;
+        width:2px;
+        background:linear-gradient(to bottom,#fab41e40,transparent);
+    }
+
+    /* ── Valor card hover bar ───────────────────────────── */
+    .valor-card::before {
+        content:'';
+        position:absolute;
+        top:0; left:0;
+        width:100%; height:2px;
+        background:#fab41e;
+        transform:scaleX(0);
+        transform-origin:left;
+        transition:transform .5s ease;
+    }
+    .valor-card:hover::before { transform:scaleX(1); }
+</style>
+</head>
+<body class="bg-background-dark font-body text-slate-100 antialiased selection:bg-primary selection:text-black">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+
+<!-- ═══════════════════════════════════════════════════════════
+     HEADER
+════════════════════════════════════════════════════════════ -->
+<header class="sticky top-0 z-50 border-b border-border-dark bg-background-dark/95 backdrop-blur-sm">
+  <div class="mx-auto flex h-20 max-w-[1600px] items-center justify-between px-6 lg:px-10">
+    <img src="images/alfa-logo.png" class="h-12 w-auto object-contain" alt="ALFA"/>
+    <nav class="hidden flex-1 justify-end gap-8 md:flex">
+      <div class="flex items-center gap-9">
+        <a class="text-sm font-medium text-text-muted hover:text-primary transition-colors" href="index.html">Inicio</a>
+        <a class="text-sm font-medium text-primary"                                           href="quienes-somos.html">Quiénes Somos</a>
+        <a class="text-sm font-medium text-text-muted hover:text-primary transition-colors" href="productos.html">Equipos</a>
+        <a class="text-sm font-medium text-text-muted hover:text-primary transition-colors" href="soluciones.html">Soluciones</a>
+        <a class="text-sm font-medium text-text-muted hover:text-primary transition-colors" href="contacto.html">Contacto</a>
+      </div>
+      <a href="contacto.html" class="flex h-10 min-w-[140px] items-center justify-center rounded bg-primary px-6 text-sm font-bold tracking-wide text-background-dark transition-transform hover:scale-105 hover:bg-yellow-400">
+        Solicitar Cotización
+      </a>
+    </nav>
+    <button id="mobile-btn" class="ml-4 text-white md:hidden focus:outline-none">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+  <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-background-dark/95 backdrop-blur-md border-b border-border-dark flex-col items-center gap-6 py-8 md:hidden shadow-2xl">
+    <a class="text-lg font-medium text-text-muted hover:text-primary" href="index.html">Inicio</a>
+    <a class="text-lg font-medium text-primary"                        href="quienes-somos.html">Quiénes Somos</a>
+    <a class="text-lg font-medium text-text-muted hover:text-primary" href="productos.html">Equipos</a>
+    <a class="text-lg font-medium text-text-muted hover:text-primary" href="soluciones.html">Soluciones</a>
+    <a class="text-lg font-medium text-text-muted hover:text-primary" href="contacto.html">Contacto</a>
+    <a href="contacto.html" class="flex h-12 min-w-[200px] items-center justify-center rounded bg-primary px-6 text-sm font-bold tracking-wide text-background-dark hover:bg-yellow-400">
+      Solicitar Cotización
+    </a>
+  </div>
+</header>
+
+<main class="flex-grow">
+
+<!-- ═══════════════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════════════════ -->
+<section class="relative py-28 overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <div class="absolute inset-0 bg-gradient-to-br from-background-dark via-background-dark to-black"></div>
+    <!-- Grid sutil -->
+    <div class="absolute inset-0 opacity-[0.04]"
+         style="background-image:linear-gradient(to right,#fab41e 1px,transparent 1px),linear-gradient(to bottom,#fab41e 1px,transparent 1px);background-size:60px 60px;"></div>
+    <!-- Glows decorativos -->
+    <div class="absolute top-0 left-1/3 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-primary/4 rounded-full blur-3xl translate-y-1/2"></div>
+  </div>
+
+  <div class="relative z-10 container mx-auto px-6 lg:px-20 flex flex-col lg:flex-row items-center gap-16">
+    <!-- Texto -->
+    <div class="flex-1 reveal-left">
+      <div class="inline-flex items-center gap-2 border border-primary/30 bg-primary/5 px-4 py-2 mb-8">
+        <span class="material-symbols-outlined text-primary text-sm">groups</span>
+        <span class="text-xs font-bold uppercase tracking-widest text-primary">Nuestra empresa</span>
+      </div>
+      <h1 class="text-5xl md:text-7xl font-display font-black uppercase text-white mb-6 leading-none">
+        Quiénes<br/><span class="text-outline">Somos</span>
+      </h1>
+      <p class="text-gray-400 text-xl leading-relaxed max-w-lg">
+        Desde 2009, acompañamos a empresas argentinas con maquinaria confiable, importaciones seguras y el respaldo de quienes conocen el negocio desde adentro.
+      </p>
+
+      <!-- Tabs de navegación interna -->
+      <div class="flex flex-wrap gap-3 mt-10">
+        <a href="#historia"      class="flex items-center gap-2 px-4 py-2.5 border border-border-dark text-text-muted text-xs font-bold uppercase tracking-wider hover:border-primary hover:text-primary transition-all">
+          <span class="material-symbols-outlined text-sm">history</span>Historia
+        </a>
+        <a href="#mision-valores" class="flex items-center gap-2 px-4 py-2.5 border border-border-dark text-text-muted text-xs font-bold uppercase tracking-wider hover:border-primary hover:text-primary transition-all">
+          <span class="material-symbols-outlined text-sm">flag</span>Misión & Valores
+        </a>
+        <a href="#infraestructura" class="flex items-center gap-2 px-4 py-2.5 border border-border-dark text-text-muted text-xs font-bold uppercase tracking-wider hover:border-primary hover:text-primary transition-all">
+          <span class="material-symbols-outlined text-sm">factory</span>Infraestructura
+        </a>
+        <a href="#respaldo" class="flex items-center gap-2 px-4 py-2.5 border border-border-dark text-text-muted text-xs font-bold uppercase tracking-wider hover:border-primary hover:text-primary transition-all">
+          <span class="material-symbols-outlined text-sm">verified_user</span>Respaldo
+        </a>
+      </div>
+    </div>
+
+    <!-- Stats block -->
+    <div class="flex-shrink-0 reveal-right">
+      <div class="grid grid-cols-2 gap-px bg-border-dark border border-border-dark">
+        <div class="bg-background-dark px-10 py-8 text-center">
+          <p class="text-5xl font-display font-black text-primary glow-primary mb-1">
+            <span class="counter" data-target="16">0</span>+
+          </p>
+          <p class="text-xs font-bold uppercase tracking-widest text-text-muted">Años de trayectoria</p>
+        </div>
+        <div class="bg-background-dark px-10 py-8 text-center">
+          <p class="text-5xl font-display font-black text-primary glow-primary mb-1">
+            <span class="counter" data-target="2">0</span>
+          </p>
+          <p class="text-xs font-bold uppercase tracking-widest text-text-muted">Oficinas en China</p>
+        </div>
+        <div class="bg-background-dark px-10 py-8 text-center">
+          <p class="text-5xl font-display font-black text-primary glow-primary mb-1">
+            <span class="counter" data-target="100">0</span>%
+          </p>
+          <p class="text-xs font-bold uppercase tracking-widest text-text-muted">Importaciones auditadas</p>
+        </div>
+        <div class="bg-background-dark px-10 py-8 text-center">
+          <p class="text-5xl font-display font-black text-primary glow-primary mb-1">
+            <span class="counter" data-target="6">0</span>+
+          </p>
+          <p class="text-xs font-bold uppercase tracking-widest text-text-muted">Rubros atendidos</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Strip dorado -->
+<div class="bg-primary py-4">
+  <div class="container mx-auto px-6 lg:px-20 flex flex-col sm:flex-row items-center justify-center gap-8 text-center">
+    <div class="flex items-center gap-3">
+      <span class="material-symbols-outlined text-black">location_on</span>
+      <span class="text-black font-bold text-sm uppercase tracking-wider">Tigre, Buenos Aires</span>
+    </div>
+    <div class="hidden sm:block w-px h-6 bg-black/30"></div>
+    <div class="flex items-center gap-3">
+      <span class="material-symbols-outlined text-black">language</span>
+      <span class="text-black font-bold text-sm uppercase tracking-wider">Presencia propia en China</span>
+    </div>
+    <div class="hidden sm:block w-px h-6 bg-black/30"></div>
+    <div class="flex items-center gap-3">
+      <span class="material-symbols-outlined text-black">schedule</span>
+      <span class="text-black font-bold text-sm uppercase tracking-wider">Desde 2009</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECCIÓN 1 — NUESTRA HISTORIA
+════════════════════════════════════════════════════════════ -->
+<section id="historia" class="py-28 bg-background-dark relative overflow-hidden">
+  <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/4 rounded-full blur-3xl"></div>
+  <div class="container mx-auto px-6 lg:px-20">
+
+    <!-- Encabezado -->
+    <div class="flex items-center gap-4 mb-16 reveal">
+      <div class="w-12 h-12 bg-primary flex items-center justify-center flex-shrink-0">
+        <span class="material-symbols-outlined text-black text-2xl">history</span>
+      </div>
+      <div>
+        <p class="text-xs font-bold uppercase tracking-widest text-primary mb-1">01 — Trayectoria</p>
+        <h2 class="text-4xl md:text-5xl font-display font-black text-white uppercase leading-none">Nuestra <span class="text-primary">Historia</span></h2>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+      <!-- Timeline -->
+      <div class="space-y-8 reveal-left">
+
+        <!-- Item 1 -->
+        <div class="relative pl-16 timeline-item">
+          <div class="absolute left-0 top-0 w-14 h-14 bg-primary flex items-center justify-center flex-shrink-0">
+            <span class="font-display font-black text-black text-sm">2009</span>
+          </div>
+          <div class="pt-1">
+            <h4 class="text-white font-bold uppercase tracking-wider mb-2">Los comienzos</h4>
+            <p class="text-text-muted text-sm leading-relaxed">Euroalfa Maquinaria nace en Tigre, Buenos Aires, con un foco claro: brindar a empresas argentinas acceso a maquinaria industrial importada de calidad, con procesos transparentes y soporte real.</p>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="relative pl-16 timeline-item">
+          <div class="absolute left-0 top-0 w-14 h-14 bg-primary/20 border border-primary/40 flex items-center justify-center flex-shrink-0">
+            <span class="font-display font-black text-primary text-sm">2012</span>
+          </div>
+          <div class="pt-1">
+            <h4 class="text-white font-bold uppercase tracking-wider mb-2">Constitución formal</h4>
+            <p class="text-text-muted text-sm leading-relaxed">La empresa se constituye formalmente como Euroalfa Maquinaria SRL, consolidando su estructura comercial y ampliando el catálogo hacia grúas sobre camión, palas cargadoras y retroexcavadoras.</p>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="relative pl-16 timeline-item">
+          <div class="absolute left-0 top-0 w-14 h-14 bg-primary/20 border border-primary/40 flex items-center justify-center flex-shrink-0">
+            <span class="font-display font-black text-primary text-sm">2016</span>
+          </div>
+          <div class="pt-1">
+            <h4 class="text-white font-bold uppercase tracking-wider mb-2">Expansión al trading</h4>
+            <p class="text-text-muted text-sm leading-relaxed">Abrimos nuestras primeras oficinas de representación en China. Esto nos permitió ir más allá de la reventa e integrarnos directamente con fabricantes, controlando la calidad desde el origen.</p>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="relative pl-16 timeline-item">
+          <div class="absolute left-0 top-0 w-14 h-14 bg-primary/20 border border-primary/40 flex items-center justify-center flex-shrink-0">
+            <span class="font-display font-black text-primary text-sm">Hoy</span>
+          </div>
+          <div class="pt-1">
+            <h4 class="text-white font-bold uppercase tracking-wider mb-2">Referentes del sector</h4>
+            <p class="text-text-muted text-sm leading-relaxed">Con más de 16 años de trayectoria, dos oficinas en China y presencia en múltiples industrias, somos el aliado estratégico de empresas que necesitan equipamiento confiable e importaciones seguras.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Texto + imagen lado derecho -->
+      <div class="reveal-right">
+        <div class="relative mb-8">
+          <!-- Imagen placeholder estilizada -->
+          <div class="aspect-[4/3] bg-surface-dark border border-border-dark overflow-hidden relative">
+            <div class="absolute inset-0 bg-cover bg-center grayscale contrast-110"
+                 style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuCw5o2LyyCkjTfveJcUfGEe6q7AzDpFk5eiBzXo-7Ob5IKU5M7QGwBqxUF5q3_QYL01g3mcqi-sVkoAWnCH6jeVI2Qm4bWH5UbbwvYiTT6i2zM1VAQJAGQu6sK8QuEhr4iNrOhk2lIpPTlxjnLDHe8XEkAOE2kVq7OREBw-08RW7Pc8d1M1-m4s5u5MZRoVEElXXjpaNT1JLPuqBR1lf6X51CRmvQCMxtHnzWk9X7yZqIxyoWw0colhtoOvdpilTkpeL8gy0y33G_s');"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <!-- Badge año -->
+            <div class="absolute bottom-0 left-0 bg-primary px-6 py-4">
+              <p class="font-display font-black text-black text-3xl leading-none">16+</p>
+              <p class="text-black text-xs font-bold uppercase tracking-wider">Años en el mercado</p>
+            </div>
+            <!-- Decoración esquina -->
+            <div class="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-primary/40"></div>
+          </div>
+        </div>
+
+        <blockquote class="border-l-2 border-primary pl-6 py-2">
+          <p class="text-gray-300 text-lg leading-relaxed italic">
+            "Empezamos como importadores. Con el tiempo, nos convertimos en el respaldo que nuestros clientes necesitaban: presentes antes, durante y después de cada operación."
+          </p>
+          <footer class="mt-4 text-xs font-bold uppercase tracking-widest text-primary">— Equipo Euroalfa</footer>
+        </blockquote>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECCIÓN 2 — MISIÓN Y VALORES
+════════════════════════════════════════════════════════════ -->
+<section id="mision-valores" class="py-28 bg-surface-dark relative overflow-hidden">
+  <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/4 rounded-full blur-3xl"></div>
+  <div class="container mx-auto px-6 lg:px-20">
+
+    <!-- Encabezado -->
+    <div class="flex items-center gap-4 mb-16 reveal">
+      <div class="w-12 h-12 bg-primary flex items-center justify-center flex-shrink-0">
+        <span class="material-symbols-outlined text-black text-2xl">flag</span>
+      </div>
+      <div>
+        <p class="text-xs font-bold uppercase tracking-widest text-primary mb-1">02 — Propósito</p>
+        <h2 class="text-4xl md:text-5xl font-display font-black text-white uppercase leading-none">Misión & <span class="text-primary">Valores</span></h2>
+      </div>
+    </div>
+
+    <!-- Misión -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+      <div class="reveal-left">
+        <p class="text-xs font-bold uppercase tracking-widest text-primary mb-4">Nuestra misión</p>
+        <h3 class="text-3xl font-display font-black text-white uppercase mb-6 leading-tight">
+          Brindar soluciones integrales que potencien cada operación
+        </h3>
+        <p class="text-gray-400 text-lg leading-relaxed mb-6">
+          Acompañamos a cada cliente con asesoramiento especializado y propuestas inteligentes que optimicen su inversión. No vendemos máquinas: construimos relaciones comerciales basadas en la confianza y el resultado.
+        </p>
+        <p class="text-gray-400 leading-relaxed">
+          Nuestra propuesta de valor combina conocimiento técnico de primera línea, acceso directo a fabricantes auditados en China, y una atención ágil y personalizada que se adapta al ritmo de cada negocio.
+        </p>
+      </div>
+
+      <div class="reveal-right">
+        <!-- Targets que perseguimos -->
+        <p class="text-xs font-bold uppercase tracking-widest text-text-muted mb-6">Lo que buscamos para cada cliente</p>
+        <div class="space-y-4">
+          <div class="flex items-start gap-4 p-5 border border-white/5 bg-background-dark hover:border-primary/30 transition-all group">
+            <span class="material-symbols-outlined text-primary text-2xl mt-0.5">verified</span>
+            <div>
+              <h5 class="text-white font-bold uppercase tracking-wider text-sm mb-1">Equipamiento versátil y de alto rendimiento</h5>
+              <p class="text-text-muted text-sm leading-relaxed">Maquinaria que se adapta a distintos usos y maximiza el retorno de inversión desde el primer día.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 p-5 border border-white/5 bg-background-dark hover:border-primary/30 transition-all group">
+            <span class="material-symbols-outlined text-primary text-2xl mt-0.5">bolt</span>
+            <div>
+              <h5 class="text-white font-bold uppercase tracking-wider text-sm mb-1">Provisión rápida de repuestos</h5>
+              <p class="text-text-muted text-sm leading-relaxed">Sin demoras que paralicen la operación. Stock activo y gestión ágil de piezas especiales.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 p-5 border border-white/5 bg-background-dark hover:border-primary/30 transition-all group">
+            <span class="material-symbols-outlined text-primary text-2xl mt-0.5">workspace_premium</span>
+            <div>
+              <h5 class="text-white font-bold uppercase tracking-wider text-sm mb-1">Inversiones con alto impacto</h5>
+              <p class="text-text-muted text-sm leading-relaxed">Propuestas inteligentes y económicas que generan múltiples beneficios operativos y financieros.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Valores -->
+    <div class="reveal">
+      <p class="text-xs font-bold uppercase tracking-widest text-primary mb-8 text-center">Nuestros valores</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+
+        <div class="valor-card group relative bg-background-dark border border-white/5 p-7 text-center hover:border-primary/30 transition-all overflow-hidden hover:-translate-y-1">
+          <div class="w-12 h-12 mx-auto mb-5 flex items-center justify-center bg-primary/10 border border-primary/20 group-hover:bg-primary group-hover:border-primary transition-all rounded-full">
+            <span class="material-symbols-outlined text-primary group-hover:text-black transition-colors text-xl">verified_user</span>
+          </div>
+          <h5 class="text-white font-bold uppercase tracking-wider text-xs mb-2">Confiabilidad</h5>
+          <p class="text-text-muted text-xs leading-relaxed">Cumplimos lo que prometemos, siempre.</p>
+        </div>
+
+        <div class="valor-card group relative bg-background-dark border border-white/5 p-7 text-center hover:border-primary/30 transition-all overflow-hidden hover:-translate-y-1">
+          <div class="w-12 h-12 mx-auto mb-5 flex items-center justify-center bg-primary/10 border border-primary/20 group-hover:bg-primary group-hover:border-primary transition-all rounded-full">
+            <span class="material-symbols-outlined text-primary group-hover:text-black transition-colors text-xl">shield</span>
+          </div>
+          <h5 class="text-white font-bold uppercase tracking-wider text-xs mb-2">Respaldo</h5>
+          <p class="text-text-muted text-xs leading-relaxed">Presentes en cada etapa del proceso.</p>
+        </div>
+
+        <div class="valor-card group relative bg-background-dark border border-white/5 p-7 text-center hover:border-primary/30 transition-all overflow-hidden hover:-translate-y-1">
+          <div class="w-12 h-12 mx-auto mb-5 flex items-center justify-center bg-primary/10 border border-primary/20 group-hover:bg-primary group-hover:border-primary transition-all rounded-full">
+            <span class="material-symbols-outlined text-primary group-hover:text-black transition-colors text-xl">handshake</span>
+          </div>
+          <h5 class="text-white font-bold uppercase tracking-wider text-xs mb-2">Compromiso</h5>
+          <p class="text-text-muted text-xs leading-relaxed">El éxito del cliente es nuestro objetivo.</p>
+        </div>
+
+        <div class="valor-card group relative bg-background-dark border border-white/5 p-7 text-center hover:border-primary/30 transition-all overflow-hidden hover:-translate-y-1">
+          <div class="w-12 h-12 mx-auto mb-5 flex items-center justify-center bg-primary/10 border border-primary/20 group-hover:bg-primary group-hover:border-primary transition-all rounded-full">
+            <span class="material-symbols-outlined text-primary group-hover:text-black transition-colors text-xl">engineering</span>
+          </div>
+          <h5 class="text-white font-bold uppercase tracking-wider text-xs mb-2">Profesionalismo</h5>
+          <p class="text-text-muted text-xs leading-relaxed">Conocimiento técnico aplicado al negocio.</p>
+        </div>
+
+        <div class="valor-card group relative bg-background-dark border border-white/5 p-7 text-center hover:border-primary/30 transition-all overflow-hidden hover:-translate-y-1">
+          <div class="w-12 h-12 mx-auto mb-5 flex items-center justify-center bg-primary/10 border border-primary/20 group-hover:bg-primary group-hover:border-primary transition-all rounded-full">
+            <span class="material-symbols-outlined text-primary group-hover:text-black transition-colors text-xl">visibility</span>
+          </div>
+          <h5 class="text-white font-bold uppercase tracking-wider text-xs mb-2">Transparencia</h5>
+          <p class="text-text-muted text-xs leading-relaxed">Procesos claros, sin sorpresas.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECCIÓN 3 — INFRAESTRUCTURA
+════════════════════════════════════════════════════════════ -->
+<section id="infraestructura" class="py-28 bg-background-dark relative overflow-hidden">
+  <div class="absolute top-1/2 right-0 w-[500px] h-[500px] bg-primary/4 rounded-full blur-3xl -translate-y-1/2"></div>
+  <div class="container mx-auto px-6 lg:px-20">
+
+    <!-- Encabezado -->
+    <div class="flex items-center gap-4 mb-16 reveal">
+      <div class="w-12 h-12 bg-primary flex items-center justify-center flex-shrink-0">
+        <span class="material-symbols-outlined text-black text-2xl">factory</span>
+      </div>
+      <div>
+        <p class="text-xs font-bold uppercase tracking-widest text-primary mb-1">03 — Capacidad operativa</p>
+        <h2 class="text-4xl md:text-5xl font-display font-black text-white uppercase leading-none">Infraestructura & <span class="text-primary">Operaciones</span></h2>
+      </div>
+    </div>
+
+    <!-- Dos bloques principales -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+
+      <!-- Sede Argentina -->
+      <div class="reveal-left border border-white/5 bg-surface-dark relative overflow-hidden group hover:border-primary/30 transition-all">
+        <!-- Barra superior dorada -->
+        <div class="h-1 bg-primary w-full"></div>
+        <div class="p-10">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="w-12 h-12 bg-primary flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-black text-xl">home_work</span>
+            </div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-widest text-primary">Operaciones</p>
+              <h3 class="text-2xl font-display font-black text-white uppercase">Sede Argentina</h3>
+            </div>
+          </div>
+
+          <ul class="space-y-5 mb-8">
+            <li class="flex items-start gap-4">
+              <span class="material-symbols-outlined text-primary text-xl mt-0.5 flex-shrink-0">location_on</span>
+              <div>
+                <p class="text-xs font-bold uppercase tracking-widest text-text-muted mb-1">Ubicación</p>
+                <p class="text-white text-sm">Colectora Panamericana s/n, (1617) Tigre, Buenos Aires</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="material-symbols-outlined text-primary text-xl mt-0.5 flex-shrink-0">warehouse</span>
+              <div>
+                <p class="text-xs font-bold uppercase tracking-widest text-text-muted mb-1">Instalaciones</p>
+                <p class="text-white text-sm">Planta con espacio de exhibición, área de recepción de equipos y depósito de repuestos</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="material-symbols-outlined text-primary text-xl mt-0.5 flex-shrink-0">schedule</span>
+              <div>
+                <p class="text-xs font-bold uppercase tracking-widest text-text-muted mb-1">Horario de atención</p>
+                <p class="text-white text-sm">Lunes a Viernes, 9:00 a 18:00 hs (con cita previa)</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="material-symbols-outlined text-primary text-xl mt-0.5 flex-shrink-0">phone</span>
+              <div>
+                <p class="text-xs font-bold uppercase tracking-widest text-text-muted mb-1">Teléfonos</p>
+                <p class="text-white text-sm">15 5311-9700 / 15 3279-1042</p>
+              </div>
+            </li>
+          </ul>
+
+          <a href="contacto.html#ubicacion" class="inline-flex items-center gap-2 text-primary text-sm font-bold hover:underline">
+            Ver en el mapa <span class="material-symbols-outlined text-base">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Oficinas China -->
+      <div class="reveal-right border border-primary/20 bg-primary/5 relative overflow-hidden group hover:border-primary/40 transition-all">
+        <div class="h-1 bg-primary w-full"></div>
+        <div class="p-10">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="w-12 h-12 bg-primary flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-black text-xl">language</span>
+            </div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-widest text-primary">Trading internacional</p>
+              <h3 class="text-2xl font-display font-black text-white uppercase">Oficinas en China</h3>
+            </div>
+          </div>
+
+          <p class="text-gray-400 leading-relaxed mb-8">
+            Contamos con dos oficinas operativas propias en China, el corazón de nuestra capacidad diferencial. Están dedicadas exclusivamente a:
+          </p>
+
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center gap-3 text-sm text-white">
+              <span class="w-5 h-5 bg-primary flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-black text-xs">check</span>
+              </span>
+              Búsqueda y preselección de productos y proveedores
+            </li>
+            <li class="flex items-center gap-3 text-sm text-white">
+              <span class="w-5 h-5 bg-primary flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-black text-xs">check</span>
+              </span>
+              Evaluación y auditoría de fabricantes
+            </li>
+            <li class="flex items-center gap-3 text-sm text-white">
+              <span class="w-5 h-5 bg-primary flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-black text-xs">check</span>
+              </span>
+              Control de calidad en origen antes del embarque
+            </li>
+            <li class="flex items-center gap-3 text-sm text-white">
+              <span class="w-5 h-5 bg-primary flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-black text-xs">check</span>
+              </span>
+              Gestión logística y coordinación de despacho
+            </li>
+            <li class="flex items-center gap-3 text-sm text-white">
+              <span class="w-5 h-5 bg-primary flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-black text-xs">check</span>
+              </span>
+              Trading de cualquier equipo o insumo bajo pedido
+            </li>
+          </ul>
+
+          <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary border border-primary/30 px-4 py-2">
+            <span class="material-symbols-outlined text-sm">verified</span>
+            Presencia propia, no intermediarios
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- A quiénes atendemos -->
+    <div class="reveal">
+      <p class="text-xs font-bold uppercase tracking-widest text-text-muted mb-8 text-center">Industrias que atendemos</p>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+
+        <div class="group flex flex-col items-center text-center p-6 border border-white/5 bg-surface-dark hover:border-primary/40 transition-all hover:-translate-y-1">
+          <span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors text-3xl mb-3">agriculture</span>
+          <p class="text-white text-xs font-bold uppercase tracking-wider">Agrícola</p>
+        </div>
+        <div class="group flex flex-col items-center text-center p-6 border border-white/5 bg-surface-dark hover:border-primary/40 transition-all hover:-translate-y-1">
+          <span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors text-3xl mb-3">construction</span>
+          <p class="text-white text-xs font-bold uppercase tracking-wider">Construcción</p>
+        </div>
+        <div class="group flex flex-col items-center text-center p-6 border border-white/5 bg-surface-dark hover:border-primary/40 transition-all hover:-translate-y-1">
+          <span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors text-3xl mb-3">terrain</span>
+          <p class="text-white text-xs font-bold uppercase tracking-wider">Mov. de Suelos</p>
+        </div>
+        <div class="group flex flex-col items-center text-center p-6 border border-white/5 bg-surface-dark hover:border-primary/40 transition-all hover:-translate-y-1">
+          <span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors text-3xl mb-3">account_balance</span>
+          <p class="text-white text-xs font-bold uppercase tracking-wider">Municipios</p>
+        </div>
+        <div class="group flex flex-col items-center text-center p-6 border border-white/5 bg-surface-dark hover:border-primary/40 transition-all hover:-translate-y-1">
+          <span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors text-3xl mb-3">forest</span>
+          <p class="text-white text-xs font-bold uppercase tracking-wider">Aserraderos</p>
+        </div>
+        <div class="group flex flex-col items-center text-center p-6 border border-white/5 bg-surface-dark hover:border-primary/40 transition-all hover:-translate-y-1">
+          <span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors text-3xl mb-3">local_shipping</span>
+          <p class="text-white text-xs font-bold uppercase tracking-wider">Logística</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECCIÓN 4 — RESPALDO
+════════════════════════════════════════════════════════════ -->
+<section id="respaldo" class="py-28 bg-surface-dark relative overflow-hidden">
+  <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/4 rounded-full blur-3xl"></div>
+  <div class="container mx-auto px-6 lg:px-20">
+
+    <!-- Encabezado -->
+    <div class="flex items-center gap-4 mb-6 reveal">
+      <div class="w-12 h-12 bg-primary flex items-center justify-center flex-shrink-0">
+        <span class="material-symbols-outlined text-black text-2xl">verified_user</span>
+      </div>
+      <div>
+        <p class="text-xs font-bold uppercase tracking-widest text-primary mb-1">04 — Diferencial</p>
+        <h2 class="text-4xl md:text-5xl font-display font-black text-white uppercase leading-none">Nuestro <span class="text-primary">Respaldo</span></h2>
+      </div>
+    </div>
+
+    <p class="text-gray-400 text-lg max-w-3xl mb-16 reveal">
+      Lo que diferencia a Euroalfa no es sólo la maquinaria: es la certeza de que hay un equipo humano detrás de cada operación, comprometido con que todo salga bien.
+    </p>
+
+    <!-- Grid de respaldo -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+
+      <div class="group p-8 border border-white/5 bg-background-dark hover:border-primary/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(250,180,30,0.05)] relative overflow-hidden reveal">
+        <div class="absolute top-0 left-0 w-full h-[2px] bg-primary scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100"></div>
+        <span class="material-symbols-outlined text-primary text-4xl mb-6 block">fact_check</span>
+        <h4 class="text-white font-bold uppercase tracking-wider mb-3">Calidad garantizada</h4>
+        <p class="text-text-muted text-sm leading-relaxed">Cada equipo pasa por nuestro proceso de auditoría antes de salir de fábrica. No comprás a ciegas: comprás con la firma de nuestro equipo técnico en origen.</p>
+      </div>
+
+      <div class="group p-8 border border-white/5 bg-background-dark hover:border-primary/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(250,180,30,0.05)] relative overflow-hidden reveal">
+        <div class="absolute top-0 left-0 w-full h-[2px] bg-primary scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100"></div>
+        <span class="material-symbols-outlined text-primary text-4xl mb-6 block">build_circle</span>
+        <h4 class="text-white font-bold uppercase tracking-wider mb-3">Repuestos disponibles</h4>
+        <p class="text-text-muted text-sm leading-relaxed">Stock activo de piezas de alta rotación. Para las especiales, usamos nuestras oficinas en China para conseguirlas en el menor tiempo posible.</p>
+      </div>
+
+      <div class="group p-8 border border-white/5 bg-background-dark hover:border-primary/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(250,180,30,0.05)] relative overflow-hidden reveal">
+        <div class="absolute top-0 left-0 w-full h-[2px] bg-primary scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100"></div>
+        <span class="material-symbols-outlined text-primary text-4xl mb-6 block">support_agent</span>
+        <h4 class="text-white font-bold uppercase tracking-wider mb-3">Soporte técnico permanente</h4>
+        <p class="text-text-muted text-sm leading-relaxed">Asesoramiento y asistencia técnica disponible. Un equipo que conoce cada máquina del catálogo y puede guiarte ante cualquier inconveniente operativo.</p>
+      </div>
+
+      <div class="group p-8 border border-white/5 bg-background-dark hover:border-primary/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(250,180,30,0.05)] relative overflow-hidden reveal">
+        <div class="absolute top-0 left-0 w-full h-[2px] bg-primary scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100"></div>
+        <span class="material-symbols-outlined text-primary text-4xl mb-6 block">lock</span>
+        <h4 class="text-white font-bold uppercase tracking-wider mb-3">Importaciones seguras</h4>
+        <p class="text-text-muted text-sm leading-relaxed">Procesos documentados, proveedores verificados y gestión completa de la cadena logística. Minimizamos el riesgo en cada operación de importación.</p>
+      </div>
+
+      <div class="group p-8 border border-white/5 bg-background-dark hover:border-primary/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(250,180,30,0.05)] relative overflow-hidden reveal">
+        <div class="absolute top-0 left-0 w-full h-[2px] bg-primary scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100"></div>
+        <span class="material-symbols-outlined text-primary text-4xl mb-6 block">speed</span>
+        <h4 class="text-white font-bold uppercase tracking-wider mb-3">Respuesta ágil</h4>
+        <p class="text-text-muted text-sm leading-relaxed">Nos adaptamos al ritmo del cliente. Cotizaciones rápidas, atención directa y flexibilidad para resolver lo que cada operación necesita en tiempo y forma.</p>
+      </div>
+
+      <div class="group p-8 border border-primary/20 bg-primary/5 hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(250,180,30,0.1)] relative overflow-hidden reveal">
+        <div class="absolute top-0 left-0 w-full h-[2px] bg-primary"></div>
+        <span class="material-symbols-outlined text-primary text-4xl mb-6 block">groups</span>
+        <h4 class="text-white font-bold uppercase tracking-wider mb-3">Alianza estratégica real</h4>
+        <p class="text-text-muted text-sm leading-relaxed">No somos un proveedor más. Nos integramos al negocio del cliente para entender sus desafíos y proponer soluciones que realmente generen valor a largo plazo.</p>
+      </div>
+
+    </div>
+
+    <!-- Frase final de cierre -->
+    <div class="reveal border border-primary/20 bg-primary/5 p-10 text-center relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-24 h-24 border-t-2 border-r-2 border-primary/20"></div>
+      <div class="absolute bottom-0 left-0 w-24 h-24 border-b-2 border-l-2 border-primary/20"></div>
+      <p class="text-2xl md:text-3xl font-display font-black text-white uppercase leading-snug mb-2">
+        Más que maquinaria,
+      </p>
+      <p class="text-2xl md:text-3xl font-display font-black text-primary uppercase leading-snug mb-8">
+        soluciones integrales.
+      </p>
+      <p class="text-gray-400 max-w-xl mx-auto mb-8">
+        Euroalfa es el aliado estratégico que combina experiencia técnica, respaldo internacional y atención cercana para que cada inversión en equipamiento sea segura, eficiente y duradera.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="contacto.html" class="flex items-center justify-center gap-2 bg-primary text-black font-bold uppercase tracking-widest px-8 py-4 text-sm hover:bg-yellow-400 transition-colors">
+          <span class="material-symbols-outlined">chat</span>Hablar con un asesor
+        </a>
+        <a href="soluciones.html" class="flex items-center justify-center gap-2 border border-primary text-primary font-bold uppercase tracking-widest px-8 py-4 text-sm hover:bg-primary hover:text-black transition-colors">
+          <span class="material-symbols-outlined">verified_user</span>Ver nuestras soluciones
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════════ -->
+<footer class="border-t border-border-dark bg-surface-dark py-12">
+  <div class="mx-auto grid max-w-[1600px] grid-cols-1 gap-12 px-6 lg:grid-cols-4 lg:px-10">
+    <div class="space-y-4">
+      <img src="images/alfa-logo.png" class="h-12 w-auto object-contain" alt="ALFA"/>
+      <p class="text-sm text-text-muted">Diseñadas para durar. Liderando la industria con soluciones de maquinaria pesada para todo tipo de terrenos y desafíos.</p>
+    </div>
+    <div>
+      <h5 class="mb-4 text-sm font-bold uppercase tracking-wider text-white">Productos</h5>
+      <ul class="space-y-2 text-sm text-text-muted">
+        <li><a class="hover:text-primary" href="productos.html">Excavadoras</a></li>
+        <li><a class="hover:text-primary" href="productos.html">Palas Cargadoras</a></li>
+        <li><a class="hover:text-primary" href="productos.html">Retroexcavadoras</a></li>
+        <li><a class="hover:text-primary" href="productos.html">Grúas</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 class="mb-4 text-sm font-bold uppercase tracking-wider text-white">Empresa</h5>
+      <ul class="space-y-2 text-sm text-text-muted">
+        <li><a class="hover:text-primary" href="quienes-somos.html#historia">Nuestra Historia</a></li>
+        <li><a class="hover:text-primary" href="quienes-somos.html#mision-valores">Misión & Valores</a></li>
+        <li><a class="hover:text-primary" href="quienes-somos.html#infraestructura">Infraestructura</a></li>
+        <li><a class="hover:text-primary" href="quienes-somos.html#respaldo">Respaldo</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 class="mb-4 text-sm font-bold uppercase tracking-wider text-white">Contacto</h5>
+      <ul class="space-y-2 text-sm text-text-muted">
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs">phone</span> 15 5311-9700 / 15 3279-1042</li>
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs">mail</span> euroalfavial@gmail.com</li>
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs">location_on</span> Colectora Panamericana s/n, Tigre</li>
+      </ul>
+    </div>
+  </div>
+  <div class="mt-12 border-t border-border-dark pt-8 text-center text-xs text-text-muted">
+    © 2026 ALFA – Euroalfa Maquinaria SRL. Todos los derechos reservados.
+  </div>
+</footer>
+
+</div><!-- /wrapper -->
+
+<script>
+/* ── Mobile menu ────────────────────────────────────── */
+const mobileBtn  = document.getElementById('mobile-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+if (mobileBtn && mobileMenu) {
+  mobileBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+  });
+}
+
+/* ── Scroll reveal ──────────────────────────────────── */
+const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+revealEls.forEach(el => revealObs.observe(el));
+
+/* ── Counter animation ──────────────────────────────── */
+function animateCounter(el) {
+  const target = +el.dataset.target;
+  const duration = 1600;
+  const step = target / (duration / 16);
+  let current = 0;
+  const timer = setInterval(() => {
+    current += step;
+    if (current >= target) { current = target; clearInterval(timer); }
+    el.textContent = Math.floor(current);
+  }, 16);
+}
+
+const counterEls = document.querySelectorAll('.counter');
+const counterObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      animateCounter(e.target);
+      counterObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.5 });
+counterEls.forEach(el => counterObs.observe(el));
+</script>
+</body>
+</html>
