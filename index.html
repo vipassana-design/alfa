@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<html class="dark" lang="es"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>ALFA</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
+<html class="dark" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>ALFA</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -18,14 +22,14 @@
                     colors: {
                         "primary": "#fab41e",
                         "primary-hover": "#e0a316",
-                        "background-dark": "#020408", 
+                        "background-dark": "#020408",
                         "surface-dark": "#0a0c10",
                         "surface-light": "#ffffff",
                         "accent-blue": "#00f0ff",
-						 "surface-card": "#000000",
-						"text-main": "#E5E5E5",
+                        "surface-card": "#000000",
+                        "text-main": "#E5E5E5",
                         "text-muted": "#888888",
-						 "border-dark": "#262626",
+                        "border-dark": "#262626",
                     },
                     fontFamily: {
                         "display": ["Oswald", "sans-serif"],
@@ -33,13 +37,13 @@
                     },
                     backgroundImage: {
                         'grid-pattern': 'linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px)',
-						borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                        borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
                     }
                 },
             },
         }
     </script>
-<style type="text/tailwindcss">
+    <style type="text/tailwindcss">
         @layer utilities {
             .text-outline {
                 -webkit-text-stroke: 1px #fab41e;
@@ -70,378 +74,519 @@
             100% { transform: translateY(100%); }
         }
     </style>
-	<style>::-webkit-scrollbar {
+    <style>
+        ::-webkit-scrollbar {
             width: 8px;
             height: 8px;
         }
+
         ::-webkit-scrollbar-track {
-            background: #0a0a0a; 
+            background: #0a0a0a;
         }
+
         ::-webkit-scrollbar-thumb {
-            background: #333; 
+            background: #333;
             border-radius: 4px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
-            background: #fab41e; 
+            background: #fab41e;
         }
+
         .hide-scrollbar::-webkit-scrollbar {
             display: none;
         }
+
         .hide-scrollbar {
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
     </style>
 </head>
+
 <body class="bg-background-dark font-body text-slate-100 antialiased selection:bg-primary selection:text-black">
-<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
-<header class="sticky top-0 z-50 border-b border-border-dark bg-background-dark/95 backdrop-blur-sm">
-<div class="mx-auto flex h-20 max-w-[1600px] items-center justify-between px-6 lg:px-10">
-<div class="flex items-center gap-4 text-white">
-<a href="index.html"><img src="images/alfa-logo.png" class="h-12 w-auto object-contain" alt="ALFA"/></a>
-</div>
-<nav class="hidden flex-1 justify-end gap-8 md:flex">
-<div class="flex items-center gap-9">
-<a class="text-sm font-medium text-primary transition-colors hover:text-primary" href="index.html">Inicio</a>
-<a class="text-sm font-medium text-text-muted transition-colors hover:text-primary" href="quienes-somos.html">Quiénes Somos</a>
-<a class="text-sm font-medium text-text-muted transition-colors hover:text-primary" href="equipos.html">Equipos</a>
-<a class="text-sm font-medium text-text-muted transition-colors hover:text-primary" href="soluciones.html">Soluciones</a>
-	<a class="text-sm font-medium text-text-muted transition-colors hover:text-primary" href="contacto.html">Contacto</a>
-</div>
-<a href="contacto.html" class="flex h-10 min-w-[140px] items-center justify-center rounded bg-primary px-6 text-sm font-bold tracking-wide text-background-dark transition-transform hover:scale-105 hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background-dark">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+        <header class="sticky top-0 z-50 border-b border-border-dark bg-background-dark/95 backdrop-blur-sm">
+            <div class="mx-auto flex h-20 max-w-[1600px] items-center justify-between px-6 lg:px-10">
+                <div class="flex items-center gap-4 text-white">
+                    <a href="index.html"><img src="images/alfa-logo.png" class="h-12 w-auto object-contain"
+                            alt="ALFA" /></a>
+                </div>
+                <nav class="hidden flex-1 justify-end gap-8 md:flex">
+                    <div class="flex items-center gap-9">
+                        <a class="text-sm font-medium text-primary transition-colors hover:text-primary"
+                            href="index.html">Inicio</a>
+                        <a class="text-sm font-medium text-text-muted transition-colors hover:text-primary"
+                            href="quienes-somos.html">Quiénes Somos</a>
+                        <a class="text-sm font-medium text-text-muted transition-colors hover:text-primary"
+                            href="equipos.html">Equipos</a>
+                        <a class="text-sm font-medium text-text-muted transition-colors hover:text-primary"
+                            href="soluciones.html">Soluciones</a>
+                        <a class="text-sm font-medium text-text-muted transition-colors hover:text-primary"
+                            href="contacto.html">Contacto</a>
+                    </div>
+                    <a href="contacto.html"
+                        class="flex h-10 min-w-[140px] items-center justify-center rounded bg-primary px-6 text-sm font-bold tracking-wide text-background-dark transition-transform hover:scale-105 hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background-dark">
                         Solicitar Cotización
                     </a>
-</nav>
-<button id="mobile-btn" class="ml-4 text-white md:hidden focus:outline-none">
-<span class="material-symbols-outlined">menu</span>
-</button>
-</div>
-<div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-background-dark/95 backdrop-blur-md border-b border-border-dark flex-col items-center gap-6 py-8 md:hidden shadow-2xl">
-    <a class="text-lg font-medium text-primary transition-colors hover:text-primary" href="index.html">Inicio</a>
-    <a class="text-lg font-medium text-text-muted transition-colors hover:text-primary" href="quienes-somos.html">Quiénes Somos</a>
-    <a class="text-lg font-medium text-text-muted transition-colors hover:text-primary" href="equipos.html">Equipos</a>
-    <a class="text-lg font-medium text-text-muted transition-colors hover:text-primary" href="soluciones.html">Soluciones</a>
-	<a class="text-lg font-medium text-text-muted transition-colors hover:text-primary" href="contacto.html">Contacto</a>
-    <a href="contacto.html" class="flex h-12 min-w-[200px] items-center justify-center rounded bg-primary px-6 text-sm font-bold tracking-wide text-background-dark transition-transform hover:scale-105 hover:bg-yellow-400">
-        Solicitar Cotización
-    </a>
+                </nav>
+                <button id="mobile-btn" class="ml-4 text-white md:hidden focus:outline-none">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+            <div id="mobile-menu"
+                class="hidden absolute top-full left-0 w-full bg-background-dark/95 backdrop-blur-md border-b border-border-dark flex-col items-center gap-6 py-8 md:hidden shadow-2xl">
+                <a class="text-lg font-medium text-primary transition-colors hover:text-primary"
+                    href="index.html">Inicio</a>
+                <a class="text-lg font-medium text-text-muted transition-colors hover:text-primary"
+                    href="quienes-somos.html">Quiénes Somos</a>
+                <a class="text-lg font-medium text-text-muted transition-colors hover:text-primary"
+                    href="equipos.html">Equipos</a>
+                <a class="text-lg font-medium text-text-muted transition-colors hover:text-primary"
+                    href="soluciones.html">Soluciones</a>
+                <a class="text-lg font-medium text-text-muted transition-colors hover:text-primary"
+                    href="contacto.html">Contacto</a>
+                <a href="contacto.html"
+                    class="flex h-12 min-w-[200px] items-center justify-center rounded bg-primary px-6 text-sm font-bold tracking-wide text-background-dark transition-transform hover:scale-105 hover:bg-yellow-400">
+                    Solicitar Cotización
+                </a>
 
-</div>
-</header>
-<main class="flex-grow ">
-<section class="relative h-[90vh] w-full overflow-hidden flex items-center justify-center">
-<div class="absolute inset-0 z-0 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCw5o2LyyCkjTfveJcUfGEe6q7AzDpFk5eiBzXo-7Ob5IKU5M7QGwBqxUF5q3_QYL01g3mcqi-sVkoAWnCH6jeVI2Qm4bWH5UbbwvYiTT6i2zM1VAQJAGQu6sK8QuEhr4iNrOhk2lIpPTlxjnLDHe8XEkAOE2kVq7OREBw-08RW7Pc8d1M1-m4s5u5MZRoVEElXXjpaNT1JLPuqBR1lf6X51CRmvQCMxtHnzWk9X7yZqIxyoWw0colhtoOvdpilTkpeL8gy0y33G_s");'>
-<div class="absolute inset-0 bg-gradient-to-r from-background-dark via-background-dark/80 to-transparent mix-blend-multiply"></div>
-<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent"></div>
-<div class="absolute inset-0 bg-blue-900/20 mix-blend-overlay"></div> 
-</div>
-<div class="absolute inset-0 bg-grid-pattern bg-[length:40px_40px] opacity-10 pointer-events-none z-10"></div>
-<div class="absolute top-1/4 right-10 w-64 h-64 bg-primary/20 blur-[100px] rounded-full pointer-events-none z-0"></div>
-<div class="absolute bottom-1/4 left-10 w-96 h-96 bg-blue-600/10 blur-[120px] rounded-full pointer-events-none z-0"></div>
-<div class="relative z-20 container mx-auto px-6 md:px-10 lg:px-20">
-<div class="max-w-5xl">
-<div class="flex items-center gap-3 mb-6">
-<span class="animate-pulse w-3 h-3 bg-primary rounded-full"></span>
-<span class="text-primary font-tech font-bold uppercase tracking-[0.3em] text-sm border border-primary/30 px-3 py-1 bg-black/50 backdrop-blur-sm">LÍDERES DE MÁQUINAS PESADAS</span>
-</div>
-<h1 class="font-display font-black leading-[0.85] tracking-tighter uppercase mb-8 drop-shadow-2xl">
-<span class="block text-6xl md:text-[5rem] text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">PODER, SOLUCIÓN Y</span>
-<span class="block text-6xl md:text-[7rem] text-primary glow-primary ml-0 md:ml-16">RESPALDO</span>
-</h1>
-<div class="flex flex-col md:flex-row items-start md:items-end gap-8 md:gap-16">
-<p class="text-gray-300 font-tech text-lg md:text-xl font-light leading-relaxed max-w-lg border-l-4 border-primary pl-6 bg-black/30 p-4 backdrop-blur-sm">
-                                Diseñadas para durar. Liderando la industria con soluciones de maquinaria pesada para todo tipo de terrenos y desafíos.
+            </div>
+        </header>
+        <main class="flex-grow ">
+            <section class="relative h-[90vh] w-full overflow-hidden flex items-center justify-center">
+                <div class="absolute inset-0 z-0 bg-cover bg-center"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCw5o2LyyCkjTfveJcUfGEe6q7AzDpFk5eiBzXo-7Ob5IKU5M7QGwBqxUF5q3_QYL01g3mcqi-sVkoAWnCH6jeVI2Qm4bWH5UbbwvYiTT6i2zM1VAQJAGQu6sK8QuEhr4iNrOhk2lIpPTlxjnLDHe8XEkAOE2kVq7OREBw-08RW7Pc8d1M1-m4s5u5MZRoVEElXXjpaNT1JLPuqBR1lf6X51CRmvQCMxtHnzWk9X7yZqIxyoWw0colhtoOvdpilTkpeL8gy0y33G_s");'>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-background-dark via-background-dark/80 to-transparent mix-blend-multiply">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent">
+                    </div>
+                    <div class="absolute inset-0 bg-blue-900/20 mix-blend-overlay"></div>
+                </div>
+                <div class="absolute inset-0 bg-grid-pattern bg-[length:40px_40px] opacity-10 pointer-events-none z-10">
+                </div>
+                <div
+                    class="absolute top-1/4 right-10 w-64 h-64 bg-primary/20 blur-[100px] rounded-full pointer-events-none z-0">
+                </div>
+                <div
+                    class="absolute bottom-1/4 left-10 w-96 h-96 bg-blue-600/10 blur-[120px] rounded-full pointer-events-none z-0">
+                </div>
+                <div class="relative z-20 container mx-auto px-6 md:px-10 lg:px-20">
+                    <div class="max-w-5xl">
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="animate-pulse w-3 h-3 bg-primary rounded-full"></span>
+                            <span
+                                class="text-primary font-tech font-bold uppercase tracking-[0.3em] text-sm border border-primary/30 px-3 py-1 bg-black/50 backdrop-blur-sm">LÍDERES
+                                DE MÁQUINAS PESADAS</span>
+                        </div>
+                        <h1
+                            class="font-display font-black leading-[0.85] tracking-tighter uppercase mb-8 drop-shadow-2xl">
+                            <span
+                                class="block text-6xl md:text-[5rem] text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">PODER,
+                                SOLUCIÓN Y</span>
+                            <span
+                                class="block text-6xl md:text-[7rem] text-primary glow-primary ml-0 md:ml-16">RESPALDO</span>
+                        </h1>
+                        <div class="flex flex-col md:flex-row items-start md:items-end gap-8 md:gap-16">
+                            <p
+                                class="text-gray-300 font-tech text-lg md:text-xl font-light leading-relaxed max-w-lg border-l-4 border-primary pl-6 bg-black/30 p-4 backdrop-blur-sm">
+                                Diseñadas para durar. Liderando la industria con soluciones de maquinaria pesada para
+                                todo tipo de terrenos y desafíos.
                             </p>
-<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
-<a href="equipos.html" class="group relative px-8 py-4 bg-primary text-black font-bold uppercase tracking-wider overflow-hidden clip-tech-card w-full sm:w-auto flex justify-center">
-<div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-<span class="relative flex items-center gap-2">Ver Equipos <span class="material-symbols-outlined text-lg">arrow_forward</span></span>
-</a>
-<a href="contacto.html" class="px-8 py-4 border border-white/20 text-white font-bold uppercase tracking-wider hover:border-primary hover:text-primary transition-colors clip-tech-card backdrop-blur-sm bg-black/20 w-full sm:w-auto text-center">
+                            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
+                                <a href="equipos.html"
+                                    class="group relative px-8 py-4 bg-primary text-black font-bold uppercase tracking-wider overflow-hidden clip-tech-card w-full sm:w-auto flex justify-center">
+                                    <div
+                                        class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                                    </div>
+                                    <span class="relative flex items-center gap-2">Ver Equipos <span
+                                            class="material-symbols-outlined text-lg">arrow_forward</span></span>
+                                </a>
+                                <a href="contacto.html"
+                                    class="px-8 py-4 border border-white/20 text-white font-bold uppercase tracking-wider hover:border-primary hover:text-primary transition-colors clip-tech-card backdrop-blur-sm bg-black/20 w-full sm:w-auto text-center">
                                     Contactarse
                                 </a>
-</div>
-</div>
-</div>
-</div>
-
-</section>
-<div class="bg-primary py-12 border-y border-black">
-<div class="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
-<div class="text-center border-r border-black/10 last:border-0">
-<span class="block text-4xl font-display font-black text-black">+200</span>
-<span class="text-xs uppercase font-bold tracking-widest text-black/70">Unidades Vendidas</span>
-</div>
-<div class="text-center border-r border-black/10 last:border-0">
-<span class="block text-4xl font-display font-black text-black">24/7</span>
-<span class="text-xs uppercase font-bold tracking-widest text-black/70">servicio tecnico</span>
-</div>
-<div class="text-center border-r border-black/10 last:border-0">
-<span class="block text-4xl font-display font-black text-black">+15</span>
-<span class="text-xs uppercase font-bold tracking-widest text-black/70">años en el mercado</span>
-</div>
-<div class="text-center">
-<span class="block text-4xl font-display font-black text-black">+30</span>
-<span class="text-xs uppercase font-bold tracking-widest text-black/70">Importaciones seguras</span>
-</div>
-</div>
-</div>
-<section class="py-24 bg-background-dark relative">
-<div class="container mx-auto px-6 md:px-10 lg:px-20">
-<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
-<div>
-<span class="text-primary font-tech uppercase tracking-widest text-sm mb-2 block">// Industrias</span>
-<h2 class="text-4xl md:text-5xl font-display font-bold text-white uppercase">Campos <span class="text-outline-white">Operativos</span></h2>
-</div>
-<div class="h-[1px] flex-grow bg-white/10 mx-8 hidden md:block"></div>
-<a class="text-white hover:text-primary transition-colors font-tech uppercase tracking-widest text-sm flex items-center gap-2 group" href="equipos.html">
-                            Ver todas las industrias <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">chevron_right</span>
-</a>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-<a href="equipos.html" class="group relative h-[600px] bg-surface-dark overflow-hidden border border-white/5 hover:border-primary/50 transition-all duration-500 clip-tech-card block">
-    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA82gpZkAU1ZtiZvxQEG0UkVOUdo5I72S0tP1aqvtgbC0j_2SF2mEzs4kz4qnAfDzZopVWclQXYDGpeh8Oe0ureg9p85EJ8Mg3__qCSDfWaUXS2XSjHPU3heDkoPTKC2mte5zKNXdhYwsMWGGHRUDMTmCgP3tk6AUek-_-0quQ7xCxE_eaFpkRpnu3FNbYQ3_TXZDRvSTo4M0cBVcG_0qqzv-dUaC14F_SfpV4Tgv5t66O3vYtd3sV1lMe4iKSzVjVb2tFyu1FVM8E"); filter: saturate(1.2) contrast(1.1);'></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90 transition-opacity group-hover:opacity-80"></div>
-    <div class="relative z-10 h-full flex flex-col justify-between p-8">
-        <div class="flex justify-between items-start">
-            <span class="text-4xl font-display font-bold text-white/20 group-hover:text-primary transition-colors">01</span>
-            <span class="p-2 border border-white/20 bg-black/50 backdrop-blur-md rounded-full group-hover:border-primary group-hover:text-primary transition-colors">
-                <span class="material-symbols-outlined text-sm">precision_manufacturing</span>
-            </span>
-        </div>
-        <div>
-            <h3 class="text-3xl font-tech font-bold text-white mb-2 uppercase group-hover:text-primary transition-colors">Agrícola</h3>
-            <div class="h-[2px] w-0 bg-primary mb-4 group-hover:w-16 transition-all duration-500"></div>
-            <p class="text-gray-300 text-sm font-light mb-6 opacity-80 group-hover:opacity-100">
-                Equipos de alta tracción y sistemas de precisión para el trabajo continuo en el campo.
-            </p>
-            <span class="text-primary text-xs font-bold uppercase tracking-widest border-b border-primary pb-1 inline-block">Ver Equipos</span>
-        </div>
-    </div>
-</a>
-<a href="equipos.html" class="group relative h-[600px] bg-surface-dark overflow-hidden border border-white/5 hover:border-primary/50 transition-all duration-500 clip-tech-card lg:mt-12 block">
-    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDS5Ud_Uv0hAqZdPW8p-P8jO9NZt-8EWC7_XUB4cxqA1eI55uW57JAY04lBjChMQ38TksoVrTBFW9ZLXN6e2CLhsLsIrmtwdchMrHA3vJOPpKKnJY2lcd1FndyAQrFuXxPL3q7v-5CyRxZwgqH5yi4o-ulhW62FMI2NlJE21WB1NkX0uu-R_2yXHJsq-CGlTK-0tmoA8cM0Mwmv10cVT7rndKJTWfyZ2-HJAY0VFRSA9X4BlmeonzutloiIY_BzcpcPIjf22NJ-ZXQ"); filter: saturate(1.2) contrast(1.1);'></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90 transition-opacity group-hover:opacity-80"></div>
-    <div class="relative z-10 h-full flex flex-col justify-between p-8">
-        <div class="flex justify-between items-start">
-            <span class="text-4xl font-display font-bold text-white/20 group-hover:text-primary transition-colors">02</span>
-            <span class="p-2 border border-white/20 bg-black/50 backdrop-blur-md rounded-full group-hover:border-primary group-hover:text-primary transition-colors">
-                <span class="material-symbols-outlined text-sm">architecture</span>
-            </span>
-        </div>
-        <div>
-            <h3 class="text-3xl font-tech font-bold text-white mb-2 uppercase group-hover:text-primary transition-colors">Construcción</h3>
-            <div class="h-[2px] w-0 bg-primary mb-4 group-hover:w-16 transition-all duration-500"></div>
-            <p class="text-gray-300 text-sm font-light mb-6 opacity-80 group-hover:opacity-100">
-                Palas cargadoras y equipos de movimiento de suelo para obras de alta exigencia.
-            </p>
-            <span class="text-primary text-xs font-bold uppercase tracking-widest border-b border-primary pb-1 inline-block">Ver Equipos</span>
-        </div>
-    </div>
-</a>
-<a href="equipos.html" class="group relative h-[600px] bg-surface-dark overflow-hidden border border-white/5 hover:border-primary/50 transition-all duration-500 clip-tech-card block">
-    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAeZwBeCKzNAmRagUi870OX7B6XQEVUe0TBiJrKFDfvQtvjd3M-TXgAd6WSvvX63y799HTzSGWl7W1fSeEUuTFnSLi6dwmr-839tzkKyOk_G7wc7DEPWvIiwCQoZHpyipnZ8m8z1AJgdvZYhGesSdvPheiYmeAUQC51TbicpCO5UJut0WgvvkGVm3JuezzjKhPMUShv_Jqh8wtqpZagdPzOiabaIKkxA7qgu7tucsgIer3pQSy_XWP1CJfiTtGHiuxBJHiHE6Bzcf8"); filter: saturate(1.2) contrast(1.1);'></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90 transition-opacity group-hover:opacity-80"></div>
-    <div class="relative z-10 h-full flex flex-col justify-between p-8">
-        <div class="flex justify-between items-start">
-            <span class="text-4xl font-display font-bold text-white/20 group-hover:text-primary transition-colors">03</span>
-            <span class="p-2 border border-white/20 bg-black/50 backdrop-blur-md rounded-full group-hover:border-primary group-hover:text-primary transition-colors">
-                <span class="material-symbols-outlined text-sm">bolt</span>
-            </span>
-        </div>
-        <div>
-            <h3 class="text-3xl font-tech font-bold text-white mb-2 uppercase group-hover:text-primary transition-colors">Logística y Depósitos</h3>
-            <div class="h-[2px] w-0 bg-primary mb-4 group-hover:w-16 transition-all duration-500"></div>
-            <p class="text-gray-300 text-sm font-light mb-6 opacity-80 group-hover:opacity-100">
-                Autoelevadores de máxima eficiencia para agilizar operaciones en grandes centros de distribución.
-            </p>
-            <span class="text-primary text-xs font-bold uppercase tracking-widest border-b border-primary pb-1 inline-block">Ver Equipos</span>
-        </div>
-    </div>
-</a>
-</div>
-</div>
-</section>
-<section class="bg-background-dark py-24 relative overflow-hidden border-y border-border-dark">
-    <div class="absolute inset-0 bg-grid-pattern bg-[length:40px_40px] opacity-5 pointer-events-none z-0"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/5 blur-[120px] rounded-full pointer-events-none z-0"></div>
-
-    <div class="container mx-auto px-6 md:px-10 lg:px-20 relative z-10">
-        
-        <div class="text-center mb-20 max-w-5xl mx-auto">
-            <h2 class="text-3xl md:text-5xl font-display font-black text-white uppercase mb-6">
-    Trading internacional con 
-    <span class="block mt-4 text-primary glow-primary">respaldo, seguridad y transparencia.</span>
-</h2>
-            <div class="flex items-center justify-center gap-4">
-                <span class="h-[1px] w-12 bg-primary"></span>
-                <h3 class="text-xl text-primary font-tech font-bold uppercase tracking-widest">Nos ocupamos de todo:</h3>
-                <span class="h-[1px] w-12 bg-primary"></span>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            
-            <div class="group bg-surface-dark border border-white/5 p-8 rounded-sm transition-all duration-500 hover:border-primary/40 hover:bg-black/40 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(250,180,30,0.05)] relative overflow-hidden flex flex-col items-center text-center">
-                <div class="absolute top-0 left-0 w-full h-[2px] bg-primary scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100"></div>
-                
-                <div class="w-24 h-24 bg-background-dark border border-white/10 rounded-full flex items-center justify-center mb-8 text-text-muted transition-colors duration-500 group-hover:text-primary group-hover:border-primary/30">
-                    <span class="material-symbols-outlined text-6xl">travel_explore</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <h4 class="text-white font-tech font-bold text-xl uppercase tracking-wide leading-snug">
-                    Evaluación de proveedores
-                </h4>
-            </div>
 
-            <div class="group bg-surface-dark border border-white/5 p-8 rounded-sm transition-all duration-500 hover:border-primary/40 hover:bg-black/40 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(250,180,30,0.05)] relative overflow-hidden flex flex-col items-center text-center">
-                <div class="absolute top-0 left-0 w-full h-[2px] bg-primary scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100"></div>
-                
-                <div class="w-24 h-24 bg-background-dark border border-white/10 rounded-full flex items-center justify-center mb-8 text-text-muted transition-colors duration-500 group-hover:text-primary group-hover:border-primary/30">
-                    <span class="material-symbols-outlined text-6xl">fact_check</span>
+            </section>
+            <div class="bg-primary py-12 border-y border-black">
+                <div class="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="text-center border-r border-black/10 last:border-0">
+                        <span class="block text-4xl font-display font-black text-black">+200</span>
+                        <span class="text-xs uppercase font-bold tracking-widest text-black/70">Unidades Vendidas</span>
+                    </div>
+                    <div class="text-center border-r border-black/10 last:border-0">
+                        <span class="block text-4xl font-display font-black text-black">24/7</span>
+                        <span class="text-xs uppercase font-bold tracking-widest text-black/70">servicio tecnico</span>
+                    </div>
+                    <div class="text-center border-r border-black/10 last:border-0">
+                        <span class="block text-4xl font-display font-black text-black">+16</span>
+                        <span class="text-xs uppercase font-bold tracking-widest text-black/70">años en el
+                            mercado</span>
+                    </div>
+                    <div class="text-center">
+                        <span class="block text-4xl font-display font-black text-black">+30</span>
+                        <span class="text-xs uppercase font-bold tracking-widest text-black/70">Importaciones
+                            seguras</span>
+                    </div>
                 </div>
-                <h4 class="text-white font-tech font-bold text-xl uppercase tracking-wide leading-snug">
-                    Auditoría de calidad
-                </h4>
             </div>
-
-            <div class="group bg-surface-dark border border-white/5 p-8 rounded-sm transition-all duration-500 hover:border-primary/40 hover:bg-black/40 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(250,180,30,0.05)] relative overflow-hidden flex flex-col items-center text-center">
-                <div class="absolute top-0 left-0 w-full h-[2px] bg-primary scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100"></div>
-                
-                <div class="w-24 h-24 bg-background-dark border border-white/10 rounded-full flex items-center justify-center mb-8 text-text-muted transition-colors duration-500 group-hover:text-primary group-hover:border-primary/30">
-                    <span class="material-symbols-outlined text-6xl">directions_boat</span>
+            <section class="py-24 bg-background-dark relative">
+                <div class="container mx-auto px-6 md:px-10 lg:px-20">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
+                        <div>
+                            <span class="text-primary font-tech uppercase tracking-widest text-sm mb-2 block">//
+                                Industrias</span>
+                            <h2 class="text-4xl md:text-5xl font-display font-bold text-white uppercase">Campos <span
+                                    class="text-outline-white">Operativos</span></h2>
+                        </div>
+                        <div class="h-[1px] flex-grow bg-white/10 mx-8 hidden md:block"></div>
+                        <a class="text-white hover:text-primary transition-colors font-tech uppercase tracking-widest text-sm flex items-center gap-2 group"
+                            href="equipos.html">
+                            Ver todas las industrias <span
+                                class="material-symbols-outlined group-hover:translate-x-1 transition-transform">chevron_right</span>
+                        </a>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <a href="equipos.html"
+                            class="group relative h-[600px] bg-surface-dark overflow-hidden border border-white/5 hover:border-primary/50 transition-all duration-500 clip-tech-card block">
+                            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA82gpZkAU1ZtiZvxQEG0UkVOUdo5I72S0tP1aqvtgbC0j_2SF2mEzs4kz4qnAfDzZopVWclQXYDGpeh8Oe0ureg9p85EJ8Mg3__qCSDfWaUXS2XSjHPU3heDkoPTKC2mte5zKNXdhYwsMWGGHRUDMTmCgP3tk6AUek-_-0quQ7xCxE_eaFpkRpnu3FNbYQ3_TXZDRvSTo4M0cBVcG_0qqzv-dUaC14F_SfpV4Tgv5t66O3vYtd3sV1lMe4iKSzVjVb2tFyu1FVM8E"); filter: saturate(1.2) contrast(1.1);'>
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90 transition-opacity group-hover:opacity-80">
+                            </div>
+                            <div class="relative z-10 h-full flex flex-col justify-between p-8">
+                                <div class="flex justify-between items-start">
+                                    <span
+                                        class="text-4xl font-display font-bold text-white/20 group-hover:text-primary transition-colors">01</span>
+                                    <span
+                                        class="p-2 border border-white/20 bg-black/50 backdrop-blur-md rounded-full group-hover:border-primary group-hover:text-primary transition-colors">
+                                        <span class="material-symbols-outlined text-sm">precision_manufacturing</span>
+                                    </span>
+                                </div>
+                                <div>
+                                    <h3
+                                        class="text-3xl font-tech font-bold text-white mb-2 uppercase group-hover:text-primary transition-colors">
+                                        Agrícola</h3>
+                                    <div
+                                        class="h-[2px] w-0 bg-primary mb-4 group-hover:w-16 transition-all duration-500">
+                                    </div>
+                                    <p class="text-gray-300 text-sm font-light mb-6 opacity-80 group-hover:opacity-100">
+                                        Equipos de alta tracción y sistemas de precisión para el trabajo continuo en el
+                                        campo.
+                                    </p>
+                                    <span
+                                        class="text-primary text-xs font-bold uppercase tracking-widest border-b border-primary pb-1 inline-block">Ver
+                                        Equipos</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="equipos.html"
+                            class="group relative h-[600px] bg-surface-dark overflow-hidden border border-white/5 hover:border-primary/50 transition-all duration-500 clip-tech-card lg:mt-12 block">
+                            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDS5Ud_Uv0hAqZdPW8p-P8jO9NZt-8EWC7_XUB4cxqA1eI55uW57JAY04lBjChMQ38TksoVrTBFW9ZLXN6e2CLhsLsIrmtwdchMrHA3vJOPpKKnJY2lcd1FndyAQrFuXxPL3q7v-5CyRxZwgqH5yi4o-ulhW62FMI2NlJE21WB1NkX0uu-R_2yXHJsq-CGlTK-0tmoA8cM0Mwmv10cVT7rndKJTWfyZ2-HJAY0VFRSA9X4BlmeonzutloiIY_BzcpcPIjf22NJ-ZXQ"); filter: saturate(1.2) contrast(1.1);'>
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90 transition-opacity group-hover:opacity-80">
+                            </div>
+                            <div class="relative z-10 h-full flex flex-col justify-between p-8">
+                                <div class="flex justify-between items-start">
+                                    <span
+                                        class="text-4xl font-display font-bold text-white/20 group-hover:text-primary transition-colors">02</span>
+                                    <span
+                                        class="p-2 border border-white/20 bg-black/50 backdrop-blur-md rounded-full group-hover:border-primary group-hover:text-primary transition-colors">
+                                        <span class="material-symbols-outlined text-sm">architecture</span>
+                                    </span>
+                                </div>
+                                <div>
+                                    <h3
+                                        class="text-3xl font-tech font-bold text-white mb-2 uppercase group-hover:text-primary transition-colors">
+                                        Construcción</h3>
+                                    <div
+                                        class="h-[2px] w-0 bg-primary mb-4 group-hover:w-16 transition-all duration-500">
+                                    </div>
+                                    <p class="text-gray-300 text-sm font-light mb-6 opacity-80 group-hover:opacity-100">
+                                        Palas cargadoras y equipos de movimiento de suelo para obras de alta exigencia.
+                                    </p>
+                                    <span
+                                        class="text-primary text-xs font-bold uppercase tracking-widest border-b border-primary pb-1 inline-block">Ver
+                                        Equipos</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="equipos.html"
+                            class="group relative h-[600px] bg-surface-dark overflow-hidden border border-white/5 hover:border-primary/50 transition-all duration-500 clip-tech-card block">
+                            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAeZwBeCKzNAmRagUi870OX7B6XQEVUe0TBiJrKFDfvQtvjd3M-TXgAd6WSvvX63y799HTzSGWl7W1fSeEUuTFnSLi6dwmr-839tzkKyOk_G7wc7DEPWvIiwCQoZHpyipnZ8m8z1AJgdvZYhGesSdvPheiYmeAUQC51TbicpCO5UJut0WgvvkGVm3JuezzjKhPMUShv_Jqh8wtqpZagdPzOiabaIKkxA7qgu7tucsgIer3pQSy_XWP1CJfiTtGHiuxBJHiHE6Bzcf8"); filter: saturate(1.2) contrast(1.1);'>
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90 transition-opacity group-hover:opacity-80">
+                            </div>
+                            <div class="relative z-10 h-full flex flex-col justify-between p-8">
+                                <div class="flex justify-between items-start">
+                                    <span
+                                        class="text-4xl font-display font-bold text-white/20 group-hover:text-primary transition-colors">03</span>
+                                    <span
+                                        class="p-2 border border-white/20 bg-black/50 backdrop-blur-md rounded-full group-hover:border-primary group-hover:text-primary transition-colors">
+                                        <span class="material-symbols-outlined text-sm">bolt</span>
+                                    </span>
+                                </div>
+                                <div>
+                                    <h3
+                                        class="text-3xl font-tech font-bold text-white mb-2 uppercase group-hover:text-primary transition-colors">
+                                        Logística y Depósitos</h3>
+                                    <div
+                                        class="h-[2px] w-0 bg-primary mb-4 group-hover:w-16 transition-all duration-500">
+                                    </div>
+                                    <p class="text-gray-300 text-sm font-light mb-6 opacity-80 group-hover:opacity-100">
+                                        Autoelevadores de máxima eficiencia para agilizar operaciones en grandes centros
+                                        de distribución.
+                                    </p>
+                                    <span
+                                        class="text-primary text-xs font-bold uppercase tracking-widest border-b border-primary pb-1 inline-block">Ver
+                                        Equipos</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-                <h4 class="text-white font-tech font-bold text-xl uppercase tracking-wide leading-snug">
-                    Gestión logística
-                </h4>
-            </div>
-
-            <div class="group bg-surface-dark border border-white/5 p-8 rounded-sm transition-all duration-500 hover:border-primary/40 hover:bg-black/40 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(250,180,30,0.05)] relative overflow-hidden flex flex-col items-center text-center">
-                <div class="absolute top-0 left-0 w-full h-[2px] bg-primary scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100"></div>
-                
-                <div class="w-24 h-24 bg-background-dark border border-white/10 rounded-full flex items-center justify-center mb-8 text-text-muted transition-colors duration-500 group-hover:text-primary group-hover:border-primary/30">
-                    <span class="material-symbols-outlined text-6xl">where_to_vote</span>
+            </section>
+            <section class="bg-background-dark py-24 relative overflow-hidden border-y border-border-dark">
+                <div class="absolute inset-0 bg-grid-pattern bg-[length:40px_40px] opacity-5 pointer-events-none z-0">
                 </div>
-                <h4 class="text-white font-tech font-bold text-xl uppercase tracking-wide leading-snug">
-                    Entrega en destino
-                </h4>
-            </div>
+                <div
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/5 blur-[120px] rounded-full pointer-events-none z-0">
+                </div>
 
-        </div>
-    </div>
-</section>
-<section class="bg-background-dark py-24 relative overflow-hidden">
-<div class="container mx-auto px-6 md:px-10 lg:px-20 flex flex-col lg:flex-row items-center gap-16">
-<div class="w-full lg:w-1/2">
-<h2 class="text-4xl md:text-5xl font-display font-black text-white uppercase mb-6">Quiénes <span class="text-primary">Somos</span></h2>
-<p class="text-gray-400 text-lg mb-10 leading-relaxed">
-                             Con más de 16 años de trayectoria, no solo entregamos maquinaria pesada; construimos relaciones comerciales basadas en la confianza. Nuestro compromiso es acompañar el crecimiento de su empresa con soluciones robustas y un respaldo inquebrantable.
-                         </p>
-<div class="space-y-6">
-<div class="flex items-start gap-4 p-4 border border-white/10 bg-surface-dark hover:border-primary transition-colors">
-<span class="material-symbols-outlined text-primary text-3xl">fact_check</span>
-<div>
-<h4 class="text-white font-bold uppercase tracking-wider mb-1">Auditoría en Origen</h4>
-<p class="text-sm text-gray-500">Testeamos y certificamos cada equipo directamente en fábrica antes de su embarque.</p>
-</div>
-</div>
-<div class="flex items-start gap-4 p-4 border border-white/10 bg-surface-dark hover:border-primary transition-colors">
-<span class="material-symbols-outlined text-primary text-3xl">local_shipping</span>
-<div>
-<h4 class="text-white font-bold uppercase tracking-wider mb-1">Logística Llave en Mano</h4>
-<p class="text-sm text-gray-500">Gestionamos el proceso integral de importación y nacionalización hasta la entrega en su planta.</p>
-</div>
-</div>
-<div class="flex items-start gap-4 p-4 border border-white/10 bg-surface-dark hover:border-primary transition-colors">
-<span class="material-symbols-outlined text-primary text-3xl">support_agent</span>
-<div>
-<h4 class="text-white font-bold uppercase tracking-wider mb-1">Respaldo y Repuestos</h4>
-<p class="text-sm text-gray-500">Garantizamos su continuidad operativa con asistencia técnica permanente y amplio stock de piezas.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="w-full lg:w-1/2 relative">
-<div class="relative aspect-square w-full max-w-lg mx-auto">
-<div class="absolute inset-0 border-2 border-primary/20 rounded-full animate-[spin_10s_linear_infinite]"></div>
-<div class="absolute inset-4 border border-white/10 rounded-full"></div>
-<div class="absolute inset-0 flex items-center justify-center">
-<div class="w-full h-full bg-cover bg-center rounded-full overflow-hidden grayscale contrast-125" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA82gpZkAU1ZtiZvxQEG0UkVOUdo5I72S0tP1aqvtgbC0j_2SF2mEzs4kz4qnAfDzZopVWclQXYDGpeh8Oe0ureg9p85EJ8Mg3__qCSDfWaUXS2XSjHPU3heDkoPTKC2mte5zKNXdhYwsMWGGHRUDMTmCgP3tk6AUek-_-0quQ7xCxE_eaFpkRpnu3FNbYQ3_TXZDRvSTo4M0cBVcG_0qqzv-dUaC14F_SfpV4Tgv5t66O3vYtd3sV1lMe4iKSzVjVb2tFyu1FVM8E"); box-shadow: 0 0 50px rgba(0,0,0,0.8) inset;'></div>
-</div>
-<div class="absolute -bottom-6 -right-6 bg-primary text-black p-6 font-display font-bold text-2xl uppercase text-center leading-none">
+                <div class="container mx-auto px-6 md:px-10 lg:px-20 relative z-10">
+
+                    <div class="text-center mb-20 max-w-5xl mx-auto">
+                        <h2 class="text-3xl md:text-5xl font-display font-black text-white uppercase mb-6">
+                            Trading internacional con
+                            <span class="block mt-4 text-primary glow-primary">respaldo, seguridad y
+                                transparencia.</span>
+                        </h2>
+                        <div class="flex items-center justify-center gap-4">
+                            <span class="h-[1px] w-12 bg-primary"></span>
+                            <h3 class="text-xl text-primary font-tech font-bold uppercase tracking-widest">Nos ocupamos
+                                de todo:</h3>
+                            <span class="h-[1px] w-12 bg-primary"></span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                        <div
+                            class="group bg-surface-dark border border-white/5 p-8 rounded-sm transition-all duration-500 hover:border-primary/40 hover:bg-black/40 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(250,180,30,0.05)] relative overflow-hidden flex flex-col items-center text-center">
+                            <div
+                                class="absolute top-0 left-0 w-full h-[2px] bg-primary scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100">
+                            </div>
+
+                            <div
+                                class="w-24 h-24 bg-background-dark border border-white/10 rounded-full flex items-center justify-center mb-8 text-text-muted transition-colors duration-500 group-hover:text-primary group-hover:border-primary/30">
+                                <span class="material-symbols-outlined text-6xl">travel_explore</span>
+                            </div>
+                            <h4 class="text-white font-tech font-bold text-xl uppercase tracking-wide leading-snug">
+                                Evaluación de proveedores
+                            </h4>
+                        </div>
+
+                        <div
+                            class="group bg-surface-dark border border-white/5 p-8 rounded-sm transition-all duration-500 hover:border-primary/40 hover:bg-black/40 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(250,180,30,0.05)] relative overflow-hidden flex flex-col items-center text-center">
+                            <div
+                                class="absolute top-0 left-0 w-full h-[2px] bg-primary scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100">
+                            </div>
+
+                            <div
+                                class="w-24 h-24 bg-background-dark border border-white/10 rounded-full flex items-center justify-center mb-8 text-text-muted transition-colors duration-500 group-hover:text-primary group-hover:border-primary/30">
+                                <span class="material-symbols-outlined text-6xl">fact_check</span>
+                            </div>
+                            <h4 class="text-white font-tech font-bold text-xl uppercase tracking-wide leading-snug">
+                                Auditoría de calidad
+                            </h4>
+                        </div>
+
+                        <div
+                            class="group bg-surface-dark border border-white/5 p-8 rounded-sm transition-all duration-500 hover:border-primary/40 hover:bg-black/40 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(250,180,30,0.05)] relative overflow-hidden flex flex-col items-center text-center">
+                            <div
+                                class="absolute top-0 left-0 w-full h-[2px] bg-primary scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100">
+                            </div>
+
+                            <div
+                                class="w-24 h-24 bg-background-dark border border-white/10 rounded-full flex items-center justify-center mb-8 text-text-muted transition-colors duration-500 group-hover:text-primary group-hover:border-primary/30">
+                                <span class="material-symbols-outlined text-6xl">directions_boat</span>
+                            </div>
+                            <h4 class="text-white font-tech font-bold text-xl uppercase tracking-wide leading-snug">
+                                Gestión logística
+                            </h4>
+                        </div>
+
+                        <div
+                            class="group bg-surface-dark border border-white/5 p-8 rounded-sm transition-all duration-500 hover:border-primary/40 hover:bg-black/40 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(250,180,30,0.05)] relative overflow-hidden flex flex-col items-center text-center">
+                            <div
+                                class="absolute top-0 left-0 w-full h-[2px] bg-primary scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100">
+                            </div>
+
+                            <div
+                                class="w-24 h-24 bg-background-dark border border-white/10 rounded-full flex items-center justify-center mb-8 text-text-muted transition-colors duration-500 group-hover:text-primary group-hover:border-primary/30">
+                                <span class="material-symbols-outlined text-6xl">where_to_vote</span>
+                            </div>
+                            <h4 class="text-white font-tech font-bold text-xl uppercase tracking-wide leading-snug">
+                                Entrega en destino
+                            </h4>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <section class="bg-background-dark py-24 relative overflow-hidden">
+                <div class="container mx-auto px-6 md:px-10 lg:px-20 flex flex-col lg:flex-row items-center gap-16">
+                    <div class="w-full lg:w-1/2">
+                        <h2 class="text-4xl md:text-5xl font-display font-black text-white uppercase mb-6">Quiénes <span
+                                class="text-primary">Somos</span></h2>
+                        <p class="text-gray-400 text-lg mb-10 leading-relaxed">
+                            Con más de 16 años de trayectoria, no solo entregamos maquinaria pesada; construimos
+                            relaciones comerciales basadas en la confianza. Nuestro compromiso es acompañar el
+                            crecimiento de su empresa con soluciones robustas y un respaldo inquebrantable.
+                        </p>
+                        <div class="space-y-6">
+                            <div
+                                class="flex items-start gap-4 p-4 border border-white/10 bg-surface-dark hover:border-primary transition-colors">
+                                <span class="material-symbols-outlined text-primary text-3xl">fact_check</span>
+                                <div>
+                                    <h4 class="text-white font-bold uppercase tracking-wider mb-1">Auditoría en Origen
+                                    </h4>
+                                    <p class="text-sm text-gray-500">Testeamos y certificamos cada equipo directamente
+                                        en fábrica antes de su embarque.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-start gap-4 p-4 border border-white/10 bg-surface-dark hover:border-primary transition-colors">
+                                <span class="material-symbols-outlined text-primary text-3xl">local_shipping</span>
+                                <div>
+                                    <h4 class="text-white font-bold uppercase tracking-wider mb-1">Logística Llave en
+                                        Mano</h4>
+                                    <p class="text-sm text-gray-500">Gestionamos el proceso integral de importación y
+                                        nacionalización hasta la entrega en su planta.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-start gap-4 p-4 border border-white/10 bg-surface-dark hover:border-primary transition-colors">
+                                <span class="material-symbols-outlined text-primary text-3xl">support_agent</span>
+                                <div>
+                                    <h4 class="text-white font-bold uppercase tracking-wider mb-1">Respaldo y Repuestos
+                                    </h4>
+                                    <p class="text-sm text-gray-500">Garantizamos su continuidad operativa con
+                                        asistencia técnica permanente y amplio stock de piezas.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2 relative">
+                        <div class="relative aspect-square w-full max-w-lg mx-auto">
+                            <div
+                                class="absolute inset-0 border-2 border-primary/20 rounded-full animate-[spin_10s_linear_infinite]">
+                            </div>
+                            <div class="absolute inset-4 border border-white/10 rounded-full"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-full h-full bg-cover bg-center rounded-full overflow-hidden grayscale contrast-125"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA82gpZkAU1ZtiZvxQEG0UkVOUdo5I72S0tP1aqvtgbC0j_2SF2mEzs4kz4qnAfDzZopVWclQXYDGpeh8Oe0ureg9p85EJ8Mg3__qCSDfWaUXS2XSjHPU3heDkoPTKC2mte5zKNXdhYwsMWGGHRUDMTmCgP3tk6AUek-_-0quQ7xCxE_eaFpkRpnu3FNbYQ3_TXZDRvSTo4M0cBVcG_0qqzv-dUaC14F_SfpV4Tgv5t66O3vYtd3sV1lMe4iKSzVjVb2tFyu1FVM8E"); box-shadow: 0 0 50px rgba(0,0,0,0.8) inset;'>
+                                </div>
+                            </div>
+                            <div
+                                class="absolute -bottom-6 -right-6 bg-primary text-black p-6 font-display font-bold text-2xl uppercase text-center leading-none">
                                 16+<br><span class="text-sm">Años</span>
                             </div>
-</div>
-</div>
-</div>
-</section>
-<section class="bg-primary py-24 relative overflow-hidden clip-diagonal-reverse -mt-15 z-10">
-<div class="container mx-auto px-6 md:px-10 lg:px-20 text-center relative z-20">
-<h2 class="text-5xl md:text-7xl font-display font-black text-black uppercase mb-8">¿Listo para <span class="text-white">potenciar tu flota?</span></h2>
-<p class="text-black/80 font-bold text-xl max-w-2xl mx-auto mb-10">Equipe su flota con la fuerza bruta necesaria para conquistar cualquier proyecto.</p>
-<div class="flex flex-col sm:flex-row justify-center gap-6">
-<a href="contacto.html" class="bg-black text-white px-10 py-5 font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-colors shadow-xl">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="bg-primary py-24 relative overflow-hidden clip-diagonal-reverse -mt-15 z-10">
+                <div class="container mx-auto px-6 md:px-10 lg:px-20 text-center relative z-20">
+                    <h2 class="text-5xl md:text-7xl font-display font-black text-black uppercase mb-8">¿Listo para <span
+                            class="text-white">potenciar tu flota?</span></h2>
+                    <p class="text-black/80 font-bold text-xl max-w-2xl mx-auto mb-10">Equipe su flota con la fuerza
+                        bruta necesaria para conquistar cualquier proyecto.</p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-6">
+                        <a href="contacto.html"
+                            class="bg-black text-white px-10 py-5 font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-colors shadow-xl">
                             Solicitar Cotización
                         </a>
-<a href="equipos.html" class="border-2 border-black text-black px-10 py-5 font-bold uppercase tracking-widest hover:bg-black hover:text-white transition-colors">
+                        <a href="equipos.html"
+                            class="border-2 border-black text-black px-10 py-5 font-bold uppercase tracking-widest hover:bg-black hover:text-white transition-colors">
                             Ver Nuestros Equipos
                         </a>
-</div>
-</div>
-</section>
-</main>
-    <footer class="mt-auto border-t border-border-dark bg-surface-dark py-12">
-        <div class="mx-auto grid max-w-[1600px] grid-cols-1 gap-12 px-6 lg:grid-cols-4 lg:px-10">
-            <div class="space-y-4">
-                <div class="flex items-center gap-2 text-white">
-                    <a href="index.html"><img src="images/alfa-logo.png" class="h-12 w-auto object-contain" alt="ALFA"/></a>
+                    </div>
                 </div>
-                <p class="text-sm text-text-muted">Diseñadas para durar. Liderando la industria con soluciones de maquinaria pesada para todo tipo de terrenos y desafíos.</p>
+            </section>
+        </main>
+        <footer class="mt-auto border-t border-border-dark bg-surface-dark py-12">
+            <div class="mx-auto grid max-w-[1600px] grid-cols-1 gap-12 px-6 lg:grid-cols-4 lg:px-10">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2 text-white">
+                        <a href="index.html"><img src="images/alfa-logo.png" class="h-12 w-auto object-contain"
+                                alt="ALFA" /></a>
+                    </div>
+                    <p class="text-sm text-text-muted">Diseñadas para durar. Liderando la industria con soluciones de
+                        maquinaria pesada para todo tipo de terrenos y desafíos.</p>
+                </div>
+                <div>
+                    <h5 class="mb-4 text-sm font-bold uppercase tracking-wider text-white">Equipos</h5>
+                    <ul class="space-y-2 text-sm text-text-muted">
+                        <li><a class="hover:text-primary transition-colors" href="detalle-780t.html">780 T</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="detalle-jk45.html">JK45</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="detalle-wl180.html">WL180</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="detalle-wl922.html">WL922</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="detalle-ws110.html">WS110</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="mb-4 text-sm font-bold uppercase tracking-wider text-white">Empresa</h5>
+                    <ul class="space-y-2 text-sm text-text-muted">
+                        <li><a class="hover:text-primary transition-colors" href="quienes-somos.html">Quiénes Somos</a>
+                        </li>
+                        <li><a class="hover:text-primary transition-colors" href="soluciones.html">Soluciones</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="mb-4 text-sm font-bold uppercase tracking-wider text-white">Contacto</h5>
+                    <ul class="space-y-2 text-sm text-text-muted">
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-xs">phone</span> +54 11 5311-9700 / +54 11
+                            3279-1042
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-xs">mail</span> <a
+                                href="mailto:ventas@euroalfamaquinarias.com"
+                                class="hover:text-primary transition-colors">ventas@euroalfamaquinarias.com</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-xs">location_on</span> Colectora Panamericana
+                            (1617) Tigre, Bs. As.
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div>
-                <h5 class="mb-4 text-sm font-bold uppercase tracking-wider text-white">Equipos</h5>
-                <ul class="space-y-2 text-sm text-text-muted">
-                    <li><a class="hover:text-primary transition-colors" href="detalle-780t.html">780 T</a></li>
-                    <li><a class="hover:text-primary transition-colors" href="detalle-jk45.html">JK45</a></li>
-                    <li><a class="hover:text-primary transition-colors" href="detalle-wl180.html">WL180</a></li>
-                    <li><a class="hover:text-primary transition-colors" href="detalle-wl922.html">WL922</a></li>
-                    <li><a class="hover:text-primary transition-colors" href="detalle-ws110.html">WS110</a></li>
-                </ul>
+            <div class="mt-12 border-t border-border-dark pt-8 text-center text-xs text-text-muted">
+                © 2026 ALFA. Todos los derechos reservados.
             </div>
-            <div>
-                <h5 class="mb-4 text-sm font-bold uppercase tracking-wider text-white">Empresa</h5>
-                <ul class="space-y-2 text-sm text-text-muted">
-                    <li><a class="hover:text-primary transition-colors" href="quienes-somos.html">Quiénes Somos</a></li>
-                    <li><a class="hover:text-primary transition-colors" href="soluciones.html">Soluciones</a></li>
-                    <li><a class="hover:text-primary transition-colors" href="contacto.html">Contacto</a></li>
-                </ul>
-            </div>
-            <div>
-                <h5 class="mb-4 text-sm font-bold uppercase tracking-wider text-white">Contacto</h5>
-                <ul class="space-y-2 text-sm text-text-muted">
-                    <li class="flex items-center gap-2">
-                        <span class="material-symbols-outlined text-xs">phone</span> +54 11 5311-9700 / +54 11 3279-1042
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <span class="material-symbols-outlined text-xs">mail</span> <a href="mailto:ventas@euroalfamaquinarias.com" class="hover:text-primary transition-colors">ventas@euroalfamaquinarias.com</a>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <span class="material-symbols-outlined text-xs">location_on</span> Colectora Panamericana (1617) Tigre, Bs. As.
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="mt-12 border-t border-border-dark pt-8 text-center text-xs text-text-muted">
-            © 2026 ALFA. Todos los derechos reservados.
-        </div>
-    </footer>
-</div>
+        </footer>
+    </div>
 
-<script>
-    const mobileBtn = document.getElementById('mobile-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    mobileBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-        mobileMenu.classList.toggle('flex');
-    });
-</script>
-</body></html>
+    <script>
+        const mobileBtn = document.getElementById('mobile-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+    </script>
+</body>
+
+</html>
