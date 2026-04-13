@@ -1,40 +1,43 @@
 <!DOCTYPE html>
 <html class="dark" lang="es">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>ALFA - Contacto</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>ALFA - Contacto</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
     tailwind.config = {
-        darkMode: "class",
-        theme: {
-            extend: {
-                colors: {
-                    "primary": "#fab41e",
-                    "primary-hover": "#e0a316",
-                    "background-dark": "#020408",
-                    "surface-dark": "#0a0c10",
-                    "surface-card": "#000000",
-                    "text-main": "#E5E5E5",
-                    "text-muted": "#888888",
-                    "border-dark": "#262626",
-                },
-                fontFamily: {
-                    "display": ["Oswald", "sans-serif"],
-                    "body": ["Inter", "sans-serif"]
-                },
-            },
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#fab41e",
+            "primary-hover": "#e0a316",
+            "background-dark": "#020408",
+            "surface-dark": "#0a0c10",
+            "surface-card": "#000000",
+            "text-main": "#E5E5E5",
+            "text-muted": "#888888",
+            "border-dark": "#262626",
+          },
+          fontFamily: {
+            "display": ["Oswald", "sans-serif"],
+            "body": ["Inter", "sans-serif"]
+          },
         },
+      },
     }
-</script>
-<style type="text/tailwindcss">
+  </script>
+  <style type="text/tailwindcss">
     @layer utilities {
         .glow-primary { text-shadow: 0 0 20px rgba(250, 180, 30, 0.5); }
         .text-outline {
@@ -43,686 +46,769 @@
         }
     }
 </style>
-<style>
-    ::-webkit-scrollbar { width: 8px; height: 8px; }
-    ::-webkit-scrollbar-track { background: #0a0a0a; }
-    ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: #fab41e; }
+  <style>
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #0a0a0a;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #333;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #fab41e;
+    }
 
     /* Input focus style unificado */
     .form-input {
-        background: #0a0c10;
-        border: 1px solid #262626;
-        color: #E5E5E5;
-        width: 100%;
-        padding: 14px 16px;
-        font-size: 0.875rem;
-        font-family: 'Inter', sans-serif;
-        outline: none;
-        transition: border-color 0.2s;
+      background: #0a0c10;
+      border: 1px solid #262626;
+      color: #E5E5E5;
+      width: 100%;
+      padding: 14px 16px;
+      font-size: 0.875rem;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      transition: border-color 0.2s;
     }
+
     .form-input:focus {
-        border-color: #fab41e;
-        box-shadow: 0 0 0 1px #fab41e30;
+      border-color: #fab41e;
+      box-shadow: 0 0 0 1px #fab41e30;
     }
+
     .form-input::placeholder {
-        color: #555;
+      color: #555;
     }
+
     select.form-input option {
-        background: #0a0c10;
+      background: #0a0c10;
     }
 
     .reveal {
-        opacity: 0;
-        transform: translateY(28px);
-        transition: opacity 0.6s ease, transform 0.6s ease;
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
+
     .reveal.visible {
-        opacity: 1;
-        transform: translateY(0);
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* Toast notification */
     #toast {
-        transition: all 0.4s ease;
+      transition: all 0.4s ease;
     }
-</style>
+  </style>
 </head>
-<body class="bg-background-dark font-body text-slate-100 antialiased selection:bg-primary selection:text-black">
-<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
 
-  <!-- HEADER -->
-  <header class="sticky top-0 z-50 border-b border-border-dark bg-background-dark/95 backdrop-blur-sm">
-    <div class="mx-auto flex h-20 max-w-[1600px] items-center justify-between px-6 lg:px-10">
-      <div class="flex items-center gap-4 text-white">
-        <img src="images/alfa-logo.png" class="h-12 w-auto object-contain" alt="ALFA"/>
-      </div>
-      <nav class="hidden flex-1 justify-end gap-8 md:flex">
-        <div class="flex items-center gap-9">
-          <a class="text-sm font-medium text-text-muted transition-colors hover:text-primary" href="index.html">Inicio</a>
-          <a class="text-sm font-medium text-text-muted transition-colors hover:text-primary" href="#">Quiénes Somos</a>
-          <a class="text-sm font-medium text-text-muted transition-colors hover:text-primary" href="productos.html">Equipos</a>
-          <a class="text-sm font-medium text-text-muted transition-colors hover:text-primary" href="soluciones.html">Soluciones</a>
-          <a class="text-sm font-medium text-primary transition-colors hover:text-primary" href="contacto.html">Contacto</a>
+<body class="bg-background-dark font-body text-slate-100 antialiased selection:bg-primary selection:text-black">
+  <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 border-b border-border-dark bg-background-dark/95 backdrop-blur-sm">
+      <div class="mx-auto flex h-20 max-w-[1600px] items-center justify-between px-6 lg:px-10">
+        <div class="flex items-center gap-4 text-white">
+          <img src="images/alfa-logo.png" class="h-12 w-auto object-contain" alt="ALFA" />
         </div>
-        <a href="#formulario" class="flex h-10 min-w-[140px] items-center justify-center rounded bg-primary px-6 text-sm font-bold tracking-wide text-background-dark transition-transform hover:scale-105 hover:bg-yellow-400">
+        <nav class="hidden flex-1 justify-end gap-8 md:flex">
+          <div class="flex items-center gap-9">
+            <a class="text-sm font-medium text-text-muted transition-colors hover:text-primary"
+              href="index.html">Inicio</a>
+            <a class="text-sm font-medium text-text-muted transition-colors hover:text-primary"
+              href="quienes-somos.html">Quiénes Somos</a>
+            <a class="text-sm font-medium text-text-muted transition-colors hover:text-primary"
+              href="productos.html">Equipos</a>
+            <a class="text-sm font-medium text-text-muted transition-colors hover:text-primary"
+              href="soluciones.html">Soluciones</a>
+            <a class="text-sm font-medium text-primary transition-colors hover:text-primary"
+              href="contacto.html">Contacto</a>
+          </div>
+          <a href="#formulario"
+            class="flex h-10 min-w-[140px] items-center justify-center rounded bg-primary px-6 text-sm font-bold tracking-wide text-background-dark transition-transform hover:scale-105 hover:bg-yellow-400">
+            Solicitar Cotización
+          </a>
+        </nav>
+        <button id="mobile-btn" class="ml-4 text-white md:hidden focus:outline-none">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+      <div id="mobile-menu"
+        class="hidden absolute top-full left-0 w-full bg-background-dark/95 backdrop-blur-md border-b border-border-dark flex-col items-center gap-6 py-8 md:hidden shadow-2xl">
+        <a class="text-lg font-medium text-text-muted transition-colors hover:text-primary" href="index.html">Inicio</a>
+        <a class="text-lg font-medium text-text-muted transition-colors hover:text-primary"
+          href="quienes-somos.html">Quiénes Somos</a>
+        <a class="text-lg font-medium text-text-muted transition-colors hover:text-primary"
+          href="productos.html">Equipos</a>
+        <a class="text-lg font-medium text-text-muted transition-colors hover:text-primary"
+          href="soluciones.html">Soluciones</a>
+        <a class="text-lg font-medium text-primary transition-colors hover:text-primary"
+          href="contacto.html">Contacto</a>
+        <a href="#formulario"
+          class="flex h-12 min-w-[200px] items-center justify-center rounded bg-primary px-6 text-sm font-bold tracking-wide text-background-dark transition-transform hover:scale-105 hover:bg-yellow-400">
           Solicitar Cotización
         </a>
-      </nav>
-      <button id="mobile-btn" class="ml-4 text-white md:hidden focus:outline-none">
-        <span class="material-symbols-outlined">menu</span>
-      </button>
-    </div>
-    <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-background-dark/95 backdrop-blur-md border-b border-border-dark flex-col items-center gap-6 py-8 md:hidden shadow-2xl">
-      <a class="text-lg font-medium text-text-muted transition-colors hover:text-primary" href="index.html">Inicio</a>
-      <a class="text-lg font-medium text-text-muted transition-colors hover:text-primary" href="#">Quiénes Somos</a>
-      <a class="text-lg font-medium text-text-muted transition-colors hover:text-primary" href="productos.html">Equipos</a>
-      <a class="text-lg font-medium text-text-muted transition-colors hover:text-primary" href="soluciones.html">Soluciones</a>
-      <a class="text-lg font-medium text-primary transition-colors hover:text-primary" href="contacto.html">Contacto</a>
-      <a href="#formulario" class="flex h-12 min-w-[200px] items-center justify-center rounded bg-primary px-6 text-sm font-bold tracking-wide text-background-dark transition-transform hover:scale-105 hover:bg-yellow-400">
-        Solicitar Cotización
-      </a>
-    </div>
-  </header>
-
-  <main class="flex-grow">
-
-    <!-- HERO -->
-    <section class="relative py-24 overflow-hidden">
-      <div class="absolute inset-0 z-0">
-        <div class="absolute inset-0 bg-gradient-to-br from-background-dark via-background-dark to-black"></div>
-        <div class="absolute inset-0 opacity-[0.04]" style="background-image: linear-gradient(to right, #fab41e 1px, transparent 1px), linear-gradient(to bottom, #fab41e 1px, transparent 1px); background-size: 60px 60px;"></div>
-        <div class="absolute top-0 right-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl -translate-y-1/2"></div>
       </div>
-      <div class="relative z-10 container mx-auto px-6 lg:px-20 text-center">
-        <div class="inline-flex items-center gap-2 border border-primary/30 bg-primary/5 px-4 py-2 mb-8">
-          <span class="material-symbols-outlined text-primary text-sm">chat</span>
-          <span class="text-xs font-bold uppercase tracking-widest text-primary">Hablemos</span>
-        </div>
-        <h1 class="text-5xl md:text-7xl font-display font-black uppercase text-white mb-6 leading-none">
-          Contacto &<br/><span class="text-outline">Cotización</span>
-        </h1>
-        <p class="text-gray-400 text-xl max-w-2xl mx-auto leading-relaxed">
-          Respondemos rápido. Completá el formulario o contactanos por el canal que prefieras y un asesor se comunicará a la brevedad.
-        </p>
-        <!-- Tabs de navegación interna -->
-        <div class="flex flex-wrap justify-center gap-3 mt-10">
-          <a href="#formulario" class="flex items-center gap-2 px-5 py-2.5 border border-border-dark text-text-muted text-sm font-medium hover:border-primary hover:text-primary transition-all">
-            <span class="material-symbols-outlined text-base">request_quote</span>Cotización
-          </a>
-          <a href="#servicio-tecnico" class="flex items-center gap-2 px-5 py-2.5 border border-border-dark text-text-muted text-sm font-medium hover:border-primary hover:text-primary transition-all">
-            <span class="material-symbols-outlined text-base">build</span>Servicio Técnico
-          </a>
-          <a href="#ubicacion" class="flex items-center gap-2 px-5 py-2.5 border border-border-dark text-text-muted text-sm font-medium hover:border-primary hover:text-primary transition-all">
-            <span class="material-symbols-outlined text-base">location_on</span>Ubicación
-          </a>
-          <a href="#redes" class="flex items-center gap-2 px-5 py-2.5 border border-border-dark text-text-muted text-sm font-medium hover:border-primary hover:text-primary transition-all">
-            <span class="material-symbols-outlined text-base">share</span>Redes
-          </a>
-        </div>
-      </div>
-    </section>
+    </header>
 
-    <!-- ============================================================
+    <main class="flex-grow">
+
+      <!-- HERO -->
+      <section class="relative py-24 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+          <div class="absolute inset-0 bg-cover bg-center"
+            style="background-image: url('images/productos/img-hero-ws110.jpg'); filter: brightness(0.35) saturate(1.1);">
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/75"></div>
+        </div>
+        <div class="relative z-10 container mx-auto px-6 lg:px-20 text-center">
+          <div class="inline-flex items-center gap-2 border border-primary/30 bg-primary/5 px-4 py-2 mb-8">
+            <span class="material-symbols-outlined text-primary text-sm">chat</span>
+            <span class="text-xs font-bold uppercase tracking-widest text-primary">Hablemos</span>
+          </div>
+          <h1 class="text-5xl md:text-7xl font-display font-black uppercase text-white mb-6 leading-none">
+            Contacto &<br /><span class="text-outline">Cotización</span>
+          </h1>
+          <p class="text-gray-400 text-xl max-w-2xl mx-auto leading-relaxed">
+            Respondemos rápido. Completá el formulario o contactanos por el canal que prefieras y un asesor se
+            comunicará a la brevedad.
+          </p>
+          <!-- Tabs de navegación interna -->
+          <div class="flex flex-wrap justify-center gap-3 mt-10">
+            <a href="#formulario"
+              class="flex items-center gap-2 px-5 py-2.5 border border-border-dark text-text-muted text-sm font-medium hover:border-primary hover:text-primary transition-all">
+              <span class="material-symbols-outlined text-base">request_quote</span>Cotización
+            </a>
+            <a href="#servicio-tecnico"
+              class="flex items-center gap-2 px-5 py-2.5 border border-border-dark text-text-muted text-sm font-medium hover:border-primary hover:text-primary transition-all">
+              <span class="material-symbols-outlined text-base">build</span>Servicio Técnico
+            </a>
+            <a href="#ubicacion"
+              class="flex items-center gap-2 px-5 py-2.5 border border-border-dark text-text-muted text-sm font-medium hover:border-primary hover:text-primary transition-all">
+              <span class="material-symbols-outlined text-base">location_on</span>Ubicación
+            </a>
+            <a href="#redes"
+              class="flex items-center gap-2 px-5 py-2.5 border border-border-dark text-text-muted text-sm font-medium hover:border-primary hover:text-primary transition-all">
+              <span class="material-symbols-outlined text-base">share</span>Redes
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
          SECCIÓN 1 – FORMULARIO DE COTIZACIÓN
     ============================================================ -->
-    <section id="formulario" class="py-24 bg-background-dark relative">
-      <div class="container mx-auto px-6 lg:px-20">
+      <section id="formulario" class="py-24 bg-background-dark relative">
+        <div class="container mx-auto px-6 lg:px-20">
 
-        <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
+          <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
 
-          <!-- Col izquierda: info rápida -->
-          <div class="lg:col-span-2 reveal">
-            <div class="inline-flex items-center gap-2 border border-primary/30 bg-primary/5 px-3 py-1.5 mb-6">
-              <span class="material-symbols-outlined text-primary text-sm">request_quote</span>
-              <span class="text-xs font-bold uppercase tracking-widest text-primary">Formulario</span>
-            </div>
-            <h2 class="text-4xl font-display font-black text-white uppercase mb-4">Solicitar<br/><span class="text-primary">Cotización</span></h2>
-            <p class="text-gray-400 leading-relaxed mb-8">
-              Completá el formulario y un asesor especializado te contactará en menos de 24 horas con una propuesta adaptada a tu operación.
-            </p>
+            <!-- Col izquierda: info rápida -->
+            <div class="lg:col-span-2 reveal">
+              <div class="inline-flex items-center gap-2 border border-primary/30 bg-primary/5 px-3 py-1.5 mb-6">
+                <span class="material-symbols-outlined text-primary text-sm">request_quote</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-primary">Formulario</span>
+              </div>
+              <h2 class="text-4xl font-display font-black text-white uppercase mb-4">Solicitar<br /><span
+                  class="text-primary">Cotización</span></h2>
+              <p class="text-gray-400 leading-relaxed mb-8">
+                Completá el formulario y un asesor especializado te contactará en menos de 24 horas con una propuesta
+                adaptada a tu operación.
+              </p>
 
-            <!-- Info de contacto directo -->
-            <div class="space-y-4">
-              <a href="https://wa.me/5491100000000" target="_blank"
-                 class="flex items-center gap-4 p-4 border border-white/5 bg-surface-dark hover:border-primary/30 transition-all group">
-                <div class="w-10 h-10 bg-[#25D366]/10 border border-[#25D366]/20 flex items-center justify-center group-hover:bg-[#25D366]/20 transition-colors">
-                  <svg class="w-5 h-5 fill-[#25D366]" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-                </div>
-                <div>
-                  <p class="text-xs font-bold uppercase tracking-widest text-text-muted mb-0.5">WhatsApp directo</p>
-                  <p class="text-white text-sm font-medium">+54 11 0000-0000</p>
-                </div>
-                <span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors ml-auto text-base">open_in_new</span>
-              </a>
+              <!-- Info de contacto directo -->
+              <div class="space-y-4">
+                <a href="https://wa.me/541132791042" target="_blank"
+                  class="flex items-center gap-4 p-4 border border-white/5 bg-surface-dark hover:border-primary/30 transition-all group">
+                  <div
+                    class="w-10 h-10 bg-[#25D366]/10 border border-[#25D366]/20 flex items-center justify-center group-hover:bg-[#25D366]/20 transition-colors">
+                    <svg class="w-5 h-5 fill-[#25D366]" viewBox="0 0 24 24">
+                      <path
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-xs font-bold uppercase tracking-widest text-text-muted mb-0.5">WhatsApp directo</p>
+                    <p class="text-white text-sm font-medium">+54 11 3279-1042</p>
+                  </div>
+                  <span
+                    class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors ml-auto text-base">open_in_new</span>
+                </a>
 
-              <a href="mailto:info@euroalfa.com.ar"
-                 class="flex items-center gap-4 p-4 border border-white/5 bg-surface-dark hover:border-primary/30 transition-all group">
-                <div class="w-10 h-10 bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <span class="material-symbols-outlined text-primary text-xl">mail</span>
-                </div>
-                <div>
-                  <p class="text-xs font-bold uppercase tracking-widest text-text-muted mb-0.5">Email</p>
-                  <p class="text-white text-sm font-medium">info@euroalfa.com.ar</p>
-                </div>
-                <span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors ml-auto text-base">open_in_new</span>
-              </a>
-            </div>
+                <a href="mailto:ventas@euroalfamaquinarias.com"
+                  class="flex items-center gap-4 p-4 border border-white/5 bg-surface-dark hover:border-primary/30 transition-all group">
+                  <div
+                    class="w-10 h-10 bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <span class="material-symbols-outlined text-primary text-xl">mail</span>
+                  </div>
+                  <div>
+                    <p class="text-xs font-bold uppercase tracking-widest text-text-muted mb-0.5">Email</p>
+                    <p class="text-white text-sm font-medium">ventas@euroalfamaquinarias.com</p>
+                  </div>
+                  <span
+                    class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors ml-auto text-base">open_in_new</span>
+                </a>
+              </div>
 
-            <!-- Tiempos de respuesta -->
-            <div class="mt-8 p-5 border border-primary/20 bg-primary/5">
-              <p class="text-xs font-bold uppercase tracking-widest text-primary mb-3">Tiempo de respuesta</p>
-              <div class="space-y-2">
-                <div class="flex items-center justify-between text-sm">
-                  <span class="text-gray-400">WhatsApp</span>
-                  <span class="text-white font-medium">Menos de 2 hs</span>
-                </div>
-                <div class="flex items-center justify-between text-sm">
-                  <span class="text-gray-400">Formulario / Email</span>
-                  <span class="text-white font-medium">Menos de 24 hs</span>
-                </div>
-                <div class="flex items-center justify-between text-sm">
-                  <span class="text-gray-400">Horario de atención</span>
-                  <span class="text-white font-medium">Lun–Vie 8 a 18 hs</span>
+              <!-- Tiempos de respuesta -->
+              <div class="mt-8 p-5 border border-primary/20 bg-primary/5">
+                <p class="text-xs font-bold uppercase tracking-widest text-primary mb-3">Tiempo de respuesta</p>
+                <div class="space-y-2">
+                  <div class="flex items-center justify-between text-sm">
+                    <span class="text-gray-400">WhatsApp</span>
+                    <span class="text-white font-medium">Menos de 2 hs</span>
+                  </div>
+                  <div class="flex items-center justify-between text-sm">
+                    <span class="text-gray-400">Formulario / Email</span>
+                    <span class="text-white font-medium">Menos de 24 hs</span>
+                  </div>
+                  <div class="flex items-center justify-between text-sm">
+                    <span class="text-gray-400">Horario de atención</span>
+                    <span class="text-white font-medium">Lun-Vie 9 a 18 hs</span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Col derecha: formulario -->
-          <div class="lg:col-span-3 reveal">
-            <div class="border border-border-dark bg-surface-dark p-8 md:p-10 relative">
-              <!-- Decoración geométrica -->
-              <div class="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-primary/20"></div>
-              <div class="absolute bottom-0 left-0 w-20 h-20 border-b-2 border-l-2 border-primary/20"></div>
+            <!-- Col derecha: formulario -->
+            <div class="lg:col-span-3 reveal">
+              <div class="border border-border-dark bg-surface-dark p-8 md:p-10 relative">
+                <!-- Decoración geométrica -->
+                <div class="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-primary/20"></div>
+                <div class="absolute bottom-0 left-0 w-20 h-20 border-b-2 border-l-2 border-primary/20"></div>
 
-              <h3 class="text-xl font-display font-bold text-white uppercase tracking-wider mb-8">Datos de consulta</h3>
+                <h3 class="text-xl font-display font-bold text-white uppercase tracking-wider mb-8">Datos de consulta
+                </h3>
 
-              <form id="contactForm" class="space-y-5" novalidate>
+                <form id="contactForm" class="space-y-5" novalidate>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div>
+                      <label class="block text-xs font-bold uppercase tracking-widest text-text-muted mb-2">Nombre y
+                        apellido *</label>
+                      <input type="text" name="nombre" placeholder="Juan García" class="form-input" required />
+                    </div>
+                    <div>
+                      <label
+                        class="block text-xs font-bold uppercase tracking-widest text-text-muted mb-2">Empresa</label>
+                      <input type="text" name="empresa" placeholder="Mi Empresa SRL" class="form-input" />
+                    </div>
+                  </div>
+
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div>
+                      <label class="block text-xs font-bold uppercase tracking-widest text-text-muted mb-2">Teléfono
+                        *</label>
+                      <input type="tel" name="telefono" placeholder="+54 11 0000-0000" class="form-input" required />
+                    </div>
+                    <div>
+                      <label class="block text-xs font-bold uppercase tracking-widest text-text-muted mb-2">Email
+                        *</label>
+                      <input type="email" name="email" placeholder="correo@empresa.com" class="form-input" required />
+                    </div>
+                  </div>
+
                   <div>
-                    <label class="block text-xs font-bold uppercase tracking-widest text-text-muted mb-2">Nombre y apellido *</label>
-                    <input type="text" name="nombre" placeholder="Juan García" class="form-input" required/>
+                    <label class="block text-xs font-bold uppercase tracking-widest text-text-muted mb-2">Rubro /
+                      Industria</label>
+                    <select name="rubro" class="form-input">
+                      <option value="" disabled selected>Seleccioná tu industria...</option>
+                      <option value="construccion">Construcción</option>
+                      <option value="agricola">Agrícola</option>
+                      <option value="movimiento-suelos">Movimiento de suelos</option>
+                      <option value="municipio">Municipio / Estado</option>
+                      <option value="aserradero">Aserradero</option>
+                      <option value="logistica">Logística y depósitos</option>
+                      <option value="otro">Otro</option>
+                    </select>
                   </div>
+
                   <div>
-                    <label class="block text-xs font-bold uppercase tracking-widest text-text-muted mb-2">Empresa</label>
-                    <input type="text" name="empresa" placeholder="Mi Empresa SRL" class="form-input"/>
+                    <label class="block text-xs font-bold uppercase tracking-widest text-text-muted mb-2">Equipo de
+                      interés</label>
+                    <select name="equipo" class="form-input">
+                      <option value="" disabled selected>¿Qué equipo te interesa?</option>
+                      <option value="grua-camion">Grúas sobre camión</option>
+                      <option value="grua-terreno">Grúas todo terreno</option>
+                      <option value="pala">Palas cargadoras</option>
+                      <option value="autoelevador">Autoelevadores</option>
+                      <option value="retroexcavadora">Retroexcavadoras</option>
+                      <option value="motoniveladora">Motoniveladoras</option>
+                      <option value="excavadora">Excavadoras</option>
+                      <option value="repuesto">Repuesto / Postventa</option>
+                      <option value="trading">Servicio de Trading</option>
+                      <option value="otro">Otro / No sé aún</option>
+                    </select>
                   </div>
-                </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label class="block text-xs font-bold uppercase tracking-widest text-text-muted mb-2">Teléfono *</label>
-                    <input type="tel" name="telefono" placeholder="+54 11 0000-0000" class="form-input" required/>
+                    <label class="block text-xs font-bold uppercase tracking-widest text-text-muted mb-2">Mensaje /
+                      Requerimiento *</label>
+                    <textarea name="mensaje" rows="4"
+                      placeholder="Contanos sobre tu proyecto, necesidad o consulta. Cuanto más detalle nos des, mejor podemos asesorarte."
+                      class="form-input resize-none" required></textarea>
                   </div>
-                  <div>
-                    <label class="block text-xs font-bold uppercase tracking-widest text-text-muted mb-2">Email *</label>
-                    <input type="email" name="email" placeholder="correo@empresa.com" class="form-input" required/>
+
+                  <!-- Error message -->
+                  <div id="formError" class="hidden p-4 border border-red-500/30 bg-red-500/10 text-red-400 text-sm">
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-base">error</span>
+                      Por favor completá los campos obligatorios (*)
+                    </div>
                   </div>
-                </div>
 
-                <div>
-                  <label class="block text-xs font-bold uppercase tracking-widest text-text-muted mb-2">Rubro / Industria</label>
-                  <select name="rubro" class="form-input">
-                    <option value="" disabled selected>Seleccioná tu industria...</option>
-                    <option value="construccion">Construcción</option>
-                    <option value="agricola">Agrícola</option>
-                    <option value="movimiento-suelos">Movimiento de suelos</option>
-                    <option value="municipio">Municipio / Estado</option>
-                    <option value="aserradero">Aserradero</option>
-                    <option value="logistica">Logística y depósitos</option>
-                    <option value="otro">Otro</option>
-                  </select>
-                </div>
+                  <button type="submit"
+                    class="w-full flex items-center justify-center gap-3 bg-primary text-black font-bold uppercase tracking-widest py-4 text-sm hover:bg-yellow-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    id="submitBtn">
+                    <span class="material-symbols-outlined text-xl">send</span>
+                    Enviar consulta
+                  </button>
 
-                <div>
-                  <label class="block text-xs font-bold uppercase tracking-widest text-text-muted mb-2">Equipo de interés</label>
-                  <select name="equipo" class="form-input">
-                    <option value="" disabled selected>¿Qué equipo te interesa?</option>
-                    <option value="grua-camion">Grúas sobre camión</option>
-                    <option value="grua-terreno">Grúas todo terreno</option>
-                    <option value="pala">Palas cargadoras</option>
-                    <option value="autoelevador">Autoelevadores</option>
-                    <option value="retroexcavadora">Retroexcavadoras</option>
-                    <option value="motoniveladora">Motoniveladoras</option>
-                    <option value="excavadora">Excavadoras</option>
-                    <option value="repuesto">Repuesto / Postventa</option>
-                    <option value="trading">Servicio de Trading</option>
-                    <option value="otro">Otro / No sé aún</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label class="block text-xs font-bold uppercase tracking-widest text-text-muted mb-2">Mensaje / Requerimiento *</label>
-                  <textarea name="mensaje" rows="4" placeholder="Contanos sobre tu proyecto, necesidad o consulta. Cuanto más detalle nos des, mejor podemos asesorarte." class="form-input resize-none" required></textarea>
-                </div>
-
-                <!-- Error message -->
-                <div id="formError" class="hidden p-4 border border-red-500/30 bg-red-500/10 text-red-400 text-sm">
-                  <div class="flex items-center gap-2">
-                    <span class="material-symbols-outlined text-base">error</span>
-                    Por favor completá los campos obligatorios (*)
-                  </div>
-                </div>
-
-                <button type="submit"
-                  class="w-full flex items-center justify-center gap-3 bg-primary text-black font-bold uppercase tracking-widest py-4 text-sm hover:bg-yellow-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                  id="submitBtn">
-                  <span class="material-symbols-outlined text-xl">send</span>
-                  Enviar consulta
-                </button>
-
-                <p class="text-center text-xs text-text-muted">
-                  * Campos obligatorios. Tu información es confidencial y nunca será compartida.
-                </p>
-              </form>
+                  <p class="text-center text-xs text-text-muted">
+                    * Campos obligatorios. Tu información es confidencial y nunca será compartida.
+                  </p>
+                </form>
+              </div>
             </div>
+
           </div>
-
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ============================================================
+      <!-- ============================================================
          SECCIÓN 2 – SERVICIO TÉCNICO
     ============================================================ -->
-    <section id="servicio-tecnico" class="py-24 bg-surface-dark relative overflow-hidden">
-      <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/3 rounded-full blur-3xl"></div>
-      <div class="container mx-auto px-6 lg:px-20">
+      <section id="servicio-tecnico" class="py-24 bg-surface-dark relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/3 rounded-full blur-3xl"></div>
+        <div class="container mx-auto px-6 lg:px-20">
 
-        <div class="flex items-center gap-4 mb-12 reveal">
-          <div class="w-12 h-12 bg-primary flex items-center justify-center flex-shrink-0">
-            <span class="material-symbols-outlined text-black text-2xl">build</span>
+          <div class="flex items-center gap-4 mb-12 reveal">
+            <div class="w-12 h-12 bg-primary flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-black text-2xl">build</span>
+            </div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-widest text-primary mb-1">Canal especializado</p>
+              <h2 class="text-4xl md:text-5xl font-display font-black text-white uppercase leading-none">Servicio <span
+                  class="text-primary">Técnico</span></h2>
+            </div>
           </div>
-          <div>
-            <p class="text-xs font-bold uppercase tracking-widest text-primary mb-1">Canal especializado</p>
-            <h2 class="text-4xl md:text-5xl font-display font-black text-white uppercase leading-none">Servicio <span class="text-primary">Técnico</span></h2>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+            <!-- Card: Consulta técnica -->
+            <div
+              class="group p-8 border border-white/5 bg-background-dark hover:border-primary/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(250,180,30,0.05)] relative overflow-hidden reveal">
+              <div
+                class="absolute top-0 left-0 w-full h-[2px] bg-primary scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100">
+              </div>
+              <div
+                class="w-14 h-14 bg-background-dark border border-white/10 rounded-full flex items-center justify-center mb-6 text-text-muted group-hover:text-primary group-hover:border-primary/30 transition-all">
+                <span class="material-symbols-outlined text-2xl">contact_support</span>
+              </div>
+              <h4 class="text-white font-bold uppercase tracking-wider mb-3">Consulta técnica</h4>
+              <p class="text-text-muted text-sm leading-relaxed mb-6">
+                ¿Tenés dudas sobre el funcionamiento, especificaciones o compatibilidad de un equipo? Nuestro equipo
+                técnico te asesora sin costo.
+              </p>
+              <a href="https://wa.me/541132791042?text=Hola,%20necesito%20asesoramiento%20técnico" target="_blank"
+                class="inline-flex items-center gap-2 text-primary text-sm font-bold hover:underline">
+                Consultar ahora
+                <span class="material-symbols-outlined text-base">arrow_forward</span>
+              </a>
+            </div>
+
+            <!-- Card: Solicitud de repuesto -->
+            <div
+              class="group p-8 border border-white/5 bg-background-dark hover:border-primary/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(250,180,30,0.05)] relative overflow-hidden reveal">
+              <div
+                class="absolute top-0 left-0 w-full h-[2px] bg-primary scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100">
+              </div>
+              <div
+                class="w-14 h-14 bg-background-dark border border-white/10 rounded-full flex items-center justify-center mb-6 text-text-muted group-hover:text-primary group-hover:border-primary/30 transition-all">
+                <span class="material-symbols-outlined text-2xl">settings_suggest</span>
+              </div>
+              <h4 class="text-white font-bold uppercase tracking-wider mb-3">Solicitud de repuesto</h4>
+              <p class="text-text-muted text-sm leading-relaxed mb-6">
+                Necesitás una pieza específica para tu equipo. Indicanos marca, modelo y número de parte y lo
+                gestionamos con prioridad.
+              </p>
+              <a href="#formulario"
+                class="inline-flex items-center gap-2 text-primary text-sm font-bold hover:underline">
+                Solicitar repuesto
+                <span class="material-symbols-outlined text-base">arrow_forward</span>
+              </a>
+            </div>
+
+            <!-- Card: Emergencia operativa -->
+            <div
+              class="group p-8 border border-primary/20 bg-primary/5 hover:border-primary/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(250,180,30,0.1)] relative overflow-hidden reveal">
+              <div class="absolute top-0 left-0 w-full h-[2px] bg-primary"></div>
+              <div
+                class="w-14 h-14 bg-primary/20 border border-primary/40 rounded-full flex items-center justify-center mb-6 text-primary">
+                <span class="material-symbols-outlined text-2xl">emergency</span>
+              </div>
+              <h4 class="text-white font-bold uppercase tracking-wider mb-3">Emergencia operativa</h4>
+              <p class="text-text-muted text-sm leading-relaxed mb-6">
+                ¿Tu equipo parado? Atendemos urgencias con prioridad máxima. Contactanos directamente por WhatsApp para
+                una respuesta inmediata.
+              </p>
+              <a href="https://wa.me/541132791042?text=URGENTE:%20equipo%20parado,%20necesito%20asistencia"
+                target="_blank"
+                class="inline-flex items-center gap-2 bg-primary text-black text-sm font-bold px-4 py-2 hover:bg-yellow-400 transition-colors">
+                WhatsApp urgente
+                <span class="material-symbols-outlined text-base">open_in_new</span>
+              </a>
+            </div>
+
           </div>
+
+          <!-- Proceso de atención -->
+
         </div>
+      </section>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-
-          <!-- Card: Consulta técnica -->
-          <div class="group p-8 border border-white/5 bg-background-dark hover:border-primary/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(250,180,30,0.05)] relative overflow-hidden reveal">
-            <div class="absolute top-0 left-0 w-full h-[2px] bg-primary scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100"></div>
-            <div class="w-14 h-14 bg-background-dark border border-white/10 rounded-full flex items-center justify-center mb-6 text-text-muted group-hover:text-primary group-hover:border-primary/30 transition-all">
-              <span class="material-symbols-outlined text-2xl">contact_support</span>
-            </div>
-            <h4 class="text-white font-bold uppercase tracking-wider mb-3">Consulta técnica</h4>
-            <p class="text-text-muted text-sm leading-relaxed mb-6">
-              ¿Tenés dudas sobre el funcionamiento, especificaciones o compatibilidad de un equipo? Nuestro equipo técnico te asesora sin costo.
-            </p>
-            <a href="https://wa.me/5491100000000?text=Hola,%20necesito%20asesoramiento%20técnico" target="_blank"
-               class="inline-flex items-center gap-2 text-primary text-sm font-bold hover:underline">
-              Consultar ahora
-              <span class="material-symbols-outlined text-base">arrow_forward</span>
-            </a>
-          </div>
-
-          <!-- Card: Solicitud de repuesto -->
-          <div class="group p-8 border border-white/5 bg-background-dark hover:border-primary/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(250,180,30,0.05)] relative overflow-hidden reveal">
-            <div class="absolute top-0 left-0 w-full h-[2px] bg-primary scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100"></div>
-            <div class="w-14 h-14 bg-background-dark border border-white/10 rounded-full flex items-center justify-center mb-6 text-text-muted group-hover:text-primary group-hover:border-primary/30 transition-all">
-              <span class="material-symbols-outlined text-2xl">settings_suggest</span>
-            </div>
-            <h4 class="text-white font-bold uppercase tracking-wider mb-3">Solicitud de repuesto</h4>
-            <p class="text-text-muted text-sm leading-relaxed mb-6">
-              Necesitás una pieza específica para tu equipo. Indicanos marca, modelo y número de parte y lo gestionamos con prioridad.
-            </p>
-            <a href="#formulario"
-               class="inline-flex items-center gap-2 text-primary text-sm font-bold hover:underline">
-              Solicitar repuesto
-              <span class="material-symbols-outlined text-base">arrow_forward</span>
-            </a>
-          </div>
-
-          <!-- Card: Emergencia operativa -->
-          <div class="group p-8 border border-primary/20 bg-primary/5 hover:border-primary/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(250,180,30,0.1)] relative overflow-hidden reveal">
-            <div class="absolute top-0 left-0 w-full h-[2px] bg-primary"></div>
-            <div class="w-14 h-14 bg-primary/20 border border-primary/40 rounded-full flex items-center justify-center mb-6 text-primary">
-              <span class="material-symbols-outlined text-2xl">emergency</span>
-            </div>
-            <h4 class="text-white font-bold uppercase tracking-wider mb-3">Emergencia operativa</h4>
-            <p class="text-text-muted text-sm leading-relaxed mb-6">
-              ¿Tu equipo parado? Atendemos urgencias con prioridad máxima. Contactanos directamente por WhatsApp para una respuesta inmediata.
-            </p>
-            <a href="https://wa.me/5491100000000?text=URGENTE:%20equipo%20parado,%20necesito%20asistencia" target="_blank"
-               class="inline-flex items-center gap-2 bg-primary text-black text-sm font-bold px-4 py-2 hover:bg-yellow-400 transition-colors">
-              WhatsApp urgente
-              <span class="material-symbols-outlined text-base">open_in_new</span>
-            </a>
-          </div>
-
-        </div>
-
-        <!-- Proceso de atención -->
-        <div class="mt-16 p-8 border border-border-dark bg-background-dark reveal">
-          <h3 class="text-lg font-display font-bold text-white uppercase tracking-wider mb-8 text-center">¿Cómo funciona la atención técnica?</h3>
-          <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-            <!-- Línea conectora (solo desktop) -->
-            <div class="hidden md:block absolute top-[22px] left-[12.5%] right-[12.5%] h-px bg-border-dark"></div>
-
-            <div class="flex flex-col items-center text-center relative">
-              <div class="w-11 h-11 bg-primary text-black font-black text-sm flex items-center justify-center mb-4 relative z-10">01</div>
-              <h5 class="text-white font-bold uppercase tracking-wider text-xs mb-2">Contacto</h5>
-              <p class="text-text-muted text-xs leading-relaxed">Nos comunicás tu inconveniente por WhatsApp, email o formulario</p>
-            </div>
-            <div class="flex flex-col items-center text-center relative">
-              <div class="w-11 h-11 bg-primary/20 border border-primary/40 text-primary font-black text-sm flex items-center justify-center mb-4 relative z-10">02</div>
-              <h5 class="text-white font-bold uppercase tracking-wider text-xs mb-2">Diagnóstico</h5>
-              <p class="text-text-muted text-xs leading-relaxed">Nuestro equipo analiza el caso y te da una respuesta técnica</p>
-            </div>
-            <div class="flex flex-col items-center text-center relative">
-              <div class="w-11 h-11 bg-primary/20 border border-primary/40 text-primary font-black text-sm flex items-center justify-center mb-4 relative z-10">03</div>
-              <h5 class="text-white font-bold uppercase tracking-wider text-xs mb-2">Solución</h5>
-              <p class="text-text-muted text-xs leading-relaxed">Te proponemos la solución más eficiente: repuesto, ajuste o reemplazo</p>
-            </div>
-            <div class="flex flex-col items-center text-center relative">
-              <div class="w-11 h-11 bg-primary/20 border border-primary/40 text-primary font-black text-sm flex items-center justify-center mb-4 relative z-10">04</div>
-              <h5 class="text-white font-bold uppercase tracking-wider text-xs mb-2">Seguimiento</h5>
-              <p class="text-text-muted text-xs leading-relaxed">Nos aseguramos de que tu equipo esté operativo y el problema resuelto</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
+      <!-- ============================================================
          SECCIÓN 3 – UBICACIÓN
     ============================================================ -->
-    <section id="ubicacion" class="py-24 bg-background-dark relative overflow-hidden">
-      <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary/3 rounded-full blur-3xl"></div>
-      <div class="container mx-auto px-6 lg:px-20">
+      <section id="ubicacion" class="py-24 bg-background-dark relative overflow-hidden">
+        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary/3 rounded-full blur-3xl"></div>
+        <div class="container mx-auto px-6 lg:px-20">
 
-        <div class="flex items-center gap-4 mb-12 reveal">
-          <div class="w-12 h-12 bg-primary flex items-center justify-center flex-shrink-0">
-            <span class="material-symbols-outlined text-black text-2xl">location_on</span>
-          </div>
-          <div>
-            <p class="text-xs font-bold uppercase tracking-widest text-primary mb-1">Dónde encontrarnos</p>
-            <h2 class="text-4xl md:text-5xl font-display font-black text-white uppercase leading-none">Ubicación & <span class="text-primary">Presencia</span></h2>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-
-          <!-- Info de ubicación -->
-          <div class="space-y-6 reveal">
-            <p class="text-gray-400 text-lg leading-relaxed">
-              Operamos desde Buenos Aires con alcance a todo el país, y contamos con oficinas propias en China para el servicio de trading internacional.
-            </p>
-
-            <!-- Sede Argentina -->
-            <div class="border border-white/5 bg-surface-dark p-6">
-              <div class="flex items-center gap-3 mb-4">
-                <div class="w-8 h-8 bg-primary flex items-center justify-center flex-shrink-0">
-                  <span class="material-symbols-outlined text-black text-base">home_work</span>
-                </div>
-                <h4 class="text-white font-bold uppercase tracking-wider text-sm">Sede central — Argentina</h4>
-              </div>
-              <ul class="space-y-3">
-                <li class="flex items-start gap-3 text-sm text-gray-400">
-                  <span class="material-symbols-outlined text-primary text-base mt-0.5">location_on</span>
-                  Buenos Aires, Argentina
-                </li>
-                <li class="flex items-start gap-3 text-sm text-gray-400">
-                  <span class="material-symbols-outlined text-primary text-base mt-0.5">schedule</span>
-                  Lunes a Viernes, 8:00 a 18:00 hs
-                </li>
-                <li class="flex items-start gap-3 text-sm text-gray-400">
-                  <span class="material-symbols-outlined text-primary text-base mt-0.5">phone</span>
-                  +54 11 0000-0000
-                </li>
-                <li class="flex items-start gap-3 text-sm text-gray-400">
-                  <span class="material-symbols-outlined text-primary text-base mt-0.5">mail</span>
-                  info@euroalfa.com.ar
-                </li>
-              </ul>
+          <div class="flex items-center gap-4 mb-12 reveal">
+            <div class="w-12 h-12 bg-primary flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-black text-2xl">location_on</span>
             </div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-widest text-primary mb-1">Dónde encontrarnos</p>
+              <h2 class="text-4xl md:text-5xl font-display font-black text-white uppercase leading-none">Ubicación &
+                <span class="text-primary">Presencia</span>
+              </h2>
+            </div>
+          </div>
 
-            <!-- Oficinas China -->
-            <div class="border border-white/5 bg-surface-dark p-6">
-              <div class="flex items-center gap-3 mb-4">
-                <div class="w-8 h-8 bg-primary/20 border border-primary/40 flex items-center justify-center flex-shrink-0">
-                  <span class="material-symbols-outlined text-primary text-base">language</span>
-                </div>
-                <h4 class="text-white font-bold uppercase tracking-wider text-sm">Oficinas de Trading — China</h4>
-              </div>
-              <p class="text-sm text-gray-400 leading-relaxed mb-3">
-                Contamos con dos oficinas operativas en China, dedicadas exclusivamente a la búsqueda de proveedores, auditoría de calidad y gestión logística internacional.
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+            <!-- Info de ubicación -->
+            <div class="space-y-6 reveal">
+              <p class="text-gray-400 text-lg leading-relaxed">
+                Operamos desde Buenos Aires con alcance a todo el país, y contamos con oficinas propias en China para el
+                servicio de trading internacional.
               </p>
-              <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary">
-                <span class="material-symbols-outlined text-sm">verified</span>
-                Presencia propia en origen
-              </div>
-            </div>
 
-            <!-- Cobertura nacional -->
-            <div class="border border-primary/20 bg-primary/5 p-5">
-              <div class="flex items-center gap-2 mb-2">
-                <span class="material-symbols-outlined text-primary text-base">map</span>
-                <p class="text-xs font-bold uppercase tracking-widest text-primary">Cobertura</p>
+              <!-- Sede Argentina -->
+              <div class="border border-white/5 bg-surface-dark p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-8 h-8 bg-primary flex items-center justify-center flex-shrink-0">
+                    <span class="material-symbols-outlined text-black text-base">home_work</span>
+                  </div>
+                  <h4 class="text-white font-bold uppercase tracking-wider text-sm">Sede central — Argentina</h4>
+                </div>
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-3 text-sm text-gray-400">
+                    <span class="material-symbols-outlined text-primary text-base mt-0.5">location_on</span>
+                    Colectora Panamericana (1617) Tigre, Buenos Aires
+                  </li>
+                  <li class="flex items-start gap-3 text-sm text-gray-400">
+                    <span class="material-symbols-outlined text-primary text-base mt-0.5">schedule</span>
+                    Lunes a Viernes, 9:00 a 18:00 hs
+                  </li>
+                  <li class="flex items-start gap-3 text-sm text-gray-400">
+                    <span class="material-symbols-outlined text-primary text-base mt-0.5">phone</span>
+                    +54 11 3279-1042 / +54 11 5311-9700
+                  </li>
+                  <li class="flex items-start gap-3 text-sm text-gray-400">
+                    <span class="material-symbols-outlined text-primary text-base mt-0.5">mail</span>
+                    ventas@euroalfamaquinarias.com
+                  </li>
+                </ul>
               </div>
-              <p class="text-sm text-gray-400">Entregamos en todo el territorio nacional. El flete local está incluido en la gestión integral de cada operación.</p>
-            </div>
-          </div>
 
-          <!-- Mapa placeholder estilizado -->
-          <div class="reveal">
-            <div class="border border-border-dark bg-surface-dark relative overflow-hidden aspect-[4/3]">
-              <!-- Mapa con iframe (reemplazar con URL real de Google Maps embed) -->
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d209.15977937697577!2d-58.37726898756553!3d-34.60373497310066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacf7a2b9d1d%3A0xe64c0b6bea614e0b!2sBuenos+Aires!5e0!3m2!1ses!2sar!4v1700000000000!5m2!1ses!2sar"
-                width="100%" height="100%" style="border:0; filter: grayscale(100%) invert(90%) contrast(90%); opacity: 0.7;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade" title="Ubicación ALFA - Buenos Aires">
-              </iframe>
-              <!-- Overlay con pin personalizado -->
-              <div class="absolute inset-0 pointer-events-none flex items-center justify-center">
-                <div class="bg-primary text-black px-4 py-2 font-bold uppercase tracking-wider text-xs shadow-2xl flex items-center gap-2">
-                  <span class="material-symbols-outlined text-sm">location_on</span>
-                  ALFA – Buenos Aires
+              <!-- Oficinas China -->
+              <div class="border border-white/5 bg-surface-dark p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <div
+                    class="w-8 h-8 bg-primary/20 border border-primary/40 flex items-center justify-center flex-shrink-0">
+                    <span class="material-symbols-outlined text-primary text-base">language</span>
+                  </div>
+                  <h4 class="text-white font-bold uppercase tracking-wider text-sm">Oficinas de Trading — China</h4>
+                </div>
+                <p class="text-sm text-gray-400 leading-relaxed mb-3">
+                  Contamos con dos oficinas operativas en China, dedicadas exclusivamente a la búsqueda de proveedores,
+                  auditoría de calidad y gestión logística internacional.
+                </p>
+                <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary">
+                  <span class="material-symbols-outlined text-sm">verified</span>
+                  Presencia propia en origen
                 </div>
               </div>
+
+              <!-- Cobertura nacional -->
+              <div class="border border-primary/20 bg-primary/5 p-5">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="material-symbols-outlined text-primary text-base">map</span>
+                  <p class="text-xs font-bold uppercase tracking-widest text-primary">Cobertura</p>
+                </div>
+                <p class="text-sm text-gray-400">Entregamos en todo el territorio nacional. El flete local está incluido
+                  en la gestión integral de cada operación.</p>
+              </div>
             </div>
-            <p class="text-xs text-text-muted mt-3 text-center">* Contactanos para coordinar una visita o reunión presencial.</p>
+
+            <!-- Mapa placeholder estilizado -->
+            <div class="reveal">
+              <div class="border border-border-dark bg-surface-dark relative overflow-hidden aspect-[4/3]">
+                <!-- Mapa con iframe (reemplazar con URL real de Google Maps embed) -->
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d209.15977937697577!2d-58.37726898756553!3d-34.60373497310066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacf7a2b9d1d%3A0xe64c0b6bea614e0b!2sBuenos+Aires!5e0!3m2!1ses!2sar!4v1700000000000!5m2!1ses!2sar"
+                  width="100%" height="100%"
+                  style="border:0; filter: grayscale(100%) invert(90%) contrast(90%); opacity: 0.7;" allowfullscreen=""
+                  loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación ALFA - Buenos Aires">
+                </iframe>
+                <!-- Overlay con pin personalizado -->
+                <div class="absolute inset-0 pointer-events-none flex items-center justify-center">
+                  <div
+                    class="bg-primary text-black px-4 py-2 font-bold uppercase tracking-wider text-xs shadow-2xl flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm">location_on</span>
+                    ALFA – Buenos Aires
+                  </div>
+                </div>
+              </div>
+              <p class="text-xs text-text-muted mt-3 text-center">* Contactanos para coordinar una visita o reunión
+                presencial.</p>
+            </div>
+
           </div>
-
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ============================================================
+      <!-- ============================================================
          SECCIÓN 4 – REDES SOCIALES
     ============================================================ -->
-    <section id="redes" class="py-24 bg-surface-dark relative overflow-hidden">
-      <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/3 rounded-full blur-3xl"></div>
-      <div class="container mx-auto px-6 lg:px-20">
+      <section id="redes" class="py-24 bg-surface-dark relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/3 rounded-full blur-3xl"></div>
+        <div class="container mx-auto px-6 lg:px-20">
 
-        <div class="text-center mb-16 reveal">
-          <div class="inline-flex items-center gap-2 border border-primary/30 bg-primary/5 px-4 py-2 mb-6">
-            <span class="material-symbols-outlined text-primary text-sm">share</span>
-            <span class="text-xs font-bold uppercase tracking-widest text-primary">Seguinos</span>
+          <div class="text-center mb-16 reveal">
+            <div class="inline-flex items-center gap-2 border border-primary/30 bg-primary/5 px-4 py-2 mb-6">
+              <span class="material-symbols-outlined text-primary text-sm">share</span>
+              <span class="text-xs font-bold uppercase tracking-widest text-primary">Seguinos</span>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-display font-black text-white uppercase mb-4">Redes <span
+                class="text-primary">Sociales</span></h2>
+            <p class="text-gray-400 max-w-xl mx-auto">
+              Seguinos en Instagram para ver equipos en acción, novedades, casos de uso y contenido técnico del sector.
+            </p>
           </div>
-          <h2 class="text-4xl md:text-5xl font-display font-black text-white uppercase mb-4">Redes <span class="text-primary">Sociales</span></h2>
-          <p class="text-gray-400 max-w-xl mx-auto">
-            Seguinos en Instagram para ver equipos en acción, novedades, casos de uso y contenido técnico del sector.
-          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/alfa4rental/" target="_blank"
+              class="group flex flex-col items-center text-center p-10 border border-white/5 bg-background-dark hover:border-primary/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(250,180,30,0.08)] relative overflow-hidden reveal">
+              <div
+                class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#E1306C] via-[#F56040] to-[#FCAF45] scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100">
+              </div>
+              <div class="w-16 h-16 mb-6 flex items-center justify-center">
+                <svg class="w-12 h-12 fill-text-muted group-hover:fill-[#E1306C] transition-colors" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
+              </div>
+              <h4 class="text-white font-bold uppercase tracking-wider mb-2 text-sm">Instagram</h4>
+              <p class="text-text-muted text-xs leading-relaxed mb-4">Equipos en acción, novedades y contenido del
+                sector industrial.</p>
+              <span class="text-xs font-bold text-primary">@euroalfamaquinaria</span>
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/541132791042" target="_blank"
+              class="group flex flex-col items-center text-center p-10 border border-white/5 bg-background-dark hover:border-[#25D366]/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(37,211,102,0.08)] relative overflow-hidden reveal">
+              <div
+                class="absolute top-0 left-0 w-full h-[2px] bg-[#25D366] scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100">
+              </div>
+              <div class="w-16 h-16 mb-6 flex items-center justify-center">
+                <svg class="w-12 h-12 fill-text-muted group-hover:fill-[#25D366] transition-colors" viewBox="0 0 24 24">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                </svg>
+              </div>
+              <h4 class="text-white font-bold uppercase tracking-wider mb-2 text-sm">WhatsApp</h4>
+              <p class="text-text-muted text-xs leading-relaxed mb-4">Canal directo para consultas, cotizaciones y
+                atención personalizada.</p>
+              <span class="text-xs font-bold text-[#25D366]">Escribirnos ahora</span>
+            </a>
+
+            <!-- Web / Email -->
+            <a href="mailto:ventas@euroalfamaquinarias.com"
+              class="group flex flex-col items-center text-center p-10 border border-white/5 bg-background-dark hover:border-primary/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(250,180,30,0.08)] relative overflow-hidden reveal">
+              <div
+                class="absolute top-0 left-0 w-full h-[2px] bg-primary scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100">
+              </div>
+              <div class="w-16 h-16 mb-6 flex items-center justify-center">
+                <span
+                  class="material-symbols-outlined text-5xl text-text-muted group-hover:text-primary transition-colors">mail</span>
+              </div>
+              <h4 class="text-white font-bold uppercase tracking-wider mb-2 text-sm">Email</h4>
+              <p class="text-text-muted text-xs leading-relaxed mb-4">Para consultas formales, propuestas y
+                comunicaciones corporativas.</p>
+              <span class="text-xs font-bold text-primary">ventas@euroalfamaquinarias.com</span>
+            </a>
+
+          </div>
+
+          <!-- Mensaje final -->
+          <div class="mt-16 text-center reveal">
+            <p class="text-text-muted text-sm max-w-lg mx-auto">
+              Seguinos en nuestras redes para mantenerte actualizado con el sector y ver nuestros equipos en acción.
+            </p>
+          </div>
+
         </div>
+      </section>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+    </main>
 
-          <!-- Instagram -->
-          <a href="https://www.instagram.com/euroalfamaquinaria" target="_blank"
-             class="group flex flex-col items-center text-center p-10 border border-white/5 bg-background-dark hover:border-primary/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(250,180,30,0.08)] relative overflow-hidden reveal">
-            <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#E1306C] via-[#F56040] to-[#FCAF45] scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100"></div>
-            <div class="w-16 h-16 mb-6 flex items-center justify-center">
-              <svg class="w-12 h-12 fill-text-muted group-hover:fill-[#E1306C] transition-colors" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-            </div>
-            <h4 class="text-white font-bold uppercase tracking-wider mb-2 text-sm">Instagram</h4>
-            <p class="text-text-muted text-xs leading-relaxed mb-4">Equipos en acción, novedades y contenido del sector industrial.</p>
-            <span class="text-xs font-bold text-primary">@euroalfamaquinaria</span>
-          </a>
-
-          <!-- WhatsApp -->
-          <a href="https://wa.me/5491100000000" target="_blank"
-             class="group flex flex-col items-center text-center p-10 border border-white/5 bg-background-dark hover:border-[#25D366]/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(37,211,102,0.08)] relative overflow-hidden reveal">
-            <div class="absolute top-0 left-0 w-full h-[2px] bg-[#25D366] scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100"></div>
-            <div class="w-16 h-16 mb-6 flex items-center justify-center">
-              <svg class="w-12 h-12 fill-text-muted group-hover:fill-[#25D366] transition-colors" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-            </div>
-            <h4 class="text-white font-bold uppercase tracking-wider mb-2 text-sm">WhatsApp</h4>
-            <p class="text-text-muted text-xs leading-relaxed mb-4">Canal directo para consultas, cotizaciones y atención personalizada.</p>
-            <span class="text-xs font-bold text-[#25D366]">Escribirnos ahora</span>
-          </a>
-
-          <!-- Web / Email -->
-          <a href="mailto:info@euroalfa.com.ar"
-             class="group flex flex-col items-center text-center p-10 border border-white/5 bg-background-dark hover:border-primary/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(250,180,30,0.08)] relative overflow-hidden reveal">
-            <div class="absolute top-0 left-0 w-full h-[2px] bg-primary scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100"></div>
-            <div class="w-16 h-16 mb-6 flex items-center justify-center">
-              <span class="material-symbols-outlined text-5xl text-text-muted group-hover:text-primary transition-colors">mail</span>
-            </div>
-            <h4 class="text-white font-bold uppercase tracking-wider mb-2 text-sm">Email</h4>
-            <p class="text-text-muted text-xs leading-relaxed mb-4">Para consultas formales, propuestas y comunicaciones corporativas.</p>
-            <span class="text-xs font-bold text-primary">info@euroalfa.com.ar</span>
-          </a>
-
+    <!-- FOOTER -->
+    <footer class="mt-auto border-t border-border-dark bg-surface-dark py-12">
+      <div class="mx-auto grid max-w-[1600px] grid-cols-1 gap-12 px-6 lg:grid-cols-4 lg:px-10">
+        <div class="space-y-4">
+          <div class="flex items-center gap-2 text-white">
+            <a href="index.html"><img src="images/alfa-logo.png" class="h-12 w-auto object-contain" alt="ALFA" /></a>
+          </div>
+          <p class="text-sm text-text-muted">Diseñadas para durar. Liderando la industria con soluciones de maquinaria
+            pesada para todo tipo de terrenos y desafíos.</p>
         </div>
-
-        <!-- Mensaje final -->
-        <div class="mt-16 text-center reveal">
-          <p class="text-text-muted text-sm max-w-lg mx-auto">
-            Seguinos en nuestras redes para mantenerte actualizado con el sector y ver nuestros equipos en acción.
-          </p>
+        <div>
+          <h5 class="mb-4 text-sm font-bold uppercase tracking-wider text-white">Productos</h5>
+          <ul class="space-y-2 text-sm text-text-muted">
+            <li><a class="hover:text-primary transition-colors" href="detalle-780t.html">780 T</a></li>
+            <li><a class="hover:text-primary transition-colors" href="detalle-jk45.html">JK45</a></li>
+            <li><a class="hover:text-primary transition-colors" href="detalle-wl180.html">WL180</a></li>
+            <li><a class="hover:text-primary transition-colors" href="detalle-wl922.html">WL922</a></li>
+            <li><a class="hover:text-primary transition-colors" href="detalle-ws110.html">WS110</a></li>
+          </ul>
         </div>
-
+        <div>
+          <h5 class="mb-4 text-sm font-bold uppercase tracking-wider text-white">Empresa</h5>
+          <ul class="space-y-2 text-sm text-text-muted">
+            <li><a class="hover:text-primary transition-colors" href="quienes-somos.html">Quiénes Somos</a></li>
+            <li><a class="hover:text-primary transition-colors" href="soluciones.html">Soluciones</a></li>
+            <li><a class="hover:text-primary transition-colors" href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="mb-4 text-sm font-bold uppercase tracking-wider text-white">Contacto</h5>
+          <ul class="space-y-2 text-sm text-text-muted">
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-xs">phone</span> +54 11 5311-9700 / +54 11 3279-1042
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-xs">mail</span> <a
+                href="mailto:ventas@euroalfamaquinarias.com"
+                class="hover:text-primary transition-colors">ventas@euroalfamaquinarias.com</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-xs">location_on</span> Colectora Panamericana (1617) Tigre,
+              Bs. As.
+            </li>
+          </ul>
+        </div>
       </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="border-t border-border-dark bg-surface-dark py-12">
-    <div class="mx-auto grid max-w-[1600px] grid-cols-1 gap-12 px-6 lg:grid-cols-4 lg:px-10">
-      <div class="space-y-4">
-        <img src="images/alfa-logo.png" class="h-12 w-auto object-contain" alt="ALFA"/>
-        <p class="text-sm text-text-muted">Diseñadas para durar. Liderando la industria con soluciones de maquinaria pesada para todo tipo de terrenos y desafíos.</p>
+      <div class="mt-12 border-t border-border-dark pt-8 text-center text-xs text-text-muted">
+        © 2026 ALFA. Todos los derechos reservados.
       </div>
+    </footer>
+
+  </div>
+
+  <!-- Toast de confirmación -->
+  <div id="toast" class="fixed bottom-8 right-8 z-[9999] hidden">
+    <div class="flex items-center gap-4 bg-surface-dark border border-primary/30 px-6 py-4 shadow-2xl">
+      <span class="material-symbols-outlined text-primary text-2xl">check_circle</span>
       <div>
-        <h5 class="mb-4 text-sm font-bold uppercase tracking-wider text-white">Productos</h5>
-        <ul class="space-y-2 text-sm text-text-muted">
-          <li><a class="hover:text-primary" href="productos.html">Excavadoras</a></li>
-          <li><a class="hover:text-primary" href="productos.html">Palas Cargadoras</a></li>
-          <li><a class="hover:text-primary" href="productos.html">Retroexcavadoras</a></li>
-          <li><a class="hover:text-primary" href="productos.html">Grúas</a></li>
-        </ul>
+        <p class="text-white font-bold text-sm">¡Consulta enviada!</p>
+        <p class="text-text-muted text-xs">Te contactaremos en menos de 24 horas.</p>
       </div>
-      <div>
-        <h5 class="mb-4 text-sm font-bold uppercase tracking-wider text-white">Empresa</h5>
-        <ul class="space-y-2 text-sm text-text-muted">
-          <li><a class="hover:text-primary" href="index.html">Inicio</a></li>
-          <li><a class="hover:text-primary" href="soluciones.html">Soluciones</a></li>
-          <li><a class="hover:text-primary" href="contacto.html">Contacto</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5 class="mb-4 text-sm font-bold uppercase tracking-wider text-white">Contacto</h5>
-        <ul class="space-y-2 text-sm text-text-muted">
-          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs">phone</span> +54 11 0000-0000</li>
-          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs">mail</span> info@euroalfa.com.ar</li>
-          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs">location_on</span> Buenos Aires, Argentina</li>
-        </ul>
-      </div>
-    </div>
-    <div class="mt-12 border-t border-border-dark pt-8 text-center text-xs text-text-muted">
-      © 2026 ALFA – Euroalfa Maquinaria SRL. Todos los derechos reservados.
-    </div>
-  </footer>
-
-</div>
-
-<!-- Toast de confirmación -->
-<div id="toast" class="fixed bottom-8 right-8 z-[9999] hidden">
-  <div class="flex items-center gap-4 bg-surface-dark border border-primary/30 px-6 py-4 shadow-2xl">
-    <span class="material-symbols-outlined text-primary text-2xl">check_circle</span>
-    <div>
-      <p class="text-white font-bold text-sm">¡Consulta enviada!</p>
-      <p class="text-text-muted text-xs">Te contactaremos en menos de 24 horas.</p>
     </div>
   </div>
-</div>
 
-<script>
-  // Mobile menu
-  const mobileBtn = document.getElementById('mobile-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  if (mobileBtn && mobileMenu) {
-    mobileBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      mobileMenu.classList.toggle('flex');
-    });
-  }
-
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => observer.observe(el));
-
-  // Form handling
-  const form = document.getElementById('contactForm');
-  const submitBtn = document.getElementById('submitBtn');
-  const formError = document.getElementById('formError');
-  const toast = document.getElementById('toast');
-
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const nombre = form.querySelector('[name="nombre"]').value.trim();
-    const telefono = form.querySelector('[name="telefono"]').value.trim();
-    const email = form.querySelector('[name="email"]').value.trim();
-    const mensaje = form.querySelector('[name="mensaje"]').value.trim();
-
-    // Validación básica
-    if (!nombre || !telefono || !email || !mensaje) {
-      formError.classList.remove('hidden');
-      formError.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      return;
+  <script>
+    // Mobile menu
+    const mobileBtn = document.getElementById('mobile-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('flex');
+      });
     }
 
-    formError.classList.add('hidden');
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = '<span class="material-symbols-outlined text-xl animate-spin">progress_activity</span> Enviando...';
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
 
-    // Simulación de envío (reemplazar con lógica real)
-    setTimeout(() => {
-      submitBtn.innerHTML = '<span class="material-symbols-outlined text-xl">send</span> Enviar consulta';
-      submitBtn.disabled = false;
-      form.reset();
+    // Form handling
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const formError = document.getElementById('formError');
+    const toast = document.getElementById('toast');
 
-      // Mostrar toast
-      toast.classList.remove('hidden');
-      toast.style.opacity = '1';
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const nombre = form.querySelector('[name="nombre"]').value.trim();
+      const telefono = form.querySelector('[name="telefono"]').value.trim();
+      const email = form.querySelector('[name="email"]').value.trim();
+      const mensaje = form.querySelector('[name="mensaje"]').value.trim();
+
+      // Validación básica
+      if (!nombre || !telefono || !email || !mensaje) {
+        formError.classList.remove('hidden');
+        formError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      formError.classList.add('hidden');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span class="material-symbols-outlined text-xl animate-spin">progress_activity</span> Enviando...';
+
+      // Simulación de envío (reemplazar con lógica real)
       setTimeout(() => {
-        toast.style.opacity = '0';
-        setTimeout(() => toast.classList.add('hidden'), 400);
-      }, 4000);
-    }, 1500);
-  });
+        submitBtn.innerHTML = '<span class="material-symbols-outlined text-xl">send</span> Enviar consulta';
+        submitBtn.disabled = false;
+        form.reset();
 
-  // Limpiar error al escribir
-  form.querySelectorAll('input, textarea').forEach(el => {
-    el.addEventListener('input', () => {
-      if (el.value.trim()) formError.classList.add('hidden');
+        // Mostrar toast
+        toast.classList.remove('hidden');
+        toast.style.opacity = '1';
+        setTimeout(() => {
+          toast.style.opacity = '0';
+          setTimeout(() => toast.classList.add('hidden'), 400);
+        }, 4000);
+      }, 1500);
     });
-  });
-</script>
+
+    // Limpiar error al escribir
+    form.querySelectorAll('input, textarea').forEach(el => {
+      el.addEventListener('input', () => {
+        if (el.value.trim()) formError.classList.add('hidden');
+      });
+    });
+  </script>
 </body>
+
 </html>
