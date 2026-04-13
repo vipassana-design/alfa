@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="es"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>ALFA WL922 | Pala Cargadora</title>
-<meta name="description" content="Conozca la ALFA WL922 - Pala Cargadora. Lista para todo. Potencia de 39 kW, carga de 1600 kg, motor Changchai 490."/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
+<html class="dark" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>ALFA WL922 | Pala Cargadora</title>
+    <meta name="description"
+        content="Conozca la ALFA WL922 - Pala Cargadora. Lista para todo. Potencia de 39 kW, carga de 1600 kg, motor Changchai 490." />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -43,273 +48,476 @@
                         "headline": ["Oswald", "sans-serif"],
                         "label": ["Inter", "sans-serif"],
                     },
-                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
                 },
             },
         }
     </script>
-<style>
-        ::-webkit-scrollbar { width: 8px; height: 8px; }
-        ::-webkit-scrollbar-track { background: #0a0a0a; }
-        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #fab41e; }
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #fab41e;
+        }
     </style>
 </head>
-<body class="bg-background-dark font-body text-text-main antialiased selection:bg-primary selection:text-black">
-<div class="flex min-h-screen flex-col">
-<header class="sticky top-0 z-50 border-b border-border-dark bg-background-dark/95 backdrop-blur-sm">
-<div class="mx-auto flex h-20 max-w-[1600px] items-center justify-between px-6 lg:px-10">
-<div class="flex items-center gap-4 text-white">
-<a href="index.html"><img src="images/alfa-logo.png" class="h-12 w-auto object-contain" alt="ALFA"/></a>
-</div>
-<nav class="hidden flex-1 justify-end gap-8 md:flex">
-<div class="flex items-center gap-9">
-<a class="text-sm font-medium text-text-muted transition-colors hover:text-primary" href="index.html">Inicio</a>
-<a class="text-sm font-medium text-text-muted transition-colors hover:text-primary" href="quienes-somos.html">Quiénes Somos</a>
-<a class="text-sm font-medium text-primary transition-colors hover:text-primary" href="equipos.html">Equipos</a>
-<a class="text-sm font-medium text-text-muted transition-colors hover:text-primary" href="soluciones.html">Soluciones</a>
-<a class="text-sm font-medium text-text-muted transition-colors hover:text-primary" href="contacto.html">Contacto</a>
-</div>
-<a href="contacto.html" class="flex h-10 min-w-[140px] items-center justify-center rounded bg-primary px-6 text-sm font-bold tracking-wide text-background-dark transition-transform hover:scale-105 hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background-dark">
-    Solicitar Cotización
-</a>
-</nav>
-<button id="mobile-btn" class="ml-4 text-white md:hidden focus:outline-none">
-<span class="material-symbols-outlined">menu</span>
-</button>
-</div>
-<div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-background-dark/95 backdrop-blur-md border-b border-border-dark flex-col items-center gap-6 py-8 md:hidden shadow-2xl">
-    <a class="text-lg font-medium text-text-muted transition-colors hover:text-primary" href="index.html">Inicio</a>
-    <a class="text-lg font-medium text-text-muted transition-colors hover:text-primary" href="quienes-somos.html">Quiénes Somos</a>
-    <a class="text-lg font-medium text-primary transition-colors hover:text-primary" href="equipos.html">Equipos</a>
-    <a class="text-lg font-medium text-text-muted transition-colors hover:text-primary" href="soluciones.html">Soluciones</a>
-    <a class="text-lg font-medium text-text-muted transition-colors hover:text-primary" href="contacto.html">Contacto</a>
-    <a href="contacto.html" class="flex h-12 min-w-[200px] items-center justify-center rounded bg-primary px-6 text-sm font-bold tracking-wide text-background-dark transition-transform hover:scale-105 hover:bg-yellow-400">
-        Solicitar Cotización
-    </a>
-</div>
-</header>
-<main class="flex flex-1 flex-col">
-<!-- Hero Section -->
-<section class="relative min-h-screen flex flex-col lg:flex-row bg-surface overflow-hidden">
-<div class="w-full lg:w-1/2 h-[50vh] lg:h-screen relative">
-<img alt="ALFA WL922 Pala Cargadora" class="w-full h-full object-cover" src="images/productos/img-hero-wl922.jpg"/>
-</div>
-<div class="w-full lg:w-1/2 flex flex-col justify-center px-8 md:px-16 lg:px-24 py-20 lg:py-0 bg-surface-container-lowest">
-<div class="max-w-xl">
-<div class="inline-block px-3 py-1 mb-6 bg-primary text-on-primary text-[10px] font-black uppercase tracking-[0.2em]">
-                    INGENIERÍA PARA TRABAJO PESADO
-                </div>
-<h1 class="text-6xl md:text-8xl font-display font-bold uppercase tracking-tight leading-[0.9] mb-4 text-primary">
-                    WL922
-                </h1>
-<h2 class="text-4xl md:text-5xl font-display font-bold uppercase tracking-tight mb-8 text-white">
-                    LISTA PARA TODO
-                </h2>
-<p class="text-lg md:text-xl text-on-surface-variant mb-12 font-medium leading-relaxed">
-                    La WL922 es una pala cargadora compacta y versátil, equipada de serie con balde, uña portapallet y tercera vía hidráulica incorporada para maximizar las posibilidades de trabajo sin accesorios adicionales. Motor Changchai 490 de 39 kW. Carga nominal de 1.600 kg con capacidad de balde de hasta 1,1 m³.
-                </p>
-<div class="flex flex-col sm:flex-row gap-4 mb-16">
-<button onclick="document.getElementById('formulario-cotizacion').scrollIntoView({behavior:'smooth'})" class="bg-primary text-on-primary font-black uppercase py-5 px-10 tracking-widest text-xs hover:scale-105 transition-transform flex items-center justify-center gap-2">
-                        SOLICITAR COTIZACIÓN
-                    </button>
-<a href="descargas/fichas-tecnicas/ficha-tecnica-WL922.pdf" target="_blank" class="border-2 border-outline-variant text-on-surface font-black uppercase py-5 px-10 tracking-widest text-xs hover:bg-surface-container-high transition-colors flex items-center justify-center gap-2">
-<span class="material-symbols-outlined text-sm">download</span>
-                        DESCARGAR FICHA TÉCNICA
-                    </a>
-</div>
-<!-- Quick Stats -->
-<div class="grid grid-cols-3 gap-8 border-t border-outline-variant pt-8">
-<div>
-<p class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Potencia</p>
-<p class="text-xl font-black uppercase">39 KW</p>
-</div>
-<div>
-<p class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Carga</p>
-<p class="text-xl font-black uppercase">1.600 KG</p>
-</div>
-<div>
-<p class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Motor</p>
-<p class="text-xl font-black uppercase">CHANGCHAI</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Specs Grid Section -->
-<section class="py-24 px-6 lg:px-10 bg-surface-container-low">
-<div class="mx-auto max-w-[1600px]">
-<div class="flex items-end justify-between mb-16 border-l-4 border-primary pl-6">
-<div>
-<h2 class="text-4xl font-display font-bold uppercase tracking-tight">ESPECIFICACIONES <span class="text-primary">TÉCNICAS</span></h2>
-<p class="text-text-muted uppercase text-xs tracking-[0.3em] font-bold mt-2">Ingeniería y Rendimiento</p>
-</div>
-<div class="hidden md:block text-right">
-<span class="text-4xl font-black text-outline-variant">WL922</span>
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-outline-variant border border-outline-variant">
-<!-- Spec 1 -->
-<div class="bg-surface-container-lowest p-10 hover:bg-surface-container transition-colors group">
-<span class="material-symbols-outlined text-primary text-4xl mb-6 block group-hover:scale-110 transition-transform">shopping_basket</span>
-<h3 class="text-xs font-black text-on-surface-variant tracking-[0.2em] uppercase mb-2">Capacidad de Balde</h3>
-<p class="text-2xl font-black uppercase">0,9 – 1,1 M³</p>
-<p class="text-sm text-on-surface-variant mt-4 leading-relaxed">Equipada de serie con balde de 0,9 a 1,1 m³ y uña portapallet, la WL922 ofrece máxima versatilidad sin necesidad de accesorios adicionales, con tercera vía hidráulica incorporada.</p>
-</div>
-<!-- Spec 2 -->
-<div class="bg-surface-container-lowest p-10 hover:bg-surface-container transition-colors group">
-<span class="material-symbols-outlined text-primary text-4xl mb-6 block group-hover:scale-110 transition-transform">scale</span>
-<h3 class="text-xs font-black text-on-surface-variant tracking-[0.2em] uppercase mb-2">Peso Operativo</h3>
-<p class="text-2xl font-black uppercase">3.300 KG</p>
-<p class="text-sm text-on-surface-variant mt-4 leading-relaxed">Con 3.300 kg de peso operativo, la WL922 ofrece estabilidad y potencia para movimiento de materiales en obras, depósitos y aplicaciones agropecuarias con alta demanda operativa.</p>
-</div>
-<!-- Spec 3 -->
-<div class="bg-surface-container-lowest p-10 hover:bg-surface-container transition-colors group">
-<span class="material-symbols-outlined text-primary text-4xl mb-6 block group-hover:scale-110 transition-transform">tire_repair</span>
-<h3 class="text-xs font-black text-on-surface-variant tracking-[0.2em] uppercase mb-2">Ruedas</h3>
-<p class="text-2xl font-black uppercase">20.5 - 16</p>
-<p class="text-sm text-on-surface-variant mt-4 leading-relaxed">Neumáticos 20.5-16 que combinan resistencia y flotabilidad, aptos para trabajo en superficies variadas: tierra, piedra, asfalto y pisos industriales.</p>
-</div>
-</div>
-</div>
-</section>
 
-<!-- Contact/Quote Section -->
-<section id="formulario-cotizacion" class="px-6 lg:px-10 bg-background-dark">
-<div class="mx-auto max-w-[1600px]">
-<div class="grid grid-cols-1 lg:grid-cols-2 min-h-[600px] border border-border-dark">
-<div class="bg-surface-container-lowest p-12 md:p-24 flex flex-col justify-center relative overflow-hidden">
-<div class="absolute top-0 right-0 p-12 opacity-5">
-<span class="material-symbols-outlined text-[200px]">support_agent</span>
-</div>
-<div class="relative z-10">
-<h2 class="text-4xl font-display font-bold uppercase tracking-tight mb-6">ASESORÍA <br/>
-<span class="text-primary">PERSONALIZADA</span></h2>
-<p class="text-on-surface-variant mb-12 max-w-md">Ofrecemos  una amplia gama de equipos de las mejores marcas, respaldados por un servicio  técnico especializado y un asesoramiento personalizado.</p>
-<div class="space-y-6 mb-12">
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-primary">call</span>
-<span class="font-black">+54 11 5311-9700 / +54 11 3279-1042</span>
-</div>
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-primary">mail</span>
-<span class="font-black"><a href="mailto:ventas@euroalfamaquinarias.com" class="hover:text-primary transition-colors">ventas@euroalfamaquinarias.com</a></span>
-</div>
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-primary">location_on</span>
-<span class="font-black uppercase text-xs tracking-wider">Colectora Panamericana (1617) Tigre, Buenos Aires</span>
-</div>
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-primary">schedule</span>
-<span class="font-black uppercase text-xs tracking-wider">Lunes a viernes de 9:00 a 18:00 Hs</span>
-</div>
-</div>
-<a href="https://wa.me/541132791042" target="_blank">
-    <button class="bg-[#191919] text-white font-black uppercase py-4 px-8 tracking-widest text-sm flex items-center gap-3 hover:opacity-90 transition-opacity">
-        <span class="material-symbols-outlined">chat</span>
-        HABLAR POR WHATSAPP
-    </button>
-</a>
-</div>
-</div>
-<div class="bg-surface-container-low p-12 md:p-24 flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-outline-variant">
-<h3 class="text-2xl font-display font-bold uppercase tracking-tight mb-8">SOLICITAR COTIZACIÓN</h3>
-<form class="space-y-6">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div>
-<label class="block text-[10px] font-black uppercase tracking-widest text-on-surface-variant mb-2">Nombre Completo</label>
-<input class="w-full bg-surface-container-high border-none text-on-surface h-14 px-4 focus:ring-2 focus:ring-primary" type="text"/>
-</div>
-<div>
-<label class="block text-[10px] font-black uppercase tracking-widest text-on-surface-variant mb-2">Empresa</label>
-<input class="w-full bg-surface-container-high border-none text-on-surface h-14 px-4 focus:ring-2 focus:ring-primary" type="text"/>
-</div>
-</div>
-<div>
-<label class="block text-[10px] font-black uppercase tracking-widest text-on-surface-variant mb-2">Correo Electrónico</label>
-<input class="w-full bg-surface-container-high border-none text-on-surface h-14 px-4 focus:ring-2 focus:ring-primary" type="email"/>
-</div>
-<div>
-<label class="block text-[10px] font-black uppercase tracking-widest text-on-surface-variant mb-2">Cantidad de Unidades</label>
-<select class="w-full bg-surface-container-high border-none text-on-surface h-14 px-4 focus:ring-2 focus:ring-primary">
-<option>1 UNIDAD</option>
-<option>2-5 UNIDADES</option>
-<option>MÁS DE 5 UNIDADES</option>
-</select>
-</div>
-<div>
-<label class="block text-[10px] font-black uppercase tracking-widest text-on-surface-variant mb-2">Mensaje Adicional</label>
-<textarea class="w-full bg-surface-container-high border-none text-on-surface h-32 p-4 focus:ring-2 focus:ring-primary"></textarea>
-</div>
-<button class="w-full bg-primary text-on-primary font-black uppercase py-5 tracking-widest hover:bg-primary-fixed-dim transition-colors" type="submit">
-                    ENVIAR CONSULTA
-                </button>
-</form>
-</div>
-</div>
-</div>
-</section>
-</main>
-<a class="fixed bottom-8 right-8 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-primary text-black shadow-lg transition-all hover:bg-white hover:scale-110" href="#">
-<span class="material-symbols-outlined">arrow_upward</span>
-</a>
-    <footer class="mt-auto border-t border-border-dark bg-surface-dark py-12">
-        <div class="mx-auto grid max-w-[1600px] grid-cols-1 gap-12 px-6 lg:grid-cols-4 lg:px-10">
-            <div class="space-y-4">
-                <div class="flex items-center gap-2 text-white">
-                    <a href="index.html"><img src="images/alfa-logo.png" class="h-12 w-auto object-contain" alt="ALFA"/></a>
+<body class="bg-background-dark font-body text-text-main antialiased selection:bg-primary selection:text-black">
+    <div class="flex min-h-screen flex-col">
+        <header class="sticky top-0 z-50 border-b border-border-dark bg-background-dark/95 backdrop-blur-sm">
+            <div class="mx-auto flex h-20 max-w-[1600px] items-center justify-between px-6 lg:px-10">
+                <div class="flex items-center gap-4 text-white">
+                    <a href="index.html"><img src="images/alfa-logo.png" class="h-12 w-auto object-contain"
+                            alt="ALFA" /></a>
                 </div>
-                <p class="text-sm text-text-muted">Diseñadas para durar. Liderando la industria con soluciones de maquinaria pesada para todo tipo de terrenos y desafíos.</p>
+                <nav class="hidden flex-1 justify-end gap-8 md:flex">
+                    <div class="flex items-center gap-9">
+                        <a class="text-sm font-medium text-text-muted transition-colors hover:text-primary"
+                            href="index.html">Inicio</a>
+                        <a class="text-sm font-medium text-text-muted transition-colors hover:text-primary"
+                            href="quienes-somos.html">Quiénes Somos</a>
+                        <a class="text-sm font-medium text-primary transition-colors hover:text-primary"
+                            href="equipos.html">Equipos</a>
+                        <a class="text-sm font-medium text-text-muted transition-colors hover:text-primary"
+                            href="soluciones.html">Soluciones</a>
+                        <a class="text-sm font-medium text-text-muted transition-colors hover:text-primary"
+                            href="contacto.html">Contacto</a>
+                    </div>
+                    <a href="contacto.html"
+                        class="flex h-10 min-w-[140px] items-center justify-center rounded bg-primary px-6 text-sm font-bold tracking-wide text-background-dark transition-transform hover:scale-105 hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background-dark">
+                        Solicitar Cotización
+                    </a>
+                </nav>
+                <button id="mobile-btn" class="ml-4 text-white md:hidden focus:outline-none">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
             </div>
-            <div>
-                <h5 class="mb-4 text-sm font-bold uppercase tracking-wider text-white">Equipos</h5>
-                <ul class="space-y-2 text-sm text-text-muted">
-                    <li><a class="hover:text-primary transition-colors" href="detalle-780t.html">780 T</a></li>
-                    <li><a class="hover:text-primary transition-colors" href="detalle-jk45.html">JK45</a></li>
-                    <li><a class="hover:text-primary transition-colors" href="detalle-wl180.html">WL180</a></li>
-                    <li><a class="hover:text-primary transition-colors" href="detalle-wl922.html">WL922</a></li>
-                    <li><a class="hover:text-primary transition-colors" href="detalle-ws110.html">WS110</a></li>
-                </ul>
+            <div id="mobile-menu"
+                class="hidden absolute top-full left-0 w-full bg-background-dark/95 backdrop-blur-md border-b border-border-dark flex-col items-center gap-6 py-8 md:hidden shadow-2xl">
+                <a class="text-lg font-medium text-text-muted transition-colors hover:text-primary"
+                    href="index.html">Inicio</a>
+                <a class="text-lg font-medium text-text-muted transition-colors hover:text-primary"
+                    href="quienes-somos.html">Quiénes Somos</a>
+                <a class="text-lg font-medium text-primary transition-colors hover:text-primary"
+                    href="equipos.html">Equipos</a>
+                <a class="text-lg font-medium text-text-muted transition-colors hover:text-primary"
+                    href="soluciones.html">Soluciones</a>
+                <a class="text-lg font-medium text-text-muted transition-colors hover:text-primary"
+                    href="contacto.html">Contacto</a>
+                <a href="contacto.html"
+                    class="flex h-12 min-w-[200px] items-center justify-center rounded bg-primary px-6 text-sm font-bold tracking-wide text-background-dark transition-transform hover:scale-105 hover:bg-yellow-400">
+                    Solicitar Cotización
+                </a>
             </div>
-            <div>
-                <h5 class="mb-4 text-sm font-bold uppercase tracking-wider text-white">Empresa</h5>
-                <ul class="space-y-2 text-sm text-text-muted">
-                    <li><a class="hover:text-primary transition-colors" href="quienes-somos.html">Quiénes Somos</a></li>
-                    <li><a class="hover:text-primary transition-colors" href="soluciones.html">Soluciones</a></li>
-                    <li><a class="hover:text-primary transition-colors" href="contacto.html">Contacto</a></li>
-                </ul>
+        </header>
+        <main class="flex flex-1 flex-col">
+            <!-- Hero Section -->
+            <section class="relative min-h-screen flex flex-col lg:flex-row bg-surface overflow-hidden">
+                <div class="w-full lg:w-1/2 h-[50vh] lg:h-screen relative">
+                    <img alt="ALFA WL922 Pala Cargadora" class="w-full h-full object-cover"
+                        src="images/productos/img-hero-wl922.jpg" />
+                </div>
+                <div
+                    class="w-full lg:w-1/2 flex flex-col justify-center px-8 md:px-16 lg:px-24 py-20 lg:py-0 bg-surface-container-lowest">
+                    <div class="max-w-xl">
+                        <div
+                            class="inline-block px-3 py-1 mb-6 bg-primary text-on-primary text-[10px] font-black uppercase tracking-[0.2em]">
+                            INGENIERÍA PARA TRABAJO PESADO
+                        </div>
+                        <h1
+                            class="text-6xl md:text-8xl font-display font-bold uppercase tracking-tight leading-[0.9] mb-4 text-primary">
+                            WL922
+                        </h1>
+                        <h2
+                            class="text-4xl md:text-5xl font-display font-bold uppercase tracking-tight mb-8 text-white">
+                            LISTA PARA TODO
+                        </h2>
+                        <p class="text-lg md:text-xl text-on-surface-variant mb-12 font-medium leading-relaxed">
+                            La WL922 es una pala cargadora compacta y versátil, equipada de serie con balde, uña
+                            portapallet y tercera vía hidráulica incorporada para maximizar las posibilidades de trabajo
+                            sin accesorios adicionales. Motor Changchai 490 de 39 kW. Carga nominal de 1.600 kg con
+                            capacidad de balde de hasta 1,1 m³.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 mb-16">
+                            <button
+                                onclick="document.getElementById('formulario-cotizacion').scrollIntoView({behavior:'smooth'})"
+                                class="bg-primary text-on-primary font-black uppercase py-5 px-10 tracking-widest text-xs hover:scale-105 transition-transform flex items-center justify-center gap-2">
+                                SOLICITAR COTIZACIÓN
+                            </button>
+                            <a href="descargas/fichas-tecnicas/ficha-tecnica-WL922.pdf" target="_blank"
+                                class="border-2 border-outline-variant text-on-surface font-black uppercase py-5 px-10 tracking-widest text-xs hover:bg-surface-container-high transition-colors flex items-center justify-center gap-2">
+                                <span class="material-symbols-outlined text-sm">download</span>
+                                DESCARGAR FICHA TÉCNICA
+                            </a>
+                        </div>
+                        <!-- Quick Stats -->
+                        <div class="grid grid-cols-3 gap-8 border-t border-outline-variant pt-8">
+                            <div>
+                                <p class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant">
+                                    Potencia</p>
+                                <p class="text-xl font-black uppercase">39 KW</p>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant">
+                                    Carga</p>
+                                <p class="text-xl font-black uppercase">1.600 KG</p>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant">
+                                    Motor</p>
+                                <p class="text-xl font-black uppercase">CHANGCHAI</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Specs Grid Section -->
+            <section class="py-24 px-6 lg:px-10 bg-surface-container-low">
+                <div class="mx-auto max-w-[1600px]">
+                    <div class="flex items-end justify-between mb-16 border-l-4 border-primary pl-6">
+                        <div>
+                            <h2 class="text-4xl font-display font-bold uppercase tracking-tight">ESPECIFICACIONES <span
+                                    class="text-primary">TÉCNICAS</span></h2>
+                            <p class="text-text-muted uppercase text-xs tracking-[0.3em] font-bold mt-2">Ingeniería y
+                                Rendimiento</p>
+                        </div>
+                        <div class="hidden md:block text-right">
+                            <span class="text-4xl font-black text-outline">WL922</span>
+                        </div>
+                    </div>
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-3 gap-px bg-outline-variant border border-outline-variant">
+                        <!-- Spec 1 -->
+                        <div
+                            class="bg-surface-container-lowest p-10 hover:bg-surface-container transition-colors group">
+                            <span
+                                class="material-symbols-outlined text-primary text-4xl mb-6 block group-hover:scale-110 transition-transform">shopping_basket</span>
+                            <h3 class="text-xs font-black text-on-surface-variant tracking-[0.2em] uppercase mb-2">
+                                Capacidad de Balde</h3>
+                            <p class="text-2xl font-black uppercase">0,9 – 1,1 M³</p>
+                            <p class="text-sm text-on-surface-variant mt-4 leading-relaxed">Equipada de serie con balde
+                                de 0,9 a 1,1 m³ y uña portapallet, la WL922 ofrece máxima versatilidad sin necesidad de
+                                accesorios adicionales, con tercera vía hidráulica incorporada.</p>
+                        </div>
+                        <!-- Spec 2 -->
+                        <div
+                            class="bg-surface-container-lowest p-10 hover:bg-surface-container transition-colors group">
+                            <span
+                                class="material-symbols-outlined text-primary text-4xl mb-6 block group-hover:scale-110 transition-transform">scale</span>
+                            <h3 class="text-xs font-black text-on-surface-variant tracking-[0.2em] uppercase mb-2">Peso
+                                Operativo</h3>
+                            <p class="text-2xl font-black uppercase">3.300 KG</p>
+                            <p class="text-sm text-on-surface-variant mt-4 leading-relaxed">Con 3.300 kg de peso
+                                operativo, la WL922 ofrece estabilidad y potencia para movimiento de materiales en
+                                obras, depósitos y aplicaciones agropecuarias con alta demanda operativa.</p>
+                        </div>
+                        <!-- Spec 3 -->
+                        <div
+                            class="bg-surface-container-lowest p-10 hover:bg-surface-container transition-colors group">
+                            <span
+                                class="material-symbols-outlined text-primary text-4xl mb-6 block group-hover:scale-110 transition-transform">slow_motion_video</span>
+                            <h3 class="text-xs font-black text-on-surface-variant tracking-[0.2em] uppercase mb-2">
+                                Ruedas</h3>
+                            <p class="text-2xl font-black uppercase">20.5 - 16</p>
+                            <p class="text-sm text-on-surface-variant mt-4 leading-relaxed">Neumáticos 20.5-16 que
+                                combinan resistencia y flotabilidad, aptos para trabajo en superficies variadas: tierra,
+                                piedra, asfalto y pisos industriales.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact/Quote Section -->
+            <section id="formulario-cotizacion" class="px-6 lg:px-10 bg-background-dark">
+                <div class="mx-auto max-w-[1600px]">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 min-h-[600px] border border-border-dark">
+                        <div
+                            class="bg-surface-container-lowest p-12 md:p-24 flex flex-col justify-center relative overflow-hidden">
+                            <div class="absolute top-0 right-0 p-12 opacity-5">
+                                <span class="material-symbols-outlined text-[200px]">support_agent</span>
+                            </div>
+                            <div class="relative z-10">
+                                <h2 class="text-4xl font-display font-bold uppercase tracking-tight mb-6">ASESORÍA
+                                    <br />
+                                    <span class="text-primary">PERSONALIZADA</span>
+                                </h2>
+                                <p class="text-on-surface-variant mb-12 max-w-md">Ofrecemos una amplia gama de equipos
+                                    de las mejores marcas, respaldados por un servicio técnico especializado y un
+                                    asesoramiento personalizado.</p>
+                                <div class="space-y-6 mb-12">
+                                    <div class="flex items-center gap-4">
+                                        <span class="material-symbols-outlined text-primary">call</span>
+                                        <span class="font-black">+54 11 5311-9700 / +54 11 3279-1042</span>
+                                    </div>
+                                    <div class="flex items-center gap-4">
+                                        <span class="material-symbols-outlined text-primary">mail</span>
+                                        <span class="font-black"><a href="mailto:ventas@euroalfamaquinarias.com"
+                                                class="hover:text-primary transition-colors">ventas@euroalfamaquinarias.com</a></span>
+                                    </div>
+                                    <div class="flex items-center gap-4">
+                                        <span class="material-symbols-outlined text-primary">location_on</span>
+                                        <span class="font-black uppercase text-xs tracking-wider">Colectora Panamericana
+                                            (1617) Tigre, Buenos Aires</span>
+                                    </div>
+                                    <div class="flex items-center gap-4">
+                                        <span class="material-symbols-outlined text-primary">schedule</span>
+                                        <span class="font-black uppercase text-xs tracking-wider">Lunes a viernes de
+                                            9:00 a 18:00 Hs</span>
+                                    </div>
+                                </div>
+                                <a href="https://wa.me/541132791042" target="_blank">
+                                    <button
+                                        class="bg-[#191919] text-white font-black uppercase py-4 px-8 tracking-widest text-sm flex items-center gap-3 hover:opacity-90 transition-opacity">
+                                        <span class="material-symbols-outlined">chat</span>
+                                        HABLAR POR WHATSAPP
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-surface-container-low p-12 md:p-24 flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-outline-variant">
+                            <h3 class="text-2xl font-display font-bold uppercase tracking-tight mb-8">SOLICITAR
+                                COTIZACIÓN</h3>
+                            <form id="contactForm" class="space-y-6">
+                                <!-- Error message container -->
+                                <div id="formError" class="hidden p-4 bg-red-500/10 border border-red-500/50 text-red-500 text-xs font-bold uppercase tracking-widest">
+                                    Por favor, completá todos los campos obligatorios (*).
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label
+                                            class="block text-[10px] font-black uppercase tracking-widest text-on-surface-variant mb-2">Nombre
+                                            y Apellido *</label>
+                                        <input required name="nombre"
+                                            class="w-full bg-surface-container-high border-none text-on-surface h-14 px-4 focus:ring-2 focus:ring-primary"
+                                            type="text" />
+                                    </div>
+                                    <div>
+                                        <label
+                                            class="block text-[10px] font-black uppercase tracking-widest text-on-surface-variant mb-2">Empresa</label>
+                                        <input name="empresa"
+                                            class="w-full bg-surface-container-high border-none text-on-surface h-14 px-4 focus:ring-2 focus:ring-primary"
+                                            type="text" />
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label
+                                            class="block text-[10px] font-black uppercase tracking-widest text-on-surface-variant mb-2">Correo
+                                            Electrónico *</label>
+                                        <input required name="email"
+                                            class="w-full bg-surface-container-high border-none text-on-surface h-14 px-4 focus:ring-2 focus:ring-primary"
+                                            type="email" />
+                                    </div>
+                                    <div>
+                                        <label
+                                            class="block text-[10px] font-black uppercase tracking-widest text-on-surface-variant mb-2">Teléfono</label>
+                                        <input name="telefono"
+                                            class="w-full bg-surface-container-high border-none text-on-surface h-14 px-4 focus:ring-2 focus:ring-primary"
+                                            type="tel" />
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label
+                                            class="block text-[10px] font-black uppercase tracking-widest text-on-surface-variant mb-2">Rubro
+                                            / Industria</label>
+                                        <input name="rubro"
+                                            class="w-full bg-surface-container-high border-none text-on-surface h-14 px-4 focus:ring-2 focus:ring-primary"
+                                            type="text" />
+                                    </div>
+                                    <div>
+                                        <label
+                                            class="block text-[10px] font-black uppercase tracking-widest text-on-surface-variant mb-2">Equipo
+                                            de Interés</label>
+                                        <select name="equipo"
+                                            class="w-full bg-surface-container-high border-none text-on-surface h-14 px-4 focus:ring-2 focus:ring-primary">
+                                            <option value="seleccionar-un-equipo">Seleccionar un Equipo</option>
+                                            <option value="780T">780 T</option>
+                                            <option value="JK45">JK45</option>
+                                            <option value="WL180">WL180</option>
+                                            <option value="WL922" selected>WL922</option>
+                                            <option value="WS110">WS110</option>
+                                            <option value="otro-equipo">Otro Equipo</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-[10px] font-black uppercase tracking-widest text-on-surface-variant mb-2">Cantidad
+                                        de Unidades</label>
+                                    <select name="cantidad"
+                                        class="w-full bg-surface-container-high border-none text-on-surface h-14 px-4 focus:ring-2 focus:ring-primary">
+                                        <option>1 UNIDAD</option>
+                                        <option>2-5 UNIDADES</option>
+                                        <option>MÁS DE 5 UNIDADES</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-[10px] font-black uppercase tracking-widest text-on-surface-variant mb-2">Mensaje
+                                        / Requerimiento *</label>
+                                    <textarea required name="mensaje"
+                                        class="w-full bg-surface-container-high border-none text-on-surface h-32 p-4 focus:ring-2 focus:ring-primary"></textarea>
+                                </div>
+                                <button id="submitBtn"
+                                    class="w-full bg-primary text-on-primary font-black uppercase py-5 tracking-widest hover:bg-primary-hover transition-colors flex items-center justify-center gap-2"
+                                    type="submit">
+                                    <span class="material-symbols-outlined text-sm">send</span>
+                                    ENVIAR CONSULTA
+                                </button>
+                                <p class="text-[13px] text-on-surface-variant italic mt-4">
+                                    * Campos obligatorios. Tu información es confidencial y nunca será compartida.
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <a class="fixed bottom-8 right-8 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-primary text-black shadow-lg transition-all hover:bg-white hover:scale-110"
+            href="#">
+            <span class="material-symbols-outlined">arrow_upward</span>
+        </a>
+        <footer class="mt-auto border-t border-border-dark bg-surface-dark py-12">
+            <div class="mx-auto grid max-w-[1600px] grid-cols-1 gap-12 px-6 lg:grid-cols-4 lg:px-10">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2 text-white">
+                        <a href="index.html"><img src="images/alfa-logo.png" class="h-12 w-auto object-contain"
+                                alt="ALFA" /></a>
+                    </div>
+                    <p class="text-sm text-text-muted">Diseñadas para durar. Liderando la industria con soluciones de
+                        maquinaria pesada para todo tipo de terrenos y desafíos.</p>
+                </div>
+                <div>
+                    <h5 class="mb-4 text-sm font-bold uppercase tracking-wider text-white">Equipos</h5>
+                    <ul class="space-y-2 text-sm text-text-muted">
+                        <li><a class="hover:text-primary transition-colors" href="detalle-780t.html">780 T</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="detalle-jk45.html">JK45</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="detalle-wl180.html">WL180</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="detalle-wl922.html">WL922</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="detalle-ws110.html">WS110</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="mb-4 text-sm font-bold uppercase tracking-wider text-white">Empresa</h5>
+                    <ul class="space-y-2 text-sm text-text-muted">
+                        <li><a class="hover:text-primary transition-colors" href="quienes-somos.html">Quiénes Somos</a>
+                        </li>
+                        <li><a class="hover:text-primary transition-colors" href="soluciones.html">Soluciones</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="mb-4 text-sm font-bold uppercase tracking-wider text-white">Contacto</h5>
+                    <ul class="space-y-2 text-sm text-text-muted">
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-xs">phone</span> +54 11 5311-9700 / +54 11
+                            3279-1042
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-xs">mail</span> <a
+                                href="mailto:ventas@euroalfamaquinarias.com"
+                                class="hover:text-primary transition-colors">ventas@euroalfamaquinarias.com</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-xs">location_on</span> Colectora Panamericana
+                            (1617) Tigre, Bs. As.
+                        </li>
+                    </ul>
+                </div>
             </div>
+            <div class="mt-12 border-t border-border-dark pt-8 text-center text-xs text-text-muted">
+                © 2026 ALFA. Todos los derechos reservados.
+            </div>
+        </footer>
+    </div>
+    <!-- Toast de confirmación -->
+    <div id="toast" class="fixed bottom-8 right-8 z-[9999] hidden opacity-0 transition-all duration-400">
+        <div class="flex items-center gap-4 bg-surface-dark border border-primary/30 px-6 py-4 shadow-2xl">
+            <span class="material-symbols-outlined text-primary text-2xl">check_circle</span>
             <div>
-                <h5 class="mb-4 text-sm font-bold uppercase tracking-wider text-white">Contacto</h5>
-                <ul class="space-y-2 text-sm text-text-muted">
-                    <li class="flex items-center gap-2">
-                        <span class="material-symbols-outlined text-xs">phone</span> +54 11 5311-9700 / +54 11 3279-1042
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <span class="material-symbols-outlined text-xs">mail</span> <a href="mailto:ventas@euroalfamaquinarias.com" class="hover:text-primary transition-colors">ventas@euroalfamaquinarias.com</a>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <span class="material-symbols-outlined text-xs">location_on</span> Colectora Panamericana (1617) Tigre, Bs. As.
-                    </li>
-                </ul>
+                <p class="text-white font-bold text-sm">¡Consulta enviada!</p>
+                <p class="text-on-surface-variant text-xs">Te contactaremos en menos de 24 horas.</p>
             </div>
         </div>
-        <div class="mt-12 border-t border-border-dark pt-8 text-center text-xs text-text-muted">
-            © 2026 ALFA. Todos los derechos reservados.
-        </div>
-    </footer>
-</div>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const mobileBtn = document.getElementById('mobile-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (mobileBtn && mobileMenu) {
-            mobileBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-                mobileMenu.classList.toggle('flex');
-            });
-        }
-    });
-</script>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileBtn = document.getElementById('mobile-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileBtn && mobileMenu) {
+                mobileBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    mobileMenu.classList.toggle('flex');
+                });
+            }
+
+            // Form handling
+            const form = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const formError = document.getElementById('formError');
+            const toast = document.getElementById('toast');
+
+            if (form) {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    const nombre = form.querySelector('[name="nombre"]').value.trim();
+                    const email = form.querySelector('[name="email"]').value.trim();
+                    const mensaje = form.querySelector('[name="mensaje"]').value.trim();
+
+                    // Validación básica
+                    if (!nombre || !email || !mensaje) {
+                        formError.classList.remove('hidden');
+                        formError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        return;
+                    }
+
+                    formError.classList.add('hidden');
+                    submitBtn.disabled = true;
+                    const originalContent = submitBtn.innerHTML;
+                    submitBtn.innerHTML = '<span class="material-symbols-outlined text-sm animate-spin">progress_activity</span> ENVIANDO...';
+
+                    // Simulación de envío
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalContent;
+                        submitBtn.disabled = false;
+                        form.reset();
+
+                        // Mostrar toast
+                        toast.classList.remove('hidden');
+                        setTimeout(() => toast.classList.replace('opacity-0', 'opacity-100'), 10);
+                        
+                        setTimeout(() => {
+                            toast.classList.replace('opacity-100', 'opacity-0');
+                            setTimeout(() => toast.classList.add('hidden'), 400);
+                        }, 4000);
+                    }, 1500);
+                });
+
+                // Limpiar error al escribir
+                form.querySelectorAll('input, textarea').forEach(el => {
+                    el.addEventListener('input', () => {
+                        if (el.value.trim()) formError.classList.add('hidden');
+                    });
+                });
+            }
+        });
+    </script>
 </body>
+
 </html>

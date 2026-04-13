@@ -21,13 +21,17 @@
         extend: {
           colors: {
             "primary": "#fab41e",
-            "primary-hover": "#e0a316",
-            "background-dark": "#020408",
-            "surface-dark": "#0a0c10",
+            "background-dark": "#0a0a0a",
+            "surface-dark": "#141414",
             "surface-card": "#000000",
             "text-main": "#E5E5E5",
             "text-muted": "#888888",
             "border-dark": "#262626",
+            "surface-container-high": "#1a1a1a",
+            "on-surface": "#E5E5E5",
+            "on-surface-variant": "#888888",
+            "on-primary": "#000000",
+            "primary-hover": "#e0a316",
           },
           fontFamily: {
             "display": ["Oswald", "sans-serif"],
@@ -287,91 +291,102 @@
                 <h3 class="text-xl font-display font-bold text-white uppercase tracking-wider mb-8">Datos de consulta
                 </h3>
 
-                <form id="contactForm" class="space-y-5" novalidate>
+                <form id="contactForm" class="space-y-6">
+                    <!-- Error message container -->
+                    <div id="formError" class="hidden p-4 bg-red-500/10 border border-red-500/50 text-red-500 text-xs font-bold uppercase tracking-widest">
+                        Por favor, completá todos los campos obligatorios (*).
+                    </div>
 
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label class="block text-xs font-bold uppercase tracking-widest text-text-muted mb-2">Nombre y
-                        apellido *</label>
-                      <input type="text" name="nombre" placeholder="Juan García" class="form-input" required />
+                      <label
+                        class="block text-[10px] font-black uppercase tracking-widest text-on-surface-variant mb-2">Nombre
+                        y Apellido *</label>
+                      <input required name="nombre"
+                        class="w-full bg-surface-container-high border-none text-on-surface h-14 px-4 focus:ring-2 focus:ring-primary"
+                        type="text" />
                     </div>
                     <div>
                       <label
-                        class="block text-xs font-bold uppercase tracking-widest text-text-muted mb-2">Empresa</label>
-                      <input type="text" name="empresa" placeholder="Mi Empresa SRL" class="form-input" />
+                        class="block text-[10px] font-black uppercase tracking-widest text-on-surface-variant mb-2">Empresa</label>
+                      <input name="empresa"
+                        class="w-full bg-surface-container-high border-none text-on-surface h-14 px-4 focus:ring-2 focus:ring-primary"
+                        type="text" />
                     </div>
                   </div>
 
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label class="block text-xs font-bold uppercase tracking-widest text-text-muted mb-2">Teléfono
-                        *</label>
-                      <input type="tel" name="telefono" placeholder="+54 11 0000-0000" class="form-input" required />
+                      <label
+                        class="block text-[10px] font-black uppercase tracking-widest text-on-surface-variant mb-2">Correo
+                        Electrónico *</label>
+                      <input required name="email"
+                        class="w-full bg-surface-container-high border-none text-on-surface h-14 px-4 focus:ring-2 focus:ring-primary"
+                        type="email" />
                     </div>
                     <div>
-                      <label class="block text-xs font-bold uppercase tracking-widest text-text-muted mb-2">Email
-                        *</label>
-                      <input type="email" name="email" placeholder="correo@empresa.com" class="form-input" required />
+                      <label
+                        class="block text-[10px] font-black uppercase tracking-widest text-on-surface-variant mb-2">Teléfono</label>
+                      <input name="telefono"
+                        class="w-full bg-surface-container-high border-none text-on-surface h-14 px-4 focus:ring-2 focus:ring-primary"
+                        type="tel" />
+                    </div>
+                  </div>
+
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label
+                        class="block text-[10px] font-black uppercase tracking-widest text-on-surface-variant mb-2">Rubro
+                        / Industria</label>
+                      <input name="rubro"
+                        class="w-full bg-surface-container-high border-none text-on-surface h-14 px-4 focus:ring-2 focus:ring-primary"
+                        type="text" />
+                    </div>
+                    <div>
+                      <label
+                        class="block text-[10px] font-black uppercase tracking-widest text-on-surface-variant mb-2">Equipo
+                        de Interés</label>
+                      <select name="equipo"
+                        class="w-full bg-surface-container-high border-none text-on-surface h-14 px-4 focus:ring-2 focus:ring-primary">
+                        <option value="seleccionar-un-equipo" selected>Seleccionar un Equipo</option>
+                        <option value="780T">780 T</option>
+                        <option value="JK45">JK45</option>
+                        <option value="WL180">WL180</option>
+                        <option value="WL922">WL922</option>
+                        <option value="WS110">WS110</option>
+                        <option value="otro-equipo">Otro Equipo</option>
+                      </select>
                     </div>
                   </div>
 
                   <div>
-                    <label class="block text-xs font-bold uppercase tracking-widest text-text-muted mb-2">Rubro /
-                      Industria</label>
-                    <select name="rubro" class="form-input">
-                      <option value="" disabled selected>Seleccioná tu industria...</option>
-                      <option value="construccion">Construcción</option>
-                      <option value="agricola">Agrícola</option>
-                      <option value="movimiento-suelos">Movimiento de suelos</option>
-                      <option value="municipio">Municipio / Estado</option>
-                      <option value="aserradero">Aserradero</option>
-                      <option value="logistica">Logística y depósitos</option>
-                      <option value="otro">Otro</option>
+                    <label
+                      class="block text-[10px] font-black uppercase tracking-widest text-on-surface-variant mb-2">Cantidad
+                      de Unidades</label>
+                    <select name="cantidad"
+                      class="w-full bg-surface-container-high border-none text-on-surface h-14 px-4 focus:ring-2 focus:ring-primary">
+                      <option>1 UNIDAD</option>
+                      <option>2-5 UNIDADES</option>
+                      <option>MÁS DE 5 UNIDADES</option>
                     </select>
                   </div>
 
                   <div>
-                    <label class="block text-xs font-bold uppercase tracking-widest text-text-muted mb-2">Equipo de
-                      interés</label>
-                    <select name="equipo" class="form-input">
-                      <option value="" disabled selected>¿Qué equipo te interesa?</option>
-                      <option value="grua-camion">Grúas sobre camión</option>
-                      <option value="grua-terreno">Grúas todo terreno</option>
-                      <option value="pala">Palas cargadoras</option>
-                      <option value="autoelevador">Autoelevadores</option>
-                      <option value="retroexcavadora">Retroexcavadoras</option>
-                      <option value="motoniveladora">Motoniveladoras</option>
-                      <option value="excavadora">Excavadoras</option>
-                      <option value="repuesto">Repuesto / Postventa</option>
-                      <option value="trading">Servicio de Trading</option>
-                      <option value="otro">Otro / No sé aún</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label class="block text-xs font-bold uppercase tracking-widest text-text-muted mb-2">Mensaje /
-                      Requerimiento *</label>
-                    <textarea name="mensaje" rows="4"
-                      placeholder="Contanos sobre tu proyecto, necesidad o consulta. Cuanto más detalle nos des, mejor podemos asesorarte."
-                      class="form-input resize-none" required></textarea>
-                  </div>
-
-                  <!-- Error message -->
-                  <div id="formError" class="hidden p-4 border border-red-500/30 bg-red-500/10 text-red-400 text-sm">
-                    <div class="flex items-center gap-2">
-                      <span class="material-symbols-outlined text-base">error</span>
-                      Por favor completá los campos obligatorios (*)
-                    </div>
+                    <label
+                      class="block text-[10px] font-black uppercase tracking-widest text-on-surface-variant mb-2">Mensaje
+                      / Requerimiento *</label>
+                    <textarea required name="mensaje"
+                      class="w-full bg-surface-container-high border-none text-on-surface h-32 p-4 focus:ring-2 focus:ring-primary"></textarea>
                   </div>
 
                   <button type="submit"
-                    class="w-full flex items-center justify-center gap-3 bg-primary text-black font-bold uppercase tracking-widest py-4 text-sm hover:bg-yellow-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    class="w-full bg-primary text-black font-black uppercase py-5 tracking-widest hover:bg-[#d19614] transition-colors flex items-center justify-center gap-2"
                     id="submitBtn">
-                    <span class="material-symbols-outlined text-xl">send</span>
-                    Enviar consulta
+                    <span class="material-symbols-outlined text-sm">send</span>
+                    ENVIAR CONSULTA
                   </button>
 
-                  <p class="text-center text-xs text-text-muted">
+                  <p class="text-center text-[10px] text-on-surface-variant italic mt-4">
                     * Campos obligatorios. Tu información es confidencial y nunca será compartida.
                   </p>
                 </form>
@@ -728,7 +743,7 @@
   </div>
 
   <!-- Toast de confirmación -->
-  <div id="toast" class="fixed bottom-8 right-8 z-[9999] hidden">
+  <div id="toast" class="fixed bottom-8 right-8 z-[9999] hidden opacity-0 transition-all duration-400">
     <div class="flex items-center gap-4 bg-surface-dark border border-primary/30 px-6 py-4 shadow-2xl">
       <span class="material-symbols-outlined text-primary text-2xl">check_circle</span>
       <div>
@@ -771,12 +786,11 @@
       e.preventDefault();
 
       const nombre = form.querySelector('[name="nombre"]').value.trim();
-      const telefono = form.querySelector('[name="telefono"]').value.trim();
       const email = form.querySelector('[name="email"]').value.trim();
       const mensaje = form.querySelector('[name="mensaje"]').value.trim();
 
       // Validación básica
-      if (!nombre || !telefono || !email || !mensaje) {
+      if (!nombre || !email || !mensaje) {
         formError.classList.remove('hidden');
         formError.scrollIntoView({ behavior: 'smooth', block: 'center' });
         return;
@@ -784,19 +798,21 @@
 
       formError.classList.add('hidden');
       submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span class="material-symbols-outlined text-xl animate-spin">progress_activity</span> Enviando...';
+      const originalContent = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<span class="material-symbols-outlined text-sm animate-spin">progress_activity</span> ENVIANDO...';
 
-      // Simulación de envío (reemplazar con lógica real)
+      // Simulación de envío
       setTimeout(() => {
-        submitBtn.innerHTML = '<span class="material-symbols-outlined text-xl">send</span> Enviar consulta';
+        submitBtn.innerHTML = originalContent;
         submitBtn.disabled = false;
         form.reset();
 
         // Mostrar toast
         toast.classList.remove('hidden');
-        toast.style.opacity = '1';
+        setTimeout(() => toast.classList.replace('opacity-0', 'opacity-100'), 10);
+        
         setTimeout(() => {
-          toast.style.opacity = '0';
+          toast.classList.replace('opacity-100', 'opacity-0');
           setTimeout(() => toast.classList.add('hidden'), 400);
         }, 4000);
       }, 1500);
